@@ -65,47 +65,6 @@ Options:
 - `-r` / `--recursive` — recurse into subdirectories
 - `-o` / `--output` — output CSV path (default: `cdx_smiles.csv`)
 
-## API Reference
-
-### `read_cdx_molecule(path_or_bytes, as_single=True)`
-
-Read a CDX file and return an RDKit `Mol` object. Multi-atom fragment
-abbreviations (Me, Ph, Boc, CF3, ...) are always expanded.
-
-**Parameters:**
-
-| Parameter | Type | Default | Description |
-|---|---|---|---|
-| `path_or_bytes` | `str`, `Path`, or `bytes` | required | Path to a CDX file or raw CDX bytes |
-| `as_single` | `bool` | `True` | Combine all fragments into a single molecule |
-
-**Returns:** An RDKit `Mol` object (if `as_single=True`) or a list of `Mol` objects.
-
-### `get_fragment_smiles(label)`
-
-Look up a text label in the fragment library.
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|---|---|---|
-| `label` | `str` | Text label from a ChemDraw node (e.g. "Me", "CF3", "R1") |
-
-**Returns:** `(smiles, smiles_with_attachment, is_scaffold)` tuple. Returns `(None, None, True)` for scaffold/R-group labels and `(None, None, False)` for unknown labels.
-
-### `join_molecule_fragments(scaffold, decoration, regenerate_2d_coords=False)`
-
-Join two RDKit molecules at labeled attachment points (`[*:N]`).
-
-**Parameters:**
-
-| Parameter | Type | Default | Description |
-|---|---|---|---|
-| `scaffold` | `Mol` | required | RDKit molecule with a labeled attachment point |
-| `decoration` | `Mol` | required | RDKit molecule with a matching labeled attachment point |
-| `regenerate_2d_coords` | `bool` | `False` | Recompute 2D coordinates after joining |
-
-**Returns:** Joined `Mol` object, or `None` on failure.
 
 ## Supported Fragment Abbreviations
 
@@ -133,6 +92,21 @@ Join two RDKit molecules at labeled attachment points (`[*:N]`).
 **Other:** B(OH)2, BnO2C, BnO2CHN
 
 </details>
+
+## Limitations
+
+**Abbreviations embedded inside a ring cannot be expanded.** Fragment
+expansion works by splitting the molecule at the labeled atom into two
+pieces — the scaffold and the abbreviation — and then re-joining them
+with the expanded structure. When the labeled atom sits inside a ring,
+cutting that single bond does not actually separate the graph into two
+components, so the splitter has nothing to replace and the abbreviation
+is left as an unexpanded heteroatom (or dummy) in the ring.
+
+Example: [`US20140045811A1-20140213-C00235`](tests/data/US20140045811A1-20140213/US20140045811A1-20140213-C00235.CDX)
+contains a ring with an `Me`-labeled atom that participates in two ring
+bonds — the parser emits the ring but cannot substitute the methyl in
+place, so the result differs from the reference structure.
 
 ## License
 
