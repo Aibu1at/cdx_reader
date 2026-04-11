@@ -1,6 +1,6 @@
 # cdx-reader
 
-A Python library for reading ChemDraw CDX/CDXML files and converting them to RDKit molecule objects, with automatic expansion of fragment abbreviations.
+A Python library (and CLI) for reading ChemDraw CDX/CDXML files and converting them to RDKit molecule objects, with automatic expansion of fragment abbreviations.
 
 ## Problem
 
@@ -27,28 +27,50 @@ pip install cdx-reader
 
 ## Quick Start
 
+### Python API
+
 ```python
 from cdx_reader import read_cdx_molecule
+from rdkit import Chem
 
 # From a file path
 mol = read_cdx_molecule("structure.cdx")
+print(Chem.MolToSmiles(mol))
 
 # From bytes (e.g. read from a database or zip archive)
 with open("structure.cdx", "rb") as f:
     mol = read_cdx_molecule(f.read())
 
-# Without fragment expansion
-mol = read_cdx_molecule("structure.cdx", expand_fragments=False)
-
 # Get individual fragments instead of a combined molecule
 mols = read_cdx_molecule("structure.cdx", as_single=False)
 ```
 
+Multi-atom abbreviations (Me, Ph, Boc, CF3, ...) are always expanded into
+their full structures.
+
+### CLI: batch-convert a folder of CDX files
+
+```bash
+cdx-to-csv path/to/cdx_folder/ -o smiles.csv
+```
+
+Output CSV has three columns: `file_name`, `tag`, `smiles`. The `tag` is
+the last dash-separated component of the file name stem — for example
+`US20140045811A1-20140213-C00001.CDX` → `C00001`. Files that fail to
+parse still appear in the CSV with an empty `smiles` column, so you can
+audit which inputs failed.
+
+Options:
+- `--pattern '*.cdx'` — case-sensitive glob (default: `*.CDX`)
+- `-r` / `--recursive` — recurse into subdirectories
+- `-o` / `--output` — output CSV path (default: `cdx_smiles.csv`)
+
 ## API Reference
 
-### `read_cdx_molecule(path_or_bytes, as_single=True, expand_fragments=True)`
+### `read_cdx_molecule(path_or_bytes, as_single=True)`
 
-Read a CDX file and return an RDKit `Mol` object.
+Read a CDX file and return an RDKit `Mol` object. Multi-atom fragment
+abbreviations (Me, Ph, Boc, CF3, ...) are always expanded.
 
 **Parameters:**
 
@@ -56,9 +78,8 @@ Read a CDX file and return an RDKit `Mol` object.
 |---|---|---|---|
 | `path_or_bytes` | `str`, `Path`, or `bytes` | required | Path to a CDX file or raw CDX bytes |
 | `as_single` | `bool` | `True` | Combine all fragments into a single molecule |
-| `expand_fragments` | `bool` | `True` | Expand multi-atom abbreviations (Me, Ph, Boc, etc.) |
 
-**Returns:** An RDKit `Mol` object (if `as_single=True`) or a tuple of `Mol` objects.
+**Returns:** An RDKit `Mol` object (if `as_single=True`) or a list of `Mol` objects.
 
 ### `get_fragment_smiles(label)`
 

@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cdx-reader"
+version = "0.1.0"
+description = "A Python library for reading ChemDraw CDX/CDXML files and working with chemical SMILES data"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "Konstantin Avchaciov"}
+]
+keywords = [
+    "chemistry",
+    "cheminformatics",
+    "rdkit",
+    "smiles",
+    "chemdraw",
+    "cdx",
+    "cdxml",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "rdkit==2025.3.3",
+    "pycdxml @ git+https://github.com/kienerj/pycdxml.git",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[project.scripts]
+cdx-to-csv = "cdx_reader.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/gero-science/cdx_reader"
+Documentation = "https://github.com/gero-science/cdx_reader#readme"
+Repository = "https://github.com/gero-science/cdx_reader"
+Issues = "https://github.com/gero-science/cdx_reader/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cdx_reader*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

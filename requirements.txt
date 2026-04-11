@@ -1,0 +1,2 @@
+rdkit>=2025.3.3
+pycdxml @ git+https://github.com/kienerj/pycdxml.git
