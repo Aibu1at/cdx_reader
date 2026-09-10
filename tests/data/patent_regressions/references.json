@@ -2433,5 +2433,186 @@
       "kind": "source_and_patent",
       "details": "Compound I-14 source drawing has a first-atom BocHN abbreviation in addition to another Boc group. The corresponding table row reports distinct 9H singlets at 1.52 and 1.54 ppm, supporting two Boc groups; the old reader and MOL lose the first one. Other bonds and the source stereocentre are retained."
     }
+  },
+  {
+    "id": "US20120225858A1-C00010",
+    "patent": "US20120225858A1",
+    "member": "US20120225858A1-20120906/US20120225858A1-20120906-C00010.CDX",
+    "sha256": "53048b41fbfbecddebf29d30422d526f3d9803a3e19ff52c567c5b2cfd2e77bd",
+    "mol_sha256": "e38d1ba4ced044c0e1b2ddc321484b23eec07b55dece86a1a1686188498a0499",
+    "coverage": [
+      "stereochemistry",
+      "distinct_r_variables",
+      "nested_nitro"
+    ],
+    "expected": {
+      "tetrahedral_source_centers": {
+        "419": [
+          [
+            "1028",
+            "417",
+            "424",
+            "426"
+          ],
+          1
+        ],
+        "919": [
+          [
+            "913",
+            "918",
+            "921",
+            "922"
+          ],
+          -1
+        ],
+        "872": [
+          [
+            "860",
+            "870",
+            "883",
+            "885"
+          ],
+          -1
+        ],
+        "603": [
+          [
+            "602",
+            "604",
+            "605",
+            "608"
+          ],
+          -1
+        ],
+        "831": [
+          [
+            "819",
+            "829",
+            "842",
+            "844"
+          ],
+          -1
+        ],
+        "799": [
+          [
+            "787",
+            "797",
+            "810",
+            "812"
+          ],
+          1
+        ]
+      }
+    },
+    "evidence": {
+      "kind": "source_query_graph",
+      "details": "The source wedges specify tetrahedral orientation at centres attached to distinct R3 and R4 variables. Baseline RDKit atom tags preserve these wedges even though ordinary SMILES treats the wildcard substituents as identical. Recomputing stereo after nitro expansion must preserve those imported orientations for later substitution. Expected parity is relative to sorted source-neighbor IDs, independent of molecule atom indices; it preserves existing source stereochemistry rather than claiming resolved R/S configuration."
+    }
+  },
+  {
+    "id": "US20120225858A1-C00011",
+    "patent": "US20120225858A1",
+    "member": "US20120225858A1-20120906/US20120225858A1-20120906-C00011.CDX",
+    "sha256": "924c9c6ca3c9b33c18acbec7f6f33c1cfbf6a4076248e25efe7e5899d7fcab61",
+    "mol_sha256": "893dbec1d2768f0a09d73e7d2de3a7beef599b151fe15b97a87b5e1532549951",
+    "coverage": [
+      "stereochemistry",
+      "distinct_r_variables",
+      "nested_nitro"
+    ],
+    "expected": {
+      "tetrahedral_source_centers": {
+        "1380": [
+          [
+            "1374",
+            "1379",
+            "1381",
+            "1382"
+          ],
+          -1
+        ],
+        "872": [
+          [
+            "860",
+            "870",
+            "883",
+            "885"
+          ],
+          -1
+        ],
+        "603": [
+          [
+            "602",
+            "604",
+            "605",
+            "606"
+          ],
+          -1
+        ],
+        "831": [
+          [
+            "819",
+            "829",
+            "842",
+            "844"
+          ],
+          -1
+        ],
+        "1222": [
+          [
+            "1216",
+            "1221",
+            "1224",
+            "1225"
+          ],
+          -1
+        ],
+        "1092": [
+          [
+            "1091",
+            "1093",
+            "1094",
+            "1095"
+          ],
+          -1
+        ],
+        "1296": [
+          [
+            "1290",
+            "1295",
+            "1298",
+            "1299"
+          ],
+          -1
+        ]
+      }
+    },
+    "evidence": {
+      "kind": "source_query_graph",
+      "details": "The source wedges specify tetrahedral orientation at centres attached to distinct R3 and R4 variables. Baseline RDKit atom tags preserve these wedges even though ordinary SMILES treats the wildcard substituents as identical. Recomputing stereo after nitro expansion must preserve those imported orientations for later substitution. Expected parity is relative to sorted source-neighbor IDs, independent of molecule atom indices; it preserves existing source stereochemistry rather than claiming resolved R/S configuration."
+    }
+  },
+  {
+    "id": "US20100130737A1_C00039",
+    "patent": "US20100130737A1",
+    "member": "US20100130737A1-20100527/US20100130737A1-20100527-C00039.CDX",
+    "sha256": "0f62127b193dc13f4c0fcd3ffedb3e261a23a414aed23108976caa3fbfeaccc4",
+    "mol_sha256": "4be87117876bb362c27c8f108c0c0952f7567b8d3cd0d16cddd77169bc98ff13",
+    "coverage": [
+      "amide",
+      "mol_defect",
+      "r_labels"
+    ],
+    "expected": {
+      "smiles": "*NC(C)=O",
+      "formula": "C2H4*NO",
+      "inchikey": "",
+      "r_labels": {
+        "10": "R3"
+      }
+    },
+    "evidence": {
+      "kind": "source_query_graph",
+      "details": "The CDX graph contains the amide nitrogen between the variable and acetyl group; paired MOL substitutes carbon, producing [3*]CC(C)=O. This is a source-graph regression for the existing correct CDX amide, not an assertion that its unspecified group is a complete molecule."
+    }
   }
 ]

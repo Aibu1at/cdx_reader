@@ -11,9 +11,14 @@ from rdkit import RDLogger
 import sys
 from io import StringIO, BytesIO
 from pathlib import Path
-from ._normalization import (atom_label, r_label, variable_label, capture_r_labels,
-                             capture_atom_labels, restore_r_labels, restore_atom_labels,
-                             detach_variable_atom_maps)
+from ._normalization import (
+    atom_label, r_label, capture_r_labels, restore_r_labels,
+    normalize_nested_fragment, repair_invalid_nitrogen_hydrogens,
+    explicit_element_is_usable,
+    has_ambiguous_multimolecule_expansion,
+    variable_label, capture_atom_labels, restore_atom_labels, detach_variable_atom_maps,
+    sanitize_aromatic_variable_graph,
+)
 
 RDLogger.DisableLog('rdApp.*')
 logger = logging.getLogger(__name__)
@@ -236,7 +241,12 @@ def parse_cdxml(tree, fix=True):
           node_order is the 0-based index of the node in the order nodes appear in CDXML.
         - Dict mapping node_id -> node_order for all nodes in the CDXML
     """
+    return _parse_cdxml(tree, fix=fix)
+
+
+def _parse_cdxml(tree, fix=True, repair_nested=True):
     root = tree.getroot()
+    preserve_selection = has_ambiguous_multimolecule_expansion(root, FRAGMENT_LIBRARY)
     fragments_to_expand = []  # List of (node_order, label, node_id) for multi-atom fragments
     node_id_to_order = {}  # Maps node_id -> order index
 
@@ -255,6 +265,13 @@ def parse_cdxml(tree, fix=True):
         # Get the node's id attribute - this is the reliable identifier
         node_id = node.get('id')
 
+        if fix:
+            repair_invalid_nitrogen_hydrogens(node)
+            # Prefer explicit internal atoms/bonds over interpreting the outer
+            # text. Some ChemDraw files incorrectly mark these as Unspecified.
+            if repair_nested and not preserve_selection and normalize_nested_fragment(node):
+                continue
+
         # 'Element' is often implicit (Carbon) or in 'Element' attribute
         # 't' tag inside 'n' often contains labels like "Me", "Ph"
         element = node.get('Element', '100')  # Default to Carbon if missing
@@ -268,13 +285,24 @@ def parse_cdxml(tree, fix=True):
         if not label:
             continue
 
-        if fix and variable_label(node, FRAGMENT_LIBRARY):
+        declared_variable = variable_label(node, FRAGMENT_LIBRARY)
+        if fix and declared_variable:
             node.set('Element', '0')
             continue
 
         # Skip if element is already correctly set
         is_bad_element = element == '100'
         if not is_bad_element and not fix:
+            continue
+
+        # Explicit element identity is stronger evidence than a prefix such as
+        # "N" in "Na+". R placeholders and known abbreviations still need the
+        # existing interpretation/expansion path. An Unspecified node with no
+        # Element (e.g. HN) continues through the label repair below.
+        if (node.get('Element') is not None and element not in ('0', '99', '100')
+                and explicit_element_is_usable(node)
+                and label not in FRAGMENT_LIBRARY
+                and label not in SCAFFOLD_LABELS and not get_fragment_smiles(label)[2]):
             continue
 
         # Determine what element this label should map to
@@ -341,7 +369,7 @@ def split_mol_at_atom(mol, atom_idx: int):
     if bond is None:
         atom = mol.GetAtomWithIdx(atom_idx)
         neighbor_idx = min([x.GetIdx() for x in atom.GetNeighbors()])
-        bond = mol.GetBondBetweenAtoms(neighbor_idx, atom_idx) if neighbor_idx >= 0 else None
+        bond = mol.GetBondBetweenAtoms(neighbor_idx, atom_idx)
     mol_frag = Chem.FragmentOnBonds(mol, [bond.GetIdx()], addDummies=True)
     mol_frag = Chem.GetMolFrags(mol_frag, asMols=True)
     return mol_frag
@@ -580,6 +608,10 @@ def read_cdx_molecule(path_or_bytes, as_single=True):
         as_single: If True (default), combine all fragments into a single molecule.
             If False, return a list of molecules.
     """
+    return _read_cdx_molecule(path_or_bytes, as_single, repair_nested=True)
+
+
+def _read_cdx_molecule(path_or_bytes, as_single, repair_nested):
     # Redirect stderr to suppress font warnings from pycdxml
     old_stderr = sys.stderr
     sys.stderr = StringIO()
@@ -595,25 +627,53 @@ def read_cdx_molecule(path_or_bytes, as_single=True):
         doc: cdxml_converter.ChemDrawDocument = cdxml_converter.read_cdx(source)
         labels = capture_r_labels(doc.cdxml)
         all_labels = capture_atom_labels(doc.cdxml)
-        fragments_to_expand = parse_cdxml(doc.cdxml, fix=True)
+        original_types = {n.get('id'): n.get('NodeType') for n in doc.cdxml.getroot().iter('n')}
+        fragments_to_expand = _parse_cdxml(doc.cdxml, fix=True, repair_nested=repair_nested)
+        repaired_fragment = any(n.get('NodeType') == 'Fragment'
+                                and original_types.get(n.get('id')) != 'Fragment'
+                                for n in doc.cdxml.getroot().iter('n'))
         mols = Chem.rdmolfiles.MolsFromCDXML(doc.to_cdxml(), sanitize=False)
         for mol in mols:
             detach_variable_atom_maps(mol, all_labels)
 
         def finalize(mol):
-            return restore_r_labels(restore_atom_labels(fix_valence(mol), all_labels), labels)
+            original = Chem.Mol(mol)
+            mol = fix_valence(mol)
+            if mol is None:
+                mol = sanitize_aromatic_variable_graph(original, all_labels)
+            if mol is not None and repaired_fragment:
+                # Expanding CDXML nodes changes atom indices. Recompute cached
+                # stereo from retained bond directions before serializing.
+                # Cleaning treats R3/R4 as identical wildcard substituents and
+                # can erase their drawn tetrahedral orientation. Preserve the
+                # imported tags for the downstream agent choosing those groups.
+                drawn_tags = [(atom, atom.GetChiralTag()) for atom in mol.GetAtoms()
+                              if atom.GetChiralTag() != Chem.ChiralType.CHI_UNSPECIFIED]
+                Chem.AssignStereochemistry(mol, cleanIt=True, force=True)
+                for atom, tag in drawn_tags:
+                    atom.SetChiralTag(tag)
+            return restore_r_labels(restore_atom_labels(mol, all_labels), labels)
 
         if as_single:
             combined = functools.reduce(Chem.CombineMols, mols)
             if fragments_to_expand:
                 combined = expand_fragments_in_mol(combined, fragments_to_expand)
-            return finalize(combined)
+            result = finalize(combined)
+            if result is None and repaired_fragment:
+                # A valid nested group can expose an unrelated error in the
+                # surrounding drawing which the legacy valence fixer cannot
+                # repair (e.g. excess H next to a newly restored nitro N+).
+                # Preserve resolution without broadening hydrogen repairs.
+                return _read_cdx_molecule(path_or_bytes, as_single, repair_nested=False)
+            return result
 
         result = []
         for mol in mols:
             if fragments_to_expand:
                 mol = expand_fragments_in_mol(mol, fragments_to_expand)
             result.append(finalize(mol))
+        if repaired_fragment and any(mol is None for mol in result):
+            return _read_cdx_molecule(path_or_bytes, as_single, repair_nested=False)
         return result
     finally:
         sys.stderr = old_stderr
