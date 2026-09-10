@@ -11,6 +11,9 @@ from rdkit import RDLogger
 import sys
 from io import StringIO, BytesIO
 from pathlib import Path
+from ._normalization import (atom_label, r_label, variable_label, capture_r_labels,
+                             capture_atom_labels, restore_r_labels, restore_atom_labels,
+                             detach_variable_atom_maps)
 
 RDLogger.DisableLog('rdApp.*')
 logger = logging.getLogger(__name__)
@@ -257,14 +260,16 @@ def parse_cdxml(tree, fix=True):
         element = node.get('Element', '100')  # Default to Carbon if missing
 
         # Check for text label
-        label = None
-        t_tag = node.find('t')
-        if t_tag is not None:
-            # Text is often inside 's' (style) tags
-            label = "".join([s.text.replace('\n', '') for s in t_tag.iter('s') if s.text])
-            label = label.strip() if label else None
+        label = atom_label(node).replace('\n', '').replace('\r', '')
+        canonical_r_label = r_label(node)
+        if canonical_r_label:
+            label = canonical_r_label
 
         if not label:
+            continue
+
+        if fix and variable_label(node, FRAGMENT_LIBRARY):
+            node.set('Element', '0')
             continue
 
         # Skip if element is already correctly set
@@ -331,12 +336,12 @@ def split_mol_at_atom(mol, atom_idx: int):
 
     # Try to find a bond between index atom and its' nieghbor
     neighbor_idx = atom_idx - 1
-    bond = mol.GetBondBetweenAtoms(neighbor_idx, atom_idx)
+    bond = mol.GetBondBetweenAtoms(neighbor_idx, atom_idx) if neighbor_idx >= 0 else None
 
     if bond is None:
         atom = mol.GetAtomWithIdx(atom_idx)
         neighbor_idx = min([x.GetIdx() for x in atom.GetNeighbors()])
-        bond = mol.GetBondBetweenAtoms(neighbor_idx, atom_idx)
+        bond = mol.GetBondBetweenAtoms(neighbor_idx, atom_idx) if neighbor_idx >= 0 else None
     mol_frag = Chem.FragmentOnBonds(mol, [bond.GetIdx()], addDummies=True)
     mol_frag = Chem.GetMolFrags(mol_frag, asMols=True)
     return mol_frag
@@ -522,17 +527,14 @@ def expand_fragments_in_mol(mol, fragments_to_expand):
             if scaffold_mol is None:
                 scaffold_mol = split_frags_sorted[-1]  # Use largest fragment as scaffold
 
-            # Convert isotope labels on dummy atoms to atom map numbers
-            # split_mol_at_atom creates [N*] (isotope=N) but join_molecule_fragments needs [*:N]
-            # Note: SetAtomMapNum(0) doesn't set the property, so we use 1
+            # Only FragmentOnBonds' new cut atoms belong to the joining
+            # namespace. Source R atoms keep their labels/isotopes, and a cut
+            # next to atom zero is still a valid attachment (isotope zero).
             scaffold_rw = RWMol(scaffold_mol)
             for atom in scaffold_rw.GetAtoms():
-                if atom.GetSymbol() == '*' or atom.GetAtomicNum() == 0:
-                    isotope = atom.GetIsotope()
-                    if isotope > 0:
-                        # Convert isotope label to atom map number (use 1, as 0 doesn't set property)
-                        atom.SetAtomMapNum(1)
-                        atom.SetIsotope(0)
+                if atom.GetAtomicNum() == 0 and not atom.HasProp('_CDX_ATOM_ID'):
+                    atom.SetAtomMapNum(1)
+                    atom.SetIsotope(0)
             scaffold_mol = scaffold_rw.GetMol()
 
             # Use the pre-defined attached SMILES from FRAGMENT_LIBRARY
@@ -591,20 +593,27 @@ def read_cdx_molecule(path_or_bytes, as_single=True):
             raise ValueError(f"Invalid type {type(path_or_bytes)}")
 
         doc: cdxml_converter.ChemDrawDocument = cdxml_converter.read_cdx(source)
+        labels = capture_r_labels(doc.cdxml)
+        all_labels = capture_atom_labels(doc.cdxml)
         fragments_to_expand = parse_cdxml(doc.cdxml, fix=True)
         mols = Chem.rdmolfiles.MolsFromCDXML(doc.to_cdxml(), sanitize=False)
+        for mol in mols:
+            detach_variable_atom_maps(mol, all_labels)
+
+        def finalize(mol):
+            return restore_r_labels(restore_atom_labels(fix_valence(mol), all_labels), labels)
 
         if as_single:
             combined = functools.reduce(Chem.CombineMols, mols)
             if fragments_to_expand:
                 combined = expand_fragments_in_mol(combined, fragments_to_expand)
-            return fix_valence(combined)
+            return finalize(combined)
 
         result = []
         for mol in mols:
             if fragments_to_expand:
                 mol = expand_fragments_in_mol(mol, fragments_to_expand)
-            result.append(fix_valence(mol))
+            result.append(finalize(mol))
         return result
     finally:
         sys.stderr = old_stderr
