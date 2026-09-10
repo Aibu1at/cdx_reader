@@ -101,9 +101,22 @@ def describe(mol):
         atom.SetAtomMapNum(0)
     components = sorted(Chem.MolToSmiles(f, isomericSmiles=True)
                         for f in Chem.GetMolFrags(clean, asMols=True, sanitizeFrags=False))
-    return {'status': 'ok', 'smiles': Chem.MolToSmiles(clean, isomericSmiles=True),
-            'graph_smiles': Chem.MolToSmiles(clean, isomericSmiles=False),
-            'inchikey': Chem.MolToInchiKey(clean),
+    # Keep the baseline measurement order. SMILES initializes RDKit's stereo
+    # caches; invoking InChI first on large patent drawings can be much slower.
+    smiles = Chem.MolToSmiles(clean, isomericSmiles=True)
+    graph_smiles = Chem.MolToSmiles(clean, isomericSmiles=False)
+    # An aromatic query with unspecified variable electron counts can have a
+    # valid retained graph and no unique InChI. Do not report a descriptor's
+    # exception as an exception from the CDX parser.
+    descriptor_error = {}
+    try:
+        inchikey = Chem.MolToInchiKey(Chem.Mol(clean))
+    except Exception as exc:
+        inchikey = None
+        descriptor_error['inchikey_error'] = {'type': type(exc).__name__, 'message': str(exc)}
+    return {'status': 'ok', 'smiles': smiles,
+            'graph_smiles': graph_smiles,
+            'inchikey': inchikey, **descriptor_error,
             'formula': rdMolDescriptors.CalcMolFormula(clean),
             'charge': Chem.GetFormalCharge(clean), 'components': components,
             'radicals': sum(a['radicals'] for a in atoms),

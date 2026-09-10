@@ -81,3 +81,51 @@ def test_run_budgets_must_be_positive(value):
         runner.positive_integer(value)
     with pytest.raises(argparse.ArgumentTypeError):
         runner.positive_number(value)
+
+
+def test_stereo_audit_ignores_atom_reordering_but_detects_inversion():
+    from rdkit import Chem
+    spec = importlib.util.spec_from_file_location(
+        'audit_corpus', Path(__file__).parents[1] / 'scripts' / 'audit_corpus.py')
+    audit = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(audit)
+    mol = Chem.MolFromSmiles('N[C@@H](C)C(=O)O')
+    for atom in mol.GetAtoms():
+        atom.SetIntProp('_CDX_ATOM_ID', atom.GetIdx() + 100)
+    shuffled = Chem.RenumberAtoms(mol, list(reversed(range(mol.GetNumAtoms()))))
+    assert audit.tetrahedral_parities(mol) == audit.tetrahedral_parities(shuffled)
+    next(a for a in shuffled.GetAtoms() if a.GetProp('_CDX_ATOM_ID') == '101').InvertChirality()
+    assert audit.tetrahedral_parities(mol)['101'][1] == -audit.tetrahedral_parities(shuffled)['101'][1]
+
+
+def test_missing_query_inchi_is_not_a_parser_failure(monkeypatch):
+    from rdkit import Chem
+    mol = Chem.MolFromSmiles('*c1ccccc1')
+
+    def undefined_key(mol):
+        raise ValueError('query has no unique InChI')
+
+    monkeypatch.setattr(Chem, 'MolToInchiKey', undefined_key)
+    result = runner.describe(mol)
+    assert result['status'] == 'ok'
+    assert result['smiles'] == '*c1ccccc1'
+    assert result['formula'] == 'C6H5*'
+    assert result['inchikey'] is None
+    assert result['inchikey_error']['message'] == 'query has no unique InChI'
+    assert not result['harvest_accepted']
+
+
+@pytest.mark.parametrize('unexplained', ['graph_loss', 'tetrahedral_stereo_changed:7'])
+def test_review_gate_does_not_excuse_graph_or_stereo_loss_with_a_variable_label(unexplained):
+    spec = importlib.util.spec_from_file_location(
+        'review_audit', Path(__file__).parents[1] / 'scripts' / 'review_audit.py')
+    review = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(review)
+    record = {'sha': 'input', 'member': 'C00001.CDX',
+              'classification': 'review',
+              'changes': [{'rule': 'declared_variable_placeholder'}],
+              'source_placeholders_explaining_rejection': [{'id': '8', 'label': 'X1'}],
+              'flags': ['acceptance_loss', unexplained]}
+    result = review.classify(record, None)
+    assert result['classification'] == 'unresolved'
+    assert result['remaining_flags'] == [unexplained]

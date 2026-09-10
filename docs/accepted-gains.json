@@ -1,0 +1,65 @@
+[
+  {
+    "sha": "09100dc06ed3615d3467d891150fbf1d7647c65084be6d3bb685b3de8818901d",
+    "member": "US20240336629A1-20241010/US20240336629A1-20241010-C00562.CDX",
+    "smiles": "C[C@@H](COCCC(=O)N1CCN2c3ncc(C(F)(F)F)cc3C(=O)N(C)CC2C1)Nc1cn[nH]c(=O)c1C(F)(F)F",
+    "inchikey": "BRBYFBFYGKWGDH-CFMCSPIPSA-N",
+    "radicals": 0
+  },
+  {
+    "sha": "36f0befdaaee9ee4483e9c8e182f06d0182213c5c24af41b92f81b15d3640732",
+    "member": "US20240336629A1-20241010/US20240336629A1-20241010-C00552.CDX",
+    "smiles": "C[C@@H](COCCC(=O)N1CCN2c3ncc(C(F)(F)F)cc3NC(=O)CC2C1)Nc1cn[nH]c(=O)c1C(F)(F)F",
+    "inchikey": "JQNJHGOATDQQRL-NBFOIZRFSA-N",
+    "radicals": 0
+  },
+  {
+    "sha": "480d5b56bee013ca48f876639d6fbed82d9560dd8c9bad45a36ed5efe34f0abf",
+    "member": "US20240336629A1-20241010/US20240336629A1-20241010-C00588.CDX",
+    "smiles": "C[C@@H](COCCC(=O)N1CCN2c3ncc(C(F)(F)F)cc3N(C3CC3)C(=O)C2C1)Nc1cn[nH]c(=O)c1C(F)(F)F",
+    "inchikey": "HORVUSLVZAZFTA-FVRDMJKUSA-N",
+    "radicals": 0
+  },
+  {
+    "sha": "495ebbc0e9a5dc6db7db2d59a31f94bc78ee447b33c76e485f4c86888802d02e",
+    "member": "US20130029938A1-20130131/US20130029938A1-20130131-C00061.CDX",
+    "smiles": "COC(=O)CC([NH3+])CC(=O)OC",
+    "inchikey": "PXJFLUYRGQUUIN-UHFFFAOYSA-O",
+    "radicals": 0
+  },
+  {
+    "sha": "6c9ec48aef341a53e9e1329f58f50f1e7feed24229c2ca8f7be535bb6fcb6af2",
+    "member": "US20140024636A1-20140123/US20140024636A1-20140123-C00224.CDX",
+    "smiles": "CCOC(=O)CN1CCCN(C(=O)OC(C)(C)C)S1(=O)=O",
+    "inchikey": "DHHDMWRMJSQLME-UHFFFAOYSA-N",
+    "radicals": 0
+  },
+  {
+    "sha": "73745dfcd25e3f85aa748e577b916e384beb0272591e6615dbd6cd7822b91469",
+    "member": "US20240336629A1-20241010/US20240336629A1-20241010-C00601.CDX",
+    "smiles": "C[C@@H](COCCC(=O)N1CCN2c3ncc(C(F)(F)F)cc3N(C)C(=O)[C@@]2(C)C1)Nc1cn[nH]c(=O)c1C(F)(F)F",
+    "inchikey": "PTVVHUVEVSCPCI-WHEQGISXSA-N",
+    "radicals": 0
+  },
+  {
+    "sha": "c127d3d50418e6edaefa1eef12489fc95ef40d68c340ac5ed0ca020f0e470e02",
+    "member": "US20120208833A1-20120816/US20120208833A1-20120816-C00010.CDX",
+    "smiles": "O=C(NCCS(=O)(=O)[O][Na])OCc1ccccc1",
+    "inchikey": "CHYFYIAMUALNIN-UHFFFAOYSA-M",
+    "radicals": 0
+  },
+  {
+    "sha": "d28a5028f73d5b650ecc5fa6dce3461feea4fa02ba2d8d82948c62ff757fb50a",
+    "member": "US20240336629A1-20241010/US20240336629A1-20241010-C00606.CDX",
+    "smiles": "C[C@@H](COCCC(=O)N1CCN2c3ncc(C(F)(F)F)cc3NCC2C1)Nc1cn[nH]c(=O)c1C(F)(F)F",
+    "inchikey": "FBHCNHVYVVQYOA-NBFOIZRFSA-N",
+    "radicals": 0
+  },
+  {
+    "sha": "e82460201d49316c01febf37b168929eff6891a6e15bf895446a0777bd7bb7c8",
+    "member": "US20240336629A1-20241010/US20240336629A1-20241010-C00607.CDX",
+    "smiles": "C[C@@H](COCCC(=O)N1CCN2c3ncc(C(F)(F)F)cc3N(C)CC2C1)Nc1cn[nH]c(=O)c1C(F)(F)F",
+    "inchikey": "DFHPJMRSVXQVTH-CFMCSPIPSA-N",
+    "radicals": 0
+  }
+]

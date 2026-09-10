@@ -1,0 +1,108 @@
+{
+  "completed": "2026-09-11",
+  "baseline_commit": "452dd4fcf60ce934974625db60fca14c3d6ffefd",
+  "candidate_chemistry_commit": "6513b7d",
+  "inventory": {
+    "archives": 970,
+    "cdx_origins": 240093,
+    "unique_cdx": 212917,
+    "patents_with_cdx": 838,
+    "year_range": [
+      2001,
+      2025
+    ]
+  },
+  "comparison": {
+    "compared": 212917,
+    "before_ok": 200794,
+    "after_ok": 200914,
+    "before_accepted": 170187,
+    "after_accepted": 168613,
+    "metadata_only": 186921,
+    "chemistry_or_status_changed": 12766,
+    "before_error": 10021,
+    "after_error": 10021,
+    "unchanged": 13230,
+    "accepted_to_rejected": 1583,
+    "before_none": 2102,
+    "after_none": 1982,
+    "rejected_to_accepted": 9,
+    "inventory": 212917,
+    "missing_pairs": 0
+  },
+  "source_audit": {
+    "changed_inputs_checked": 199687,
+    "classifications": {
+      "source_metadata_verified": 186921,
+      "source_graph_verified": 11123,
+      "review": 1643
+    },
+    "node_rules": {
+      "explicit_nested_graph": 1799,
+      "declared_variable_placeholder": 28128,
+      "contradictory_nitrogen_hydrogens": 5620,
+      "explicit_element_preserved": 7019,
+      "nested_graph_not_in_selected_result": 16,
+      "first_atom_abbreviation_expanded": 44,
+      "aromatic_variable_graph_retained": 35,
+      "variable_maps_detached": 42
+    }
+  },
+  "review": {
+    "classifications": {
+      "metadata_only": 186921,
+      "source_correction": 12766
+    },
+    "review_evidence": {
+      "source_placeholders_preclude_complete_molecule": 1583,
+      "explicit_source_graph_or_label_overrides_mol_agreement": 342,
+      "existing_selection_after_corrected_abbreviation_join": 37,
+      "radicals_belong_to_additional_source_components": 5
+    },
+    "remaining_flags": {},
+    "source_labels_checked": 2568138,
+    "r_labels_checked": 82634,
+    "retained_stereocenters_checked": 15494
+  },
+  "environment": {
+    "before": {
+      "reader_source_sha256": "23b820b8258fd2bbafea2fe98dfa71b70c0fc60cb3043c7ecca1369fe8c36651",
+      "rdkit": "2025.03.3",
+      "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+      "pycdxml": "0.1.6b0",
+      "pycdxml_vcs": {
+        "commit_id": "0cb554faaa25494b374473852d2e839c91691c73",
+        "vcs": "git"
+      },
+      "timeout": 30.0
+    },
+    "after": {
+      "reader_source_sha256": "4c887cdd8909e9694ee429a77d688d95493b6ad245a5048e5cdf88e738a49b98",
+      "rdkit": "2025.03.3",
+      "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+      "pycdxml": "0.1.6b0",
+      "pycdxml_vcs": {
+        "commit_id": "0cb554faaa25494b374473852d2e839c91691c73",
+        "vcs": "git"
+      },
+      "timeout": 30.0
+    }
+  },
+  "tests": {
+    "parser_passed": 318,
+    "existing_xfail": 1,
+    "harvest_passed": 58,
+    "real_fixtures": 97,
+    "fixture_patents": 56,
+    "original_references_preserved": 46,
+    "cli_parsed": 94,
+    "cli_known_failures": 3,
+    "harvest_fixture_accepted": 79,
+    "harvest_fixture_rejected": 18
+  },
+  "baseline_error_recheck": {
+    "inputs": 10021,
+    "changed_payloads": 0
+  },
+  "production_harvest_switched": false
+}

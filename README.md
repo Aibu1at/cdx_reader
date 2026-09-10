@@ -22,7 +22,7 @@ pip install cdx-reader
 
 ### Dependencies
 
-- [RDKit](https://www.rdkit.org/) (>=2022.03)
+- [RDKit](https://www.rdkit.org/) (2025.03.3, pinned in `pyproject.toml`)
 - [pycdxml](https://github.com/kienerj/pycdxml)
 
 ## Quick Start
@@ -45,8 +45,65 @@ with open("structure.cdx", "rb") as f:
 mols = read_cdx_molecule("structure.cdx", as_single=False)
 ```
 
-Multi-atom abbreviations (Me, Ph, Boc, CF3, ...) are always expanded into
-their full structures.
+The reader attempts to expand supported multi-atom abbreviations (Me, Ph, Boc,
+CF3, ...). Ambiguous attachments can prevent expansion; see the limitations below.
+
+### R-group metadata and conservative repairs
+
+Styled R labels are read across all text segments. A surviving R dummy carries
+`_CDX_ATOM_ID` (the original node), `_CDX_ATOM_LABEL` (original text), and
+`dummyLabel` (the normalized display label). Numeric `Rn` labels additionally
+carry the integer `_MolFileRLabel`. Repeated R numbers are allowed; these are
+chemical labels, not the atom-map numbers used internally to join fragments.
+Ordinary SMILES does not serialize all these properties: retain the RDKit object
+when a downstream agent needs label-to-atom correspondence.
+
+Variables are not restricted to the letter R. Declared `GenericNickname` nodes
+and recognizable uninterpreted variables such as `G`, `J`, `L`, `X1`, `Y2` and
+`Z3` retain their full labels as dummies. Known dictionary abbreviations are
+expanded first. An ordinary element label is not made into a variable merely
+because it is a letter. Every surviving labeled source atom also retains its
+original `_CDX_NODE_TYPE` and `_CDX_ATOM_LABEL`, including ambiguous labels whose
+chemical interpretation is deferred. Only numeric **R** labels receive
+`_MolFileRLabel`; other labels are not assigned invented R numbers.
+
+Source dummy atom maps are saved in `_CDX_ORIGINAL_ATOM_MAP` and removed from the
+joining namespace. Only newly created cut atoms identify abbreviation joins;
+source R isotopes and repeated numbers never serve that purpose.
+
+Explicit element numbers, charges and isotopes take precedence over text-prefix
+guesses such as interpreting Na as nitrogen. Inconsistent variable letters and
+warned, chemically impossible metal/isotope drawings retain the legacy behavior.
+The repair of uninterpreted HN labels remains separate.
+
+A valid, connected nested graph with one consistent external attachment is used
+before abbreviation expansion, including incorrectly marked `Unspecified` nodes.
+Query graphs, multiple attachments, impossible valences and covalent graphs that
+RDKit rewrites into dative bonds are not promoted. A narrowly targeted zero-H
+repair applies to neutral N with two single bonds, an invalid-valence warning,
+and no explicit radical/query annotation. Other hydrogen counts are retained.
+
+An explicitly aromatic bond to a variable may have no unique Kekule form. When
+that is the sole sanitization obstacle, the original aromatic query graph is
+retained without Kekulization. It remains a scaffold, unsuitable for a complete
+molecule filter or for assuming a unique InChI. This fallback never applies to
+ordinary complete molecules; the returned object sets `_CDX_UNKEKULIZED_QUERY`.
+Drawn tetrahedral tags are retained when stereo is recomputed, including centres
+whose distinct variable labels appear identical to RDKit as wildcard atoms.
+
+The existing molecule-selection behavior is preserved. In drawings with multiple
+structures and unresolved dictionary abbreviations, nested repairs are deferred:
+they can otherwise change which component the existing expander selects. An API
+that explicitly returns every labeled object for a future agent is separate work.
+Fixing an erroneous join through a source R atom can nevertheless change the
+components returned by the old expander: an accidental attachment is not retained
+as a compatibility requirement. These differences are audited separately.
+
+Regression data and source evidence are documented in
+[tests/data/patent_regressions/README.md](tests/data/patent_regressions/README.md).
+For reproducible corpus comparisons see [docs/corpus-validation.md](docs/corpus-validation.md).
+The completed 212,917-input comparison, acceptance transitions and remaining
+limitations are in [docs/validation-report.md](docs/validation-report.md).
 
 ### CLI: batch-convert a folder of CDX files
 

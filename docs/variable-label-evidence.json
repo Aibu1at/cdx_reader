@@ -1,0 +1,46 @@
+[
+  {
+    "sha256": "ae4c737c44ca0490f4f74ff1fcfc90a844478819784ed2b9580752e6b637b1d2",
+    "member": "US20120277220A1-20121101/US20120277220A1-20121101-C00002.CDX",
+    "patent": "US20120277220A1",
+    "label": "M4",
+    "paragraph_ids": [
+      "p-0042"
+    ],
+    "evidence": "M1\u2013M4 represent alternative atoms/groups; M4 can be C, carbonyl C, N, O or S(O)p. It must not silently default to carbon.",
+    "classification": "variable"
+  },
+  {
+    "sha256": "06fc94fad1b1568fdcb861beeb7a71cd642147e7ac02f64f83215c233937bf7f",
+    "member": "US20110135650A1-20110609/US20110135650A1-20110609-C00024.CDX",
+    "patent": "US20110135650A1",
+    "label": "G",
+    "paragraph_ids": [
+      "p-0023"
+    ],
+    "evidence": "G is explicitly defined as O, imino, S, sulfoxide, sulfone or methylene. A fixed carbon graph is not resolved chemistry.",
+    "classification": "variable"
+  },
+  {
+    "sha256": "e113a65bef56dfd229aba007c1c18aa6280a5694d06d8af982dd53b3fb3a5a31",
+    "member": "US20200247781A1-20200806/US20200247781A1-20200806-C00022.CDX",
+    "patent": "US20200247781A1",
+    "label": "P4",
+    "paragraph_ids": [
+      "p-0368"
+    ],
+    "evidence": "P4 is a compound identifier in the synthesis/results table. Uninterpreted detached label nodes are preserved as placeholders; the reader does not assign the P4 name to a graph or interpret it as a carbon atom.",
+    "classification": "compound_reference_placeholder"
+  },
+  {
+    "sha256": "81869c9abce7ef69be362f10c3460e79af73b96b4a584e595a16b519e5982aa8",
+    "member": "US20140323474A1-20141030/US20140323474A1-20141030-C00021.CDX",
+    "patent": "US20140323474A1",
+    "label": "C1",
+    "paragraph_ids": [
+      "p-0180"
+    ],
+    "evidence": "C1 names (2R)-1-(benzyloxy)pent-4-en-2-ol. A detached C1 label is not methane and is not an instruction to merge its text with the adjacent structure.",
+    "classification": "compound_reference_placeholder"
+  }
+]

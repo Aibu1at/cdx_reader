@@ -1,0 +1,555 @@
+{
+  "US20130178505A1": {
+    "archive": "US20130178505A1.zip",
+    "archive_sha256": "41e7f23a9364fe5aa478af04518929b36241a4d10a70949daec98b4d5a28f51e",
+    "counts": {
+      "cdx": 281,
+      "files_with_points": 167,
+      "nested_points": 369,
+      "dependency_errors": 3
+    },
+    "seven_points": [
+      {
+        "member": "US20130178505A1-20130711/US20130178505A1-20130711-C00006.CDX",
+        "sha256": "2944d3127d07b3535c23da14973ed6976cd20c2ea41ad0c60722a3140da95400",
+        "groups": [
+          {
+            "id": "128",
+            "parent": "46",
+            "label": "O2N",
+            "child_atoms": [
+              "125",
+              "126",
+              "127"
+            ],
+            "retained_child_atoms": []
+          },
+          {
+            "id": "136",
+            "parent": "52",
+            "label": "CO2H",
+            "child_atoms": [
+              "133",
+              "134",
+              "135"
+            ],
+            "retained_child_atoms": [
+              "133",
+              "134",
+              "135"
+            ]
+          },
+          {
+            "id": "152",
+            "parent": "147",
+            "label": "O2N",
+            "child_atoms": [
+              "149",
+              "150",
+              "151"
+            ],
+            "retained_child_atoms": []
+          },
+          {
+            "id": "163",
+            "parent": "158",
+            "label": "CO2H",
+            "child_atoms": [
+              "160",
+              "161",
+              "162"
+            ],
+            "retained_child_atoms": [
+              "160",
+              "162",
+              "161"
+            ]
+          },
+          {
+            "id": "484",
+            "parent": "392",
+            "label": "NO2",
+            "child_atoms": [
+              "481",
+              "482",
+              "483"
+            ],
+            "retained_child_atoms": [
+              "481",
+              "483",
+              "482"
+            ]
+          },
+          {
+            "id": "574",
+            "parent": "506",
+            "label": "NO2",
+            "child_atoms": [
+              "571",
+              "572",
+              "573"
+            ],
+            "retained_child_atoms": [
+              "571",
+              "572",
+              "573"
+            ]
+          },
+          {
+            "id": "582",
+            "parent": "514",
+            "label": "CO2H",
+            "child_atoms": [
+              "579",
+              "580",
+              "581"
+            ],
+            "retained_child_atoms": [
+              "581",
+              "579",
+              "580"
+            ]
+          }
+        ],
+        "dummy_count": 0
+      },
+      {
+        "member": "US20130178505A1-20130711/US20130178505A1-20130711-C00009.CDX",
+        "sha256": "a1305d3b470234b4715e115b79f83db23c2764fac03b259384012d804336f11c",
+        "groups": [
+          {
+            "id": "110",
+            "parent": "9",
+            "label": "RY",
+            "child_atoms": [
+              "108",
+              "109"
+            ],
+            "retained_child_atoms": [
+              "109",
+              "108"
+            ]
+          },
+          {
+            "id": "117",
+            "parent": "46",
+            "label": "CO2H",
+            "child_atoms": [
+              "114",
+              "115",
+              "116"
+            ],
+            "retained_child_atoms": [
+              "115",
+              "116",
+              "114"
+            ]
+          },
+          {
+            "id": "124",
+            "parent": "95",
+            "label": "RX",
+            "child_atoms": [
+              "122",
+              "123"
+            ],
+            "retained_child_atoms": [
+              "122",
+              "123"
+            ]
+          },
+          {
+            "id": "362",
+            "parent": "231",
+            "label": "RY",
+            "child_atoms": [
+              "360",
+              "361"
+            ],
+            "retained_child_atoms": [
+              "360",
+              "361"
+            ]
+          },
+          {
+            "id": "368",
+            "parent": "238",
+            "label": "RX",
+            "child_atoms": [
+              "366",
+              "367"
+            ],
+            "retained_child_atoms": [
+              "366",
+              "367"
+            ]
+          },
+          {
+            "id": "354",
+            "parent": "292",
+            "label": "O2N",
+            "child_atoms": [
+              "371",
+              "352",
+              "353"
+            ],
+            "retained_child_atoms": [
+              "371",
+              "353",
+              "352"
+            ]
+          },
+          {
+            "id": "393",
+            "parent": "388",
+            "label": "O2N",
+            "child_atoms": [
+              "390",
+              "391",
+              "392"
+            ],
+            "retained_child_atoms": [
+              "392",
+              "390",
+              "391"
+            ]
+          }
+        ],
+        "dummy_count": 8
+      },
+      {
+        "member": "US20130178505A1-20130711/US20130178505A1-20130711-C00078.CDX",
+        "sha256": "3a5e6b8e7dd21dca4ea1286c77918d371ab0239c328b631c2adb5b68aedd0135",
+        "groups": [
+          {
+            "id": "358",
+            "parent": "78",
+            "label": "NO2",
+            "child_atoms": [
+              "355",
+              "356",
+              "357"
+            ],
+            "retained_child_atoms": [
+              "357",
+              "355",
+              "356"
+            ]
+          },
+          {
+            "id": "367",
+            "parent": "80",
+            "label": "HO2C",
+            "child_atoms": [
+              "363",
+              "364",
+              "365",
+              "366"
+            ],
+            "retained_child_atoms": []
+          },
+          {
+            "id": "375",
+            "parent": "124",
+            "label": "CO2H",
+            "child_atoms": [
+              "372",
+              "373",
+              "374"
+            ],
+            "retained_child_atoms": [
+              "373",
+              "374",
+              "372"
+            ]
+          },
+          {
+            "id": "383",
+            "parent": "152",
+            "label": "O2N",
+            "child_atoms": [
+              "380",
+              "381",
+              "382"
+            ],
+            "retained_child_atoms": [
+              "380",
+              "382",
+              "381"
+            ]
+          },
+          {
+            "id": "391",
+            "parent": "201",
+            "label": "CO2H",
+            "child_atoms": [
+              "388",
+              "389",
+              "390"
+            ],
+            "retained_child_atoms": [
+              "388",
+              "389",
+              "390"
+            ]
+          },
+          {
+            "id": "223",
+            "parent": "218",
+            "label": "O2N",
+            "child_atoms": [
+              "220",
+              "221",
+              "222"
+            ],
+            "retained_child_atoms": [
+              "220",
+              "222",
+              "221"
+            ]
+          },
+          {
+            "id": "350",
+            "parent": "304",
+            "label": "CO2H",
+            "child_atoms": [
+              "347",
+              "348",
+              "349"
+            ],
+            "retained_child_atoms": [
+              "347",
+              "349",
+              "348"
+            ]
+          }
+        ],
+        "dummy_count": 9
+      },
+      {
+        "member": "US20130178505A1-20130711/US20130178505A1-20130711-C00145.CDX",
+        "sha256": "993713922fe710b6bd9a3d38b2663eead0f86599fbe3ea4e7a3faf8e31a9c289",
+        "groups": [
+          {
+            "id": "333",
+            "parent": "153",
+            "label": "MS",
+            "child_atoms": [
+              "331",
+              "332"
+            ],
+            "retained_child_atoms": []
+          },
+          {
+            "id": "340",
+            "parent": "158",
+            "label": "NMR:",
+            "child_atoms": [
+              "337",
+              "338",
+              "339"
+            ],
+            "retained_child_atoms": [
+              "339",
+              "338",
+              "337"
+            ]
+          },
+          {
+            "id": "325",
+            "parent": "23",
+            "label": "O2N",
+            "child_atoms": [
+              "348",
+              "323",
+              "324"
+            ],
+            "retained_child_atoms": [
+              "323",
+              "348",
+              "324"
+            ]
+          },
+          {
+            "id": "352",
+            "parent": "204",
+            "label": "OMe",
+            "child_atoms": [
+              "350",
+              "351"
+            ],
+            "retained_child_atoms": [
+              "350",
+              "351"
+            ]
+          },
+          {
+            "id": "359",
+            "parent": "264",
+            "label": "OMe",
+            "child_atoms": [
+              "357",
+              "358"
+            ],
+            "retained_child_atoms": [
+              "358",
+              "357"
+            ]
+          },
+          {
+            "id": "416",
+            "parent": "275",
+            "label": "N3",
+            "child_atoms": [
+              "413",
+              "414",
+              "415"
+            ],
+            "retained_child_atoms": [
+              "414",
+              "413",
+              "415"
+            ]
+          },
+          {
+            "id": "374",
+            "parent": "285",
+            "label": "O\nMe",
+            "child_atoms": [
+              "372",
+              "373"
+            ],
+            "retained_child_atoms": [
+              "373",
+              "372"
+            ]
+          }
+        ],
+        "dummy_count": 3
+      }
+    ],
+    "parent_attachment_degrees": {
+      "parent_degrees": {
+        "1": 363,
+        "3": 6
+      },
+      "exceptions": [
+        {
+          "member": "US20130178505A1-20130711/US20130178505A1-20130711-C00217.CDX",
+          "external_id": "197",
+          "parent_id": "123",
+          "parent_type": "Fragment",
+          "label": "NH+Br-",
+          "degree": 3
+        },
+        {
+          "member": "US20130178505A1-20130711/US20130178505A1-20130711-C00217.CDX",
+          "external_id": "198",
+          "parent_id": "123",
+          "parent_type": "Fragment",
+          "label": "NH+Br-",
+          "degree": 3
+        },
+        {
+          "member": "US20130178505A1-20130711/US20130178505A1-20130711-C00217.CDX",
+          "external_id": "199",
+          "parent_id": "123",
+          "parent_type": "Fragment",
+          "label": "NH+Br-",
+          "degree": 3
+        },
+        {
+          "member": "US20130178505A1-20130711/US20130178505A1-20130711-C00218.CDX",
+          "external_id": "198",
+          "parent_id": "123",
+          "parent_type": "Fragment",
+          "label": "NH+Br-",
+          "degree": 3
+        },
+        {
+          "member": "US20130178505A1-20130711/US20130178505A1-20130711-C00218.CDX",
+          "external_id": "199",
+          "parent_id": "123",
+          "parent_type": "Fragment",
+          "label": "NH+Br-",
+          "degree": 3
+        },
+        {
+          "member": "US20130178505A1-20130711/US20130178505A1-20130711-C00218.CDX",
+          "external_id": "200",
+          "parent_id": "123",
+          "parent_type": "Fragment",
+          "label": "NH+Br-",
+          "degree": 3
+        }
+      ]
+    }
+  },
+  "US20100130737A1": {
+    "archive": "US20100130737A1.zip",
+    "archive_sha256": "5e2c329b955aba047ff4e6143e56b00c0c425a295a0308325f2ac85ea82ff010",
+    "counts": {
+      "cdx": 406,
+      "dependency_errors": 64,
+      "files_with_points": 76,
+      "nested_points": 96
+    },
+    "seven_points": [],
+    "parent_attachment_degrees": {
+      "parent_degrees": {
+        "1": 90,
+        "2": 6
+      },
+      "exceptions": [
+        {
+          "member": "US20100130737A1-20100527/US20100130737A1-20100527-C00022.CDX",
+          "external_id": "48",
+          "parent_id": "12",
+          "parent_type": "Fragment",
+          "label": "CO",
+          "degree": 2
+        },
+        {
+          "member": "US20100130737A1-20100527/US20100130737A1-20100527-C00022.CDX",
+          "external_id": "49",
+          "parent_id": "12",
+          "parent_type": "Fragment",
+          "label": "CO",
+          "degree": 2
+        },
+        {
+          "member": "US20100130737A1-20100527/US20100130737A1-20100527-C00044.CDX",
+          "external_id": "54",
+          "parent_id": "12",
+          "parent_type": "Fragment",
+          "label": "CO",
+          "degree": 2
+        },
+        {
+          "member": "US20100130737A1-20100527/US20100130737A1-20100527-C00044.CDX",
+          "external_id": "55",
+          "parent_id": "12",
+          "parent_type": "Fragment",
+          "label": "CO",
+          "degree": 2
+        },
+        {
+          "member": "US20100130737A1-20100527/US20100130737A1-20100527-C00387.CDX",
+          "external_id": "50",
+          "parent_id": "12",
+          "parent_type": "Fragment",
+          "label": "CO",
+          "degree": 2
+        },
+        {
+          "member": "US20100130737A1-20100527/US20100130737A1-20100527-C00387.CDX",
+          "external_id": "51",
+          "parent_id": "12",
+          "parent_type": "Fragment",
+          "label": "CO",
+          "degree": 2
+        }
+      ]
+    }
+  }
+}
