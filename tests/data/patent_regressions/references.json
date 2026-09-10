@@ -1,0 +1,2437 @@
+[
+  {
+    "id": "US20140303156A1_C00008",
+    "patent": "US20140303156A1",
+    "member": "US20140303156A1-20141009/US20140303156A1-20141009-C00008.CDX",
+    "sha256": "b1367f9211b8d45bd5b55fb977f8cb473eba3db1173f61d4a289273fe23e1eca",
+    "mol_sha256": "f9be22dc3c7bbba2c8233ffc5be3c48a9460e70eac2a596eef59b180bd3f226d",
+    "tags": [
+      "uninterpreted_HN"
+    ],
+    "expected": {
+      "smiles": "CCOC(=O)Cc1nc(N2CCOCC2)cc(=O)[nH]1",
+      "inchikey": "KSZKVHPIAYRXAH-UHFFFAOYSA-N",
+      "formula": "C12H17N3O4"
+    },
+    "evidence": {
+      "kind": "reviewed_diagnostic",
+      "details": "Stage 1 name: ethyl [4-(morpholin-4-yl)-6-oxo-1,6-dihydropyrimidin-2-yl]acetate; patent [M+H]+ 268 and [M-H]- 266. CDX node 15 contains H/CR/N and a ChemDraw interpretation warning. Paired MOL has the known carbon-for-N error."
+    }
+  },
+  {
+    "id": "US20140303156A1_C00009",
+    "patent": "US20140303156A1",
+    "member": "US20140303156A1-20141009/US20140303156A1-20141009-C00009.CDX",
+    "sha256": "abf7d8628e9c115894717804be04aa2d38ee3cb83dce8d46e7c1e1a15491c045",
+    "mol_sha256": "70225b2042090dda8a425e9bf14ed6586241da59abbd90f7d0edccb1d07db90f",
+    "tags": [
+      "sodium_and_HN"
+    ],
+    "expected": {
+      "smiles": "O=C([O-])Cc1nc(N2CCOCC2)cc(=O)[nH]1.[Na+]",
+      "inchikey": "FTIOHTRWRYLGKI-UHFFFAOYSA-M",
+      "formula": "C10H12N3NaO4"
+    },
+    "evidence": {
+      "kind": "reviewed_diagnostic",
+      "details": "Sodium salt of the following stage: original CDX node 59 explicitly encodes Element=11, Charge=1. HN repair follows the preceding named intermediate. Original MOL shares the HN error."
+    }
+  },
+  {
+    "id": "US20140303156A1_C00012",
+    "patent": "US20140303156A1",
+    "member": "US20140303156A1-20141009/US20140303156A1-20141009-C00012.CDX",
+    "sha256": "78b6d7fad0e30e64be3e5fb65043c60e196a2149b1e89eab0397206fa6982531",
+    "mol_sha256": "b6441fb712735912c8f361f9b118b4ff3b639c9067816acf381940005bd94130",
+    "tags": [
+      "hydrogen_count"
+    ],
+    "expected": {
+      "smiles": "O=C(Cc1nc(N2CCOCC2)cc(=O)[nH]1)Nc1ccc(F)cc1",
+      "inchikey": "NPAUEGMLUVJJFP-UHFFFAOYSA-N",
+      "formula": "C16H17FN4O3"
+    },
+    "evidence": {
+      "kind": "reviewed_diagnostic",
+      "details": "Example 2 name N-(4-fluorophenyl)-2-[4-(morpholin-4-yl)-6-oxo-1,6-dihydropyrimidin-2-yl]acetamide; [M+H]+ 333 and [M-H]- 331. CDX nodes 15/29 each have two single bonds and inconsistent zero-H/invalid-valence annotations."
+    }
+  },
+  {
+    "id": "US20180291030A1_C00033",
+    "patent": "US20180291030A1",
+    "member": "US20180291030A1-20181011/US20180291030A1-20181011-C00033.CDX",
+    "sha256": "63d07dc091b1e2737292115287776eed92644612aa5546bbb97dc41e8c99db17",
+    "mol_sha256": "9e972ba7ea8720f030543078e222442d38eea40fa5dc2f918af2c2a364a1671a",
+    "tags": [
+      "nested_nitro"
+    ],
+    "expected": {
+      "smiles": "COC(=O)CC[C@@H]1N[C@@]2(C(=O)Nc3cc(Cl)ccc32)[C@@H](c2cccc(Cl)c2)[C@@H]1[N+](=O)[O-]",
+      "inchikey": "KCSNIJFTSPKGEI-XJRBWHPUSA-N",
+      "formula": "C21H19Cl2N3O5"
+    },
+    "evidence": {
+      "kind": "reviewed_diagnostic",
+      "details": "Table 1 compound A-4a: patent [M+H]+ 464. Nested fragment under node 70 contains N+, O and O- with one external connection. Restored full InChIKey equals paired MOL, including stereo: KCSNIJFTSPKGEI-XJRBWHPUSA-N."
+    }
+  },
+  {
+    "id": "US20100130737A1_C00002",
+    "patent": "US20100130737A1",
+    "member": "US20100130737A1-20100527/US20100130737A1-20100527-C00002.CDX",
+    "sha256": "1add3a5554c00f88aeedd64cd28a9eb1c2be2b0f7777268b67d13af7f99c8627",
+    "mol_sha256": "035eccc6c1203beca8cc4bad5c896cdb6138bfe03760d3421aa2f05045396e4b",
+    "tags": [
+      "tBu_abbreviation"
+    ],
+    "expected": {
+      "smiles": "CCOC(=O)C1(NC(=O)C(C)(C)C)Cc2ccc(-c3ccccc3)cc2C1",
+      "inchikey": "XNNNUANNVIKECJ-UHFFFAOYSA-N",
+      "formula": "C23H27NO3"
+    },
+    "evidence": {
+      "kind": "reviewed_diagnostic",
+      "details": "Preservation control: source label tBu, direct attachment at the tertiary carbon; expected graph agrees with the paired MOL."
+    }
+  },
+  {
+    "id": "US20100130737A1_C00153",
+    "patent": "US20100130737A1",
+    "member": "US20100130737A1-20100527/US20100130737A1-20100527-C00153.CDX",
+    "sha256": "7b85f3c2dd025fe72d416459f4e7e22717a69d123e2bee45caf5900651672be5",
+    "mol_sha256": "615a79f14ec2d4031f536e0dc2364e97ee181e0a477e7cce31f0f929e5591c6b",
+    "tags": [
+      "MeO_abbreviation"
+    ],
+    "expected": {
+      "smiles": "COc1ccc(-c2ccc3c(c2)CC(NC(=O)Cc2ccc(F)cc2)(C(=O)O)C3)cc1",
+      "inchikey": "XRIWTHRVQLAXLS-UHFFFAOYSA-N",
+      "formula": "C25H22FNO4"
+    },
+    "evidence": {
+      "kind": "reviewed_diagnostic",
+      "details": "Example B131 explicitly names the methoxy substituent; final LCMS 420 agrees with C25H22FNO4 ([M+H]+ 420.1606). Source MeO attaches through oxygen."
+    }
+  },
+  {
+    "id": "US20210079003A1_C00690",
+    "patent": "US20210079003A1",
+    "member": "US20210079003A1-20210318/US20210079003A1-20210318-C00690.CDX",
+    "sha256": "ebebabe65bceebfd9c2e65e659af6fd64dbea8edd447d5bd3e636322366fcf36",
+    "mol_sha256": "6256fe5a9d70d5300c2bdf4197dde162c119d1e49dbf99588997785ad7f7bf16",
+    "tags": [
+      "five_molecule_scheme"
+    ],
+    "expected": {
+      "smiles": "CCOc1ccc(-c2c(-c3ccc4c(=O)[nH]nc(CNC(=O)OC(C)(C)C)c4c3)cnn2C)cc1",
+      "inchikey": "HUZFRLRDAKLDMW-UHFFFAOYSA-N",
+      "formula": "C26H29N5O4"
+    },
+    "evidence": {
+      "kind": "reviewed_diagnostic",
+      "details": "Intentional single-molecule policy control. Expected selection is the protected Step 2 intermediate of Example 4-254, patent [M+1]+ 476.2; the final Step 3 compound has [M+1]+ 376.1. This fixture does not require returning all five document molecules."
+    }
+  },
+  {
+    "id": "US20100130737A1_C00138",
+    "patent": "US20100130737A1",
+    "member": "US20100130737A1-20100527/US20100130737A1-20100527-C00138.CDX",
+    "sha256": "d4d36b7f01a125471dad99833cb25af48eeb8984e1dfd76c6c455cc2befc7af7",
+    "mol_sha256": "15d40678619384ac753f37f35d3dd2a045318833248781e7f699faa4f2f7f60b",
+    "tags": [
+      "r_groups"
+    ],
+    "expected": {
+      "r_labels": {
+        "27": "R1",
+        "49": "R2"
+      }
+    },
+    "evidence": {
+      "kind": "source_atom_labels",
+      "details": "Expected labels and original node IDs read from styled text in the original CDX. Only R-label preservation is asserted; this is not a full chemical interpretation of the Markush formula."
+    }
+  },
+  {
+    "id": "US20150025098A1_C00010",
+    "patent": "US20150025098A1",
+    "member": "US20150025098A1-20150122/US20150025098A1-20150122-C00010.CDX",
+    "sha256": "5172831a1e0554a13c0f63673ddcb601f5e416bb10b534d41b2d6647dcda442b",
+    "mol_sha256": "8eaccaffb042eef798aabcfac1b89027b35ddeb13f610ba7f3c4351c53960c52",
+    "tags": [
+      "r_groups"
+    ],
+    "expected": {
+      "r_labels": {
+        "51": "R3",
+        "115": "R2",
+        "120": "R1"
+      }
+    },
+    "evidence": {
+      "kind": "source_atom_labels",
+      "details": "Expected labels and original node IDs read from styled text in the original CDX. Only R-label preservation is asserted; this is not a full chemical interpretation of the Markush formula."
+    }
+  },
+  {
+    "id": "US20150025098A1_C00001",
+    "patent": "US20150025098A1",
+    "member": "US20150025098A1-20150122/US20150025098A1-20150122-C00001.CDX",
+    "sha256": "afe239a336f75e18ef0de8d85396e07cfd1e00b7f20a64dd9d3b3f52a6b1964e",
+    "mol_sha256": "66c6a01e1c2cbb7582b84a6dfe55ec6e881bf6e8e3645dbb2b181cc647d41246",
+    "tags": [
+      "r_groups"
+    ],
+    "expected": {
+      "r_labels": {
+        "11": "R2"
+      },
+      "variable_labels": {
+        "9": "G"
+      }
+    },
+    "evidence": {
+      "kind": "source_atom_labels",
+      "details": "Expected labels and original node IDs read from styled text in the original CDX. Only R-label preservation is asserted; this is not a full chemical interpretation of the Markush formula. Also verify variable G at source node 9 following the expanded label requirement."
+    }
+  },
+  {
+    "id": "US20200323858A1_C00301",
+    "patent": "US20200323858A1",
+    "member": "US20200323858A1-20201015/US20200323858A1-20201015-C00301.CDX",
+    "sha256": "e07ed34ec85b2a5851cd60884068605fa74e03472b83ac0d2dca23589fff8d37",
+    "mol_sha256": "22d8802242aa89b90717eba6a711b7d183da54661d66298b6c4ab52488d3243d",
+    "tags": [
+      "r_groups"
+    ],
+    "expected": {
+      "r_labels": {
+        "51": "R2",
+        "62": "R3",
+        "64": "R4",
+        "66": "R5"
+      }
+    },
+    "evidence": {
+      "kind": "source_atom_labels",
+      "details": "Expected labels and original node IDs read from styled text in the original CDX. Only R-label preservation is asserted; this is not a full chemical interpretation of the Markush formula."
+    }
+  },
+  {
+    "id": "US20040001895A1_C00038",
+    "patent": "US20040001895A1",
+    "member": "US20040001895A1-20040101/US20040001895A1-20040101-C00038.CDX",
+    "sha256": "e95d6e3fdaea79bbbb02aee2bc5011d34491fec3a1f846724d83ec8c49d4ef5c",
+    "mol_sha256": "a34735bbd679028e4813f1d97c592c06a22fb893a1dd8ba8b4bb02b3e7867f51",
+    "tags": [
+      "unchanged_control",
+      "year_2004"
+    ],
+    "expected": {
+      "smiles": "CC(C)C1CCCCC1C(C)C",
+      "inchikey": "IVHLZTLSMDNSTG-UHFFFAOYSA-N",
+      "formula": "C12H24"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": []
+    }
+  },
+  {
+    "id": "US20040001895A1_C00017",
+    "patent": "US20040001895A1",
+    "member": "US20040001895A1-20040101/US20040001895A1-20040101-C00017.CDX",
+    "sha256": "e44aac6b696cb3932fe81dec5a17f6e96b660aab41cf992f0a03c272f1332801",
+    "mol_sha256": "6a09efe55acf7aa772015c6de6faf09a41a32740b647aa5ffa8fb5b193873a75",
+    "tags": [
+      "unchanged_control",
+      "year_2004"
+    ],
+    "expected": {
+      "smiles": "CC(C)C1CCCCC1C(C)C",
+      "inchikey": "IVHLZTLSMDNSTG-UHFFFAOYSA-N",
+      "formula": "C12H24"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": []
+    }
+  },
+  {
+    "id": "US20050043535A1_C00038",
+    "patent": "US20050043535A1",
+    "member": "US20050043535A1-20050224/US20050043535A1-20050224-C00038.CDX",
+    "sha256": "2b916b623c02740bd1c896b159690728317eafd94e9d1af6606080c9f5cfe047",
+    "mol_sha256": "ec24b6e63cc70a31067fdb205c6cfb61830980423fa33229a82d14c63065f1dc",
+    "tags": [
+      "unchanged_control",
+      "year_2005"
+    ],
+    "expected": {
+      "smiles": "Cc1cc(NC(=O)NCCN2CCC(NC(=O)c3ccccn3)C2)c2ccccc2n1",
+      "inchikey": "BPLLPCXCXCAJMK-UHFFFAOYSA-N",
+      "formula": "C23H26N6O2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "NH",
+        "O",
+        "N\nH",
+        "N",
+        "H\nN",
+        "O",
+        "N"
+      ]
+    }
+  },
+  {
+    "id": "US20050043535A1_C00044",
+    "patent": "US20050043535A1",
+    "member": "US20050043535A1-20050224/US20050043535A1-20050224-C00044.CDX",
+    "sha256": "277405f63b9f9dc1a29e9d9bab79ec8b8e130a175d35fa466ab7180146ce3f41",
+    "mol_sha256": "2143c6979e1f73b6a3d88b878f15e30b3ee04dbc55e01d484fb190a2ffbe531b",
+    "tags": [
+      "unchanged_control",
+      "year_2005"
+    ],
+    "expected": {
+      "smiles": "COc1ccccc1C1=CCN(C(=O)OC(C)(C)C)CC1",
+      "inchikey": "NJPBHMRRFYXOAE-UHFFFAOYSA-N",
+      "formula": "C17H23NO3"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "O",
+        "O",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20060019991A1_C00021",
+    "patent": "US20060019991A1",
+    "member": "US20060019991A1-20060126/US20060019991A1-20060126-C00021.CDX",
+    "sha256": "2587d12049568b3d742c2f756b4c405dc63beabe79df9b1e7696a95dc040eaef",
+    "mol_sha256": "8e91843c2b5669a7de9993020017dd59bc23b6aa79bb6dc0b70af0dde7e03bc2",
+    "tags": [
+      "unchanged_control",
+      "year_2006",
+      "tetrahedral_stereo"
+    ],
+    "expected": {
+      "smiles": "COc1ccc(Oc2ccc(NC[C@H](O)c3ccc(O)c4[nH]c(=O)ccc34)cc2)cc1-c1ccccc1",
+      "inchikey": "XRXMVMIHYLZRQA-MHZLTWQESA-N",
+      "formula": "C30H26N2O5"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "HO",
+        "HN",
+        "O",
+        "H\nN",
+        "OH",
+        "O",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20060019991A1_C00022",
+    "patent": "US20060019991A1",
+    "member": "US20060019991A1-20060126/US20060019991A1-20060126-C00022.CDX",
+    "sha256": "5ab1b202010db68a56b24836de6a4c83074923011687b696d004950186c1a1ab",
+    "mol_sha256": "8fd0aec01f4225c4c4434ebb527adbff7fc7d85ae4f770a89d81aaf614104155",
+    "tags": [
+      "unchanged_control",
+      "year_2006",
+      "tetrahedral_stereo"
+    ],
+    "expected": {
+      "smiles": "O=c1ccc2c([C@@H](O)CNc3ccc(Oc4cccc(-c5ccccc5)c4)cc3)ccc(O)c2[nH]1",
+      "inchikey": "KJBBKPMJLQTFIA-MHZLTWQESA-N",
+      "formula": "C29H24N2O4"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "HO",
+        "HN",
+        "O",
+        "H\nN",
+        "OH",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20070037857A1_C00011",
+    "patent": "US20070037857A1",
+    "member": "US20070037857A1-20070215/US20070037857A1-20070215-C00011.CDX",
+    "sha256": "f0adfc5a3ffec07d7e0621a30ef2ff0cdf5a29f24f5463b626b97d6041f3bbf8",
+    "mol_sha256": "546c31966d769ad69f1edef8aafc3845ac53e828edb56d88f80584239c325b9e",
+    "tags": [
+      "unchanged_control",
+      "year_2007",
+      "tetrahedral_stereo"
+    ],
+    "expected": {
+      "smiles": "COc1cccc(Cn2c(CCCc3c[nH]c4ccccc34)nnc2[C@@H](Cc2c[nH]c3ccccc23)NC(=O)C(C)(C)N)c1",
+      "inchikey": "HPRDHALQPIXBSW-WJOKGBTCSA-N",
+      "formula": "C35H39N7O2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "O",
+        "NH",
+        "NH2",
+        "N",
+        "N",
+        "N",
+        "NH",
+        "O",
+        "H\nN"
+      ]
+    }
+  },
+  {
+    "id": "US20070037857A1_C00021",
+    "patent": "US20070037857A1",
+    "member": "US20070037857A1-20070215/US20070037857A1-20070215-C00021.CDX",
+    "sha256": "c1766224c5c2827178b29ea3f41b615a4ab9a4ac321fc672b1736f6b99b2f2dd",
+    "mol_sha256": "12f69ab2039c000bb342f05696165626b73b376e20a1a0a4ea4a7f8531615f2f",
+    "tags": [
+      "unchanged_control",
+      "year_2007",
+      "tetrahedral_stereo"
+    ],
+    "expected": {
+      "smiles": "COc1ccc(Cn2c(CCc3ccccc3)nnc2[C@@H](Cc2c[nH]c3ccccc23)NC(=O)C(C)(C)N)cc1",
+      "inchikey": "WNCKTUWHWHEBJE-MUUNZHRXSA-N",
+      "formula": "C32H36N6O2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "H\nN",
+        "N",
+        "N",
+        "N",
+        "NH",
+        "O",
+        "O",
+        "NH2"
+      ]
+    }
+  },
+  {
+    "id": "US20080039466A1_C00017",
+    "patent": "US20080039466A1",
+    "member": "US20080039466A1-20080214/US20080039466A1-20080214-C00017.CDX",
+    "sha256": "a3d8a66fdb7cd4bd56bddd027ce9e376f1f2be5dcfb98804ce979ab4a41af3ea",
+    "mol_sha256": "60b266fbc4a17ef5f93d2c6cbc9156071ece75ae5da790adb5d8eb7033c1d0a4",
+    "tags": [
+      "unchanged_control",
+      "year_2008"
+    ],
+    "expected": {
+      "smiles": "Cc1ccc(C(=O)Nc2ccc3ccn(C)c3c2)cc1Nc1nc(-c2cccnc2)cs1",
+      "inchikey": "IENULMBUSCEXEV-UHFFFAOYSA-N",
+      "formula": "C25H21N5OS"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N\nH",
+        "O",
+        "H\nN",
+        "N",
+        "S",
+        "N",
+        "N"
+      ]
+    }
+  },
+  {
+    "id": "US20080039466A1_C00022",
+    "patent": "US20080039466A1",
+    "member": "US20080039466A1-20080214/US20080039466A1-20080214-C00022.CDX",
+    "sha256": "8e6d57abddb760c2bb1a991928473bc5c37dc068abfd23eba5fb1531af198bf2",
+    "mol_sha256": "518e50e79a3e04161c4506a6fe723c2836452de2a52b120bea9f3e73727e7786",
+    "tags": [
+      "unchanged_control",
+      "year_2008"
+    ],
+    "expected": {
+      "smiles": "Cc1ccc(C(=O)Nc2cccc(F)c2)cc1Nc1nc(-c2ccncc2)cs1",
+      "inchikey": "FLGOPOHYRFSQJO-UHFFFAOYSA-N",
+      "formula": "C22H17FN4OS"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "S",
+        "N",
+        "NH",
+        "HN",
+        "O",
+        "F"
+      ]
+    }
+  },
+  {
+    "id": "US20090018114A1_C00007",
+    "patent": "US20090018114A1",
+    "member": "US20090018114A1-20090115/US20090018114A1-20090115-C00007.CDX",
+    "sha256": "05ec032dac3ade2ef0615028f59670c67491b6620fc8f7e3eb42ebb4273dca42",
+    "mol_sha256": "f92cf60f536960223afb414121d70e5c08b24be68286b24487ed8510f18610ed",
+    "tags": [
+      "unchanged_control",
+      "year_2009"
+    ],
+    "expected": {
+      "smiles": "CC(C)(C)SC1=C(C(C)(C)C)CCOC1",
+      "inchikey": "YDPCQJJCOGOYTR-UHFFFAOYSA-N",
+      "formula": "C13H24OS"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "O",
+        "S"
+      ]
+    }
+  },
+  {
+    "id": "US20090018114A1_C00009",
+    "patent": "US20090018114A1",
+    "member": "US20090018114A1-20090115/US20090018114A1-20090115-C00009.CDX",
+    "sha256": "30ca5a4fa31a265cb41bc6c24134c7406d9365a89d0db2c608dac5132dd237d1",
+    "mol_sha256": "e74ed217e10658f6912de14de62002748c150f35d8ad38a9e7294182a1830b71",
+    "tags": [
+      "unchanged_control",
+      "year_2009",
+      "double_bond_stereo"
+    ],
+    "expected": {
+      "smiles": "CC(C)/C=c1/cccc/c1=C/C(C)(C)C",
+      "inchikey": "CITXPXCFAFOAJD-WGYBXSNTSA-N",
+      "formula": "C15H22"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": []
+    }
+  },
+  {
+    "id": "US20100016372A1_C00009",
+    "patent": "US20100016372A1",
+    "member": "US20100016372A1-20100121/US20100016372A1-20100121-C00009.CDX",
+    "sha256": "a78154d709a6c6315a63702b80844b0ad19e2d6c9bf9dc6c952106120d9924cb",
+    "mol_sha256": "21d1368800c45219e96a64dbdd07948d20156cf62a0466b6a56b7201b5204993",
+    "tags": [
+      "unchanged_control",
+      "year_2010"
+    ],
+    "expected": {
+      "smiles": "Cc1cccc(C)c1Cn1c(-c2c(F)cccc2OCC(N)=O)nc2ccccc21",
+      "inchikey": "HZUSHGGHXQDWGT-UHFFFAOYSA-N",
+      "formula": "C24H22FN3O2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "N",
+        "F",
+        "O",
+        "NH2",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20100016372A1_C00011",
+    "patent": "US20100016372A1",
+    "member": "US20100016372A1-20100121/US20100016372A1-20100121-C00011.CDX",
+    "sha256": "efcc252157609ce6d6925e62b952b29253fae1ecdd45432caf45acc1e04bf7bd",
+    "mol_sha256": "d6364803a001029c12ce454d148b7094a8412145d80e01f143a1c834eb081b89",
+    "tags": [
+      "unchanged_control",
+      "year_2010"
+    ],
+    "expected": {
+      "smiles": "Cc1cccc(C)c1Cn1c(-c2ncccc2OCC(N)=O)nc2ccccc21",
+      "inchikey": "CJGXJVHBJBOYET-UHFFFAOYSA-N",
+      "formula": "C23H22N4O2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "N",
+        "N",
+        "O",
+        "NH2",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20110003739A1_C00026",
+    "patent": "US20110003739A1",
+    "member": "US20110003739A1-20110106/US20110003739A1-20110106-C00026.CDX",
+    "sha256": "4043f6117080c7a948cac669f9b513760859bdb9786524cf80a98fe02166e5f0",
+    "mol_sha256": "d203154aba29bcec861978c7f0bf4efcb183de0dca560fb8386ff702b68ea97e",
+    "tags": [
+      "unchanged_control",
+      "year_2011"
+    ],
+    "expected": {
+      "smiles": "O=C1CCN2CCC1C2",
+      "inchikey": "SIDKXEOFEHVUSW-UHFFFAOYSA-N",
+      "formula": "C7H11NO"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20110003739A1_C00030",
+    "patent": "US20110003739A1",
+    "member": "US20110003739A1-20110106/US20110003739A1-20110106-C00030.CDX",
+    "sha256": "d3759df2bdd8fae8916f445b67bb5ca6c0b2aa27b5aa69a6ecf84b168fb971bf",
+    "mol_sha256": "27bfbdc71f73169b27f945ab45327b813ebf2e4e0736c0dda23c2b4499aeb76d",
+    "tags": [
+      "unchanged_control",
+      "year_2011"
+    ],
+    "expected": {
+      "smiles": "Cn1c2c(c3ccc(Br)cc31)CN1CCC2CC1",
+      "inchikey": "XJFBZOPCHRJNKM-UHFFFAOYSA-N",
+      "formula": "C15H17BrN2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "Br",
+        "N",
+        "CH3",
+        "N"
+      ]
+    }
+  },
+  {
+    "id": "US20120004262A1_C00053",
+    "patent": "US20120004262A1",
+    "member": "US20120004262A1-20120105/US20120004262A1-20120105-C00053.CDX",
+    "sha256": "441bb8c31e5c5dfb3fea09ac38c587b8355eb0433c3fc1aeed9554515a22c064",
+    "mol_sha256": "ecae7ee2609b7548328c0e6f80be0da088161bf1c1c09813a0e7c33162addf44",
+    "tags": [
+      "unchanged_control",
+      "year_2012",
+      "tetrahedral_stereo"
+    ],
+    "expected": {
+      "smiles": "c1ccc(C2C[C@@H]2NCc2cnc3ccccc3c2)cc1",
+      "inchikey": "SUWTXHIXBBPWGI-NNBQYGFHSA-N",
+      "formula": "C19H18N2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N\nH",
+        "N"
+      ]
+    }
+  },
+  {
+    "id": "US20120004262A1_C00058",
+    "patent": "US20120004262A1",
+    "member": "US20120004262A1-20120105/US20120004262A1-20120105-C00058.CDX",
+    "sha256": "c177ccecae84c87b1cf4c1e350eb5ab2bff13b7b4f54e550b7e5d556b06cb440",
+    "mol_sha256": "12f8af74783a99ae336f4e3e305f24e8c0096bddf8ec69e142fb5c56ad253816",
+    "tags": [
+      "unchanged_control",
+      "year_2012",
+      "tetrahedral_stereo"
+    ],
+    "expected": {
+      "smiles": "N#Cc1cccc(CN[C@H]2CC2c2ccccc2)c1",
+      "inchikey": "BZSAOCAMGAGWED-DJNXLDHESA-N",
+      "formula": "C17H16N2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N\nH",
+        "N"
+      ]
+    }
+  },
+  {
+    "id": "US20130005755A1_C00025",
+    "patent": "US20130005755A1",
+    "member": "US20130005755A1-20130103/US20130005755A1-20130103-C00025.CDX",
+    "sha256": "6f5840d266353158f53c34b530ee5bc0e458a4a202da5523fa13ca2c7aecb8da",
+    "mol_sha256": "9707e1f1feaa0985e5a6a5846218ddd66d9582694b754629b06fb733173eec00",
+    "tags": [
+      "unchanged_control",
+      "year_2013"
+    ],
+    "expected": {
+      "smiles": "CC(C)CCc1ccc(-c2cc[nH]c(=O)c2)cc1",
+      "inchikey": "AJPHQARQLZKMEG-UHFFFAOYSA-N",
+      "formula": "C16H19NO"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "NH",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20130005755A1_C00057",
+    "patent": "US20130005755A1",
+    "member": "US20130005755A1-20130103/US20130005755A1-20130103-C00057.CDX",
+    "sha256": "a199a219aed5fb385c4dbf6987686716b148ee1781409d2a953605b5a453b675",
+    "mol_sha256": "59b905ce9d35cc8514aaa5cd7cbf497ca0f89a7bb5d36028a90cf39e1c952ba3",
+    "tags": [
+      "unchanged_control",
+      "year_2013",
+      "tetrahedral_stereo"
+    ],
+    "expected": {
+      "smiles": "CN1CC[C@]23CC(=O)CC[C@@]2(O)[C@H]1Cc1ccc(C(=O)NCCc2ccc(-c4cn[nH]c4)cc2)c(O)c13",
+      "inchikey": "QVGGPFMJWBVVPU-SUHSUELASA-N",
+      "formula": "C29H32N4O4"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "OH",
+        "HN",
+        "O",
+        "O",
+        "OH",
+        "NH",
+        "N"
+      ]
+    }
+  },
+  {
+    "id": "US20140005178A1_C00035",
+    "patent": "US20140005178A1",
+    "member": "US20140005178A1-20140102/US20140005178A1-20140102-C00035.CDX",
+    "sha256": "8f49bda971194924936e3cb8232ab5e1dbe2862d97aaa2bec803e3d796db63f2",
+    "mol_sha256": "124659fb4a8d2fdaba9401c4dd01d3eb00eb7edca735d3039b8d9e0f7c1f1b2d",
+    "tags": [
+      "unchanged_control",
+      "year_2014",
+      "nested_fragment"
+    ],
+    "expected": {
+      "smiles": "CCOC(=O)c1cc(C)ccc1Cl",
+      "inchikey": "PMODZEYGPFPRKO-UHFFFAOYSA-N",
+      "formula": "C10H11ClO2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "Cl",
+        "OEt",
+        "O",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20140005178A1_C00047",
+    "patent": "US20140005178A1",
+    "member": "US20140005178A1-20140102/US20140005178A1-20140102-C00047.CDX",
+    "sha256": "a0d965d82af5b5852caa8c211455b5018e95622f60c4a1528ce789da65eae453",
+    "mol_sha256": "6cf7cd05acae7d0ee260d083cf5b9948b861ea9dae13915f74fce884dd65288b",
+    "tags": [
+      "unchanged_control",
+      "year_2014"
+    ],
+    "expected": {
+      "smiles": "Oc1cc(F)c(-c2ncc(Br)cn2)c(F)c1",
+      "inchikey": "CTZAAVSNBVDVPF-UHFFFAOYSA-N",
+      "formula": "C10H5BrF2N2O"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "N",
+        "Br",
+        "F",
+        "F",
+        "OH"
+      ]
+    }
+  },
+  {
+    "id": "US20150005302A1_C00021",
+    "patent": "US20150005302A1",
+    "member": "US20150005302A1-20150101/US20150005302A1-20150101-C00021.CDX",
+    "sha256": "8342bc9fb35dd60b8ee4cd86020d4dd64c643f94af149df92f9552f04ac373cf",
+    "mol_sha256": "c61c28aafd0934836a1e03f5210757fb9e9d34505f8775f7050fb633ae02f05f",
+    "tags": [
+      "unchanged_control",
+      "year_2015",
+      "tetrahedral_stereo"
+    ],
+    "expected": {
+      "smiles": "CC(=O)c1cnc2ccc(-c3cc(F)c(O)c(Cl)c3)nc2c1N[C@H]1CC[C@H](N(C)C)CC1",
+      "inchikey": "CUIIYKSJZKONTM-WKILWMFISA-N",
+      "formula": "C24H26ClFN4O2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "N",
+        "O",
+        "F",
+        "HO",
+        "Cl",
+        "N",
+        "NH"
+      ]
+    }
+  },
+  {
+    "id": "US20150005302A1_C00041",
+    "patent": "US20150005302A1",
+    "member": "US20150005302A1-20150101/US20150005302A1-20150101-C00041.CDX",
+    "sha256": "dab6c53d7a96a0f552f0321b88ba5ad294218ea1e68ccbe979bc2a722dacee27",
+    "mol_sha256": "eba3ac942ff65d6ce8bb5fa5d4465402655f070736addf87304d36c1fa761a59",
+    "tags": [
+      "unchanged_control",
+      "year_2015"
+    ],
+    "expected": {
+      "smiles": "COc1cc(-c2ccc3ncc(C(C)=O)c(Nc4ccc(OCCN(C)C)nc4)c3n2)cc(Cl)c1O",
+      "inchikey": "OFXPODQSPOUHEV-UHFFFAOYSA-N",
+      "formula": "C26H26ClN5O4"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "N",
+        "Cl",
+        "HO",
+        "O",
+        "NH",
+        "N",
+        "O",
+        "O",
+        "N"
+      ]
+    }
+  },
+  {
+    "id": "US20160002213A1_C00040",
+    "patent": "US20160002213A1",
+    "member": "US20160002213A1-20160107/US20160002213A1-20160107-C00040.CDX",
+    "sha256": "02f751da269db94f4e860c1b30c0e30a9e4eff13b434c18c0b424d225c2a1b7b",
+    "mol_sha256": "7dac503de51149ccdb86e9304a85358aa5c90bc325a12fa975b15ecb623442c1",
+    "tags": [
+      "unchanged_control",
+      "year_2016"
+    ],
+    "expected": {
+      "smiles": "CC(C)C1=NOCC(=O)N1",
+      "inchikey": "YUAQYEUXJCIMLP-UHFFFAOYSA-N",
+      "formula": "C6H10N2O2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "N\nH",
+        "O",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20160002213A1_C00042",
+    "patent": "US20160002213A1",
+    "member": "US20160002213A1-20160107/US20160002213A1-20160107-C00042.CDX",
+    "sha256": "4c39fbe53d7b785669994d0d7c5f431a9f31d002c6c246b04eb7d0f532f1f648",
+    "mol_sha256": "ac900aaac51ae260841227e84a22283683e5829f3ae87a7ab80366b75e764abf",
+    "tags": [
+      "unchanged_control",
+      "year_2016"
+    ],
+    "expected": {
+      "smiles": "CC(C)c1noc(=O)[nH]1",
+      "inchikey": "MSHWTKGAZGNGGH-UHFFFAOYSA-N",
+      "formula": "C5H8N2O2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "N\nH",
+        "O",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20170027893A1_C00003",
+    "patent": "US20170027893A1",
+    "member": "US20170027893A1-20170202/US20170027893A1-20170202-C00003.CDX",
+    "sha256": "7346940497c5c9fefcfb48cf0912b9736bbc20e4a819284e9242894efbcf9842",
+    "mol_sha256": "160b53b08d988981e670eadb25fe609f286b9926ee28a1e3071802f5f65ae361",
+    "tags": [
+      "unchanged_control",
+      "year_2017",
+      "double_bond_stereo"
+    ],
+    "expected": {
+      "smiles": "C=CCc1cccc(/C=N/NC(N)=S)c1O",
+      "inchikey": "ICSNLUNPNUEXPF-NTUHNPAUSA-N",
+      "formula": "C11H13N3OS"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "OH",
+        "N",
+        "NH",
+        "NH2",
+        "S"
+      ]
+    }
+  },
+  {
+    "id": "US20170027893A1_C00011",
+    "patent": "US20170027893A1",
+    "member": "US20170027893A1-20170202/US20170027893A1-20170202-C00011.CDX",
+    "sha256": "bbabe23f034483252f4c7326651c007894aa18011fb358cdb1437d4d6ff2dc7c",
+    "mol_sha256": "02d9b34cb5adea6a6b0e80afed1721b391158e99e23f63e87769a778469605a2",
+    "tags": [
+      "unchanged_control",
+      "year_2017",
+      "double_bond_stereo"
+    ],
+    "expected": {
+      "smiles": "NC(=S)N/N=C/c1ccc2ccccc2c1O",
+      "inchikey": "TURWLQMLIQGIQC-VGOFMYFVSA-N",
+      "formula": "C12H11N3OS"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "OH",
+        "H",
+        "N",
+        "NH",
+        "NH2",
+        "S"
+      ]
+    }
+  },
+  {
+    "id": "US20180000797A1_C00027",
+    "patent": "US20180000797A1",
+    "member": "US20180000797A1-20180104/US20180000797A1-20180104-C00027.CDX",
+    "sha256": "8721943cc2bc1ea17da0cab74bf80768b221715d8eafd75d95db8781559e43d4",
+    "mol_sha256": "aa8e7dceada65f1ebfb3a63db858e8c65499bf60adebd9e81f2404fab03c25e9",
+    "tags": [
+      "unchanged_control",
+      "year_2018"
+    ],
+    "expected": {
+      "smiles": "CCCCCOc1ccc(F)cc1",
+      "inchikey": "OSHNWYQRTAZXJM-UHFFFAOYSA-N",
+      "formula": "C11H15FO"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "O",
+        "F"
+      ]
+    }
+  },
+  {
+    "id": "US20180000797A1_C00032",
+    "patent": "US20180000797A1",
+    "member": "US20180000797A1-20180104/US20180000797A1-20180104-C00032.CDX",
+    "sha256": "949abd503e32bd8fd2cce2f6f1beb5aa7750170cd03f346053888e2172fa5ed8",
+    "mol_sha256": "615f2fd770a570c4258e370edd3addf28e5ffbd04ffbc98401f9ef19cc4ac7ae",
+    "tags": [
+      "unchanged_control",
+      "year_2018"
+    ],
+    "expected": {
+      "smiles": "CCCCS(=O)(=O)Cc1ccccc1",
+      "inchikey": "QUTRKCZEVXALJJ-UHFFFAOYSA-N",
+      "formula": "C11H16O2S"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "S",
+        "O",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20190023702A1_C00131",
+    "patent": "US20190023702A1",
+    "member": "US20190023702A1-20190124/US20190023702A1-20190124-C00131.CDX",
+    "sha256": "edf397d5a854685417d9f52c458eda2b7a47c26b05038297ede07ada3ca0215f",
+    "mol_sha256": "803d02a9e7c609dd945c2c8fd4bc6015dce2cfd46ee43bcd0d8cfbe0a1de5f71",
+    "tags": [
+      "unchanged_control",
+      "year_2019"
+    ],
+    "expected": {
+      "smiles": "O=c1cc[nH]c2nc(-c3ccccc3)c(-c3cc(Cl)c4ncccc4c3)cc12",
+      "inchikey": "IRDGUUDBEKBHBN-UHFFFAOYSA-N",
+      "formula": "C23H14ClN3O"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "N\nH",
+        "N",
+        "Cl",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20190023702A1_C00195",
+    "patent": "US20190023702A1",
+    "member": "US20190023702A1-20190124/US20190023702A1-20190124-C00195.CDX",
+    "sha256": "aac2e07bac9bcfeade6174b98c785394bf73e9746a6243f93e6e7b6e945c68d6",
+    "mol_sha256": "ddfcdd32ec0017a2e044cf3928a92b196167a2d4e8cb06709166773016ed72a8",
+    "tags": [
+      "unchanged_control",
+      "year_2019"
+    ],
+    "expected": {
+      "smiles": "Cc1c(-c2cc3c(=O)cc[nH]c3nc2-c2ccccc2)ccc2ncccc12",
+      "inchikey": "BEJMRLDPTNYOFN-UHFFFAOYSA-N",
+      "formula": "C24H17N3O"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "N\nH",
+        "N",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20200055867A1_C00031",
+    "patent": "US20200055867A1",
+    "member": "US20200055867A1-20200220/US20200055867A1-20200220-C00031.CDX",
+    "sha256": "50620e49ad9a1282acaaec6c3c2148223bc05e20a1abb5669c2b7f478f4e8e40",
+    "mol_sha256": "02d038fba6558a496e82eab53199444ae746868e5c4daeaa09298960ac1aa237",
+    "tags": [
+      "unchanged_control",
+      "year_2020",
+      "tetrahedral_stereo",
+      "nested_fragment"
+    ],
+    "expected": {
+      "smiles": "CC(C)[C@H](NC(=O)OC(C)(C)C)C(=O)Nc1cc(Br)sc1C(=O)O",
+      "inchikey": "FOKSTSLOXKVODQ-JTQLQIEISA-N",
+      "formula": "C15H21BrN2O5S"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "S",
+        "Br",
+        "OH",
+        "O",
+        "NH",
+        "O",
+        "NHBoc",
+        "NH",
+        "O",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20200055867A1_C00049",
+    "patent": "US20200055867A1",
+    "member": "US20200055867A1-20200220/US20200055867A1-20200220-C00049.CDX",
+    "sha256": "c205341a69b2e2d9f3d6cafac46bea21ee0cf9df2b74c662f4adf334f1df20c4",
+    "mol_sha256": "d35b5cccf5032ad5abb0664e8cf9bfeb7b486697ab5a3b30d62c5b442d1ba126",
+    "tags": [
+      "unchanged_control",
+      "year_2020",
+      "tetrahedral_stereo",
+      "nested_fragment"
+    ],
+    "expected": {
+      "smiles": "CC[C@H](NC(=O)OC(C)(C)C)c1nc2cc(Br)sc2c(=O)[nH]1",
+      "inchikey": "ZJOXRMKVAGPWPE-ZETCQYMHSA-N",
+      "formula": "C14H18BrN3O3S"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "Br",
+        "S",
+        "N",
+        "NH",
+        "O",
+        "NHBoc",
+        "NH",
+        "O",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20210002229A1_C00019",
+    "patent": "US20210002229A1",
+    "member": "US20210002229A1-20210107/US20210002229A1-20210107-C00019.CDX",
+    "sha256": "53038c3b6a6cdec503123709704b3c3c8c544da9a71bd55f969860af8dbc5743",
+    "mol_sha256": "f4d3c341e8672a4c22b60164875a771b2c9c6e3027c4e62a3cb03dd625ddeeca",
+    "tags": [
+      "unchanged_control",
+      "year_2021",
+      "nested_fragment"
+    ],
+    "expected": {
+      "smiles": "COc1cc(-c2cccc(-c3cccc(-c4cc(F)c(CN(C)C)c(OC)c4)c3C)c2C)cc(F)c1CNCCO",
+      "inchikey": "BZTRCWAIONXOPM-UHFFFAOYSA-N",
+      "formula": "C34H38F2N2O3"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "NH",
+        "F",
+        "F",
+        "OH",
+        "OMe",
+        "O",
+        "Me",
+        "CH3",
+        "Me",
+        "CH3",
+        "OMe",
+        "O",
+        "Me\n\t\t\t\t\t2\n\t\t\t\t\tN",
+        "N"
+      ]
+    }
+  },
+  {
+    "id": "US20210002229A1_C00036",
+    "patent": "US20210002229A1",
+    "member": "US20210002229A1-20210107/US20210002229A1-20210107-C00036.CDX",
+    "sha256": "915b6a2e8042ba52cb19011c2dbbeb40caef1266e16768e243e239461e92c44d",
+    "mol_sha256": "70132856bf5576b23aa25ad9a993d9839c29cd965bd5ece407e85fc1a73425d6",
+    "tags": [
+      "unchanged_control",
+      "year_2021"
+    ],
+    "expected": {
+      "smiles": "COC(=O)c1ccc(-c2cccc(-c3cccc(-c4cc(F)c(CN)c(OC)c4)c3C)c2C)cc1OC",
+      "inchikey": "HAEVRJDHZWOTIX-UHFFFAOYSA-N",
+      "formula": "C31H30FNO4"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "O",
+        "O",
+        "F",
+        "O",
+        "NH2",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20220002240A1_C00033",
+    "patent": "US20220002240A1",
+    "member": "US20220002240A1-20220106/US20220002240A1-20220106-C00033.CDX",
+    "sha256": "551287655544cc228b5e403bc1b32358140e1a688255421eba6f4047cd915108",
+    "mol_sha256": "866732166811dd37e5f396e6ac5a6bb3a78abd669b048c79375056fb65ea1eb6",
+    "tags": [
+      "unchanged_control",
+      "year_2022",
+      "nested_fragment"
+    ],
+    "expected": {
+      "smiles": "Cc1c(NS(=O)(=O)c2c(C(C)C)cc(C(C)C)cc2C(C)C)cc(C(F)(F)F)cc1C(F)(F)F",
+      "inchikey": "BAUYRIJARBEFGT-UHFFFAOYSA-N",
+      "formula": "C24H29F6NO2S"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "S",
+        "HN",
+        "O",
+        "O",
+        "CF3",
+        "F",
+        "F",
+        "F",
+        "CF3",
+        "F",
+        "F",
+        "F",
+        "CH3"
+      ]
+    }
+  },
+  {
+    "id": "US20220002240A1_C00042",
+    "patent": "US20220002240A1",
+    "member": "US20220002240A1-20220106/US20220002240A1-20220106-C00042.CDX",
+    "sha256": "fee4a114216ad7fd69f2b0fdf66934c956f5c8eebb9c342ab0990a56a016b302",
+    "mol_sha256": "831bbbfcfeb8a5e4e41231d3ba7ddada31a067111ab9dcd80d0e9f8ee1785d3a",
+    "tags": [
+      "unchanged_control",
+      "year_2022",
+      "nested_fragment"
+    ],
+    "expected": {
+      "smiles": "O=S(=O)(Nc1cc(C(F)(F)F)cc(C(F)(F)F)c1)c1cc(C(F)(F)F)cc(C(F)(F)F)c1",
+      "inchikey": "PQHUVZBTWVYVHO-UHFFFAOYSA-N",
+      "formula": "C16H7F12NO2S"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "S",
+        "HN",
+        "O",
+        "O",
+        "CF3",
+        "F",
+        "F",
+        "F",
+        "CF3",
+        "F",
+        "F",
+        "F",
+        "CF3",
+        "CF3"
+      ]
+    }
+  },
+  {
+    "id": "US20230002317A1_C00019",
+    "patent": "US20230002317A1",
+    "member": "US20230002317A1-20230105/US20230002317A1-20230105-C00019.CDX",
+    "sha256": "54348165ce66af23f0f6e95c3d9b0bc7720480f31f65eff6aa5efdf8972730c7",
+    "mol_sha256": "1f1318de3aecb39103bac9df2dabdd4cf0a54e1fb97a2637b2bf5877e82d5a3f",
+    "tags": [
+      "unchanged_control",
+      "year_2023",
+      "tetrahedral_stereo"
+    ],
+    "expected": {
+      "smiles": "CC(C)C[C@]1(CO)CCCN1C(=O)c1ccc(-n2cccc2)cc1",
+      "inchikey": "SCCJOMKPLMULCX-FQEVSTJZSA-N",
+      "formula": "C20H26N2O2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "O",
+        "N",
+        "N",
+        "O",
+        "H",
+        "CH\n\t\t\t\t\t\t3",
+        "CH3"
+      ]
+    }
+  },
+  {
+    "id": "US20230002317A1_C00025",
+    "patent": "US20230002317A1",
+    "member": "US20230002317A1-20230105/US20230002317A1-20230105-C00025.CDX",
+    "sha256": "4e64965204f0cfd7da08a70f9a7d680daab0c426ec876d9e43a18c2d2e691493",
+    "mol_sha256": "7dd079a7945ba43355fcf5b3b3a9202237d39061c9d77c7a9c5311c2944ac443",
+    "tags": [
+      "unchanged_control",
+      "year_2023"
+    ],
+    "expected": {
+      "smiles": "CC(C)(C)CN(CCO)Cc1ccc(-c2ccccc2C#N)cc1",
+      "inchikey": "VMDDCZHHISKTAT-UHFFFAOYSA-N",
+      "formula": "C21H26N2O"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "N",
+        "O",
+        "H",
+        "H3C",
+        "CH3",
+        "H3C"
+      ]
+    }
+  },
+  {
+    "id": "US20240051972A1_C00320",
+    "patent": "US20240051972A1",
+    "member": "US20240051972A1-20240215/US20240051972A1-20240215-C00320.CDX",
+    "sha256": "a59a49cd460d22551f4ee8dde2b7b7b5dc2f87ff4689363fbba703628cfe4fb3",
+    "mol_sha256": "cda7735c38b871042f06ae7da2f6a1dda4427ed1e42b3602f336588a25d2afe3",
+    "tags": [
+      "unchanged_control",
+      "year_2024"
+    ],
+    "expected": {
+      "smiles": "CC=CC",
+      "inchikey": "IAQRGUVFOMOMEM-UHFFFAOYSA-N",
+      "formula": "C4H8"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": []
+    }
+  },
+  {
+    "id": "US20240051972A1_C00018",
+    "patent": "US20240051972A1",
+    "member": "US20240051972A1-20240215/US20240051972A1-20240215-C00018.CDX",
+    "sha256": "3d492a8a9d52fc25edd555e18bf787f898b27162006d2817e17bc6a5364897b6",
+    "mol_sha256": "d9eb87626d7c9e089e18d3f5f269d865a7261f1f78dbb91a0a654301971c2e99",
+    "tags": [
+      "unchanged_control",
+      "year_2024"
+    ],
+    "expected": {
+      "smiles": "CC(C)(C)CCCC(C)(C)C",
+      "inchikey": "GKNMBVVJQTWDRT-UHFFFAOYSA-N",
+      "formula": "C11H24"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": []
+    }
+  },
+  {
+    "id": "US20250042847A1_C00053",
+    "patent": "US20250042847A1",
+    "member": "US20250042847A1-20250206/US20250042847A1-20250206-C00053.CDX",
+    "sha256": "c2c3da6d44263b2d61943aabb7720747e449ab3c1d8b1f4ac5691bbd7c70d3a1",
+    "mol_sha256": "169162d4cff0da688deab2583f802ef781325d69f42d5feedfbfa6adbc1fc26e",
+    "tags": [
+      "unchanged_control",
+      "year_2025",
+      "tetrahedral_stereo"
+    ],
+    "expected": {
+      "smiles": "O=C(O)[C@@H](Cc1cccc(CNCCN(Cc2cccc(C[C@H](C(=O)O)[C@H]3CCNC3)c2)Cc2cccc(C[C@H](C(=O)O)[C@H]3CCNC3)c2)c1)[C@H]1CCNC1",
+      "inchikey": "FTSQCXNXVMMPET-SKGSPYGFSA-N",
+      "formula": "C44H59N5O6"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "NH",
+        "O",
+        "OH",
+        "N",
+        "NH",
+        "NH",
+        "O",
+        "OH",
+        "NH",
+        "O",
+        "OH"
+      ]
+    }
+  },
+  {
+    "id": "US20250042847A1_C00020",
+    "patent": "US20250042847A1",
+    "member": "US20250042847A1-20250206/US20250042847A1-20250206-C00020.CDX",
+    "sha256": "6f6e4a22a972b4a8425059172a8128786790d4ad5c8f5bacdc9bafa8eef93077",
+    "mol_sha256": "27ba2d8a9c7e2b3d35e06a437270b1ba345e6ce874314a2e3f2b22488aa134d7",
+    "tags": [
+      "unchanged_control",
+      "year_2025"
+    ],
+    "expected": {
+      "smiles": "CC(C)(C)CN(CCNC(C)(C)C)CC(C)(C)C",
+      "inchikey": "USWYDLKGPAPRFG-UHFFFAOYSA-N",
+      "formula": "C16H36N2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "NH"
+      ]
+    }
+  },
+  {
+    "id": "US20040001969A1_C00012",
+    "patent": "US20040001969A1",
+    "member": "US20040001969A1-20040101/US20040001969A1-20040101-C00012.CDX",
+    "sha256": "566804a72fa2f97ddf12915eda5ef03ffaeabcd151f2cbca20535a46cb8931a4",
+    "mol_sha256": "10c155948c5bdc5518b704468b6d09446c0eeb499ccec4989bdfaca6f432f4d2",
+    "tags": [
+      "unchanged_control",
+      "year_2004"
+    ],
+    "expected": {
+      "smiles": "c1cc2cccc3c4cccc5cccc(c(c1)c23)c54",
+      "inchikey": "CSHWQDPOILHKBI-UHFFFAOYSA-N",
+      "formula": "C20H12"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": []
+    }
+  },
+  {
+    "id": "US20040001969A1_C00014",
+    "patent": "US20040001969A1",
+    "member": "US20040001969A1-20040101/US20040001969A1-20040101-C00014.CDX",
+    "sha256": "0a4bf0bf381d1a306c2e5b424f391313bff252adef4bf226e93bf158d3019966",
+    "mol_sha256": "2b9b4e0772157fed15f1c7e2d653c27f38a17abb6690fedfc00861f768730b6a",
+    "tags": [
+      "unchanged_control",
+      "year_2004"
+    ],
+    "expected": {
+      "smiles": "CC(C)(C)c1cc2cccc3c4cc(C(C)(C)C)cc5cccc(c(c1)c23)c54",
+      "inchikey": "OEOAFDOYMOXWHL-UHFFFAOYSA-N",
+      "formula": "C28H28"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": []
+    }
+  },
+  {
+    "id": "US20040002019A1_C00014",
+    "patent": "US20040002019A1",
+    "member": "US20040002019A1-20040101/US20040002019A1-20040101-C00014.CDX",
+    "sha256": "872e4c245a57664fa1edc34537120ba55859738e069820096f489b9b64bbf27a",
+    "mol_sha256": "532124ef64696e476dcd6980b8b859330c1e77d310637a2122aac0ce93b6c207",
+    "tags": [
+      "unchanged_control",
+      "year_2004"
+    ],
+    "expected": {
+      "smiles": "CC(=O)NS(C)(=O)=O",
+      "inchikey": "QRHZUNBGGBTEBL-UHFFFAOYSA-N",
+      "formula": "C3H7NO3S"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "C",
+        "N",
+        "S",
+        "O",
+        "O",
+        "O",
+        "H"
+      ]
+    }
+  },
+  {
+    "id": "US20040002022A1_C00006",
+    "patent": "US20040002022A1",
+    "member": "US20040002022A1-20040101/US20040002022A1-20040101-C00006.CDX",
+    "sha256": "ca08a0bd4ab7f741ec7a080074bedba11f747fb9deb3b6cf1db69d125e204a04",
+    "mol_sha256": "5e6419ab1b69c08190411bd87bba4f0fe9451e60d268566805c6f9054169752c",
+    "tags": [
+      "unchanged_control",
+      "year_2004"
+    ],
+    "expected": {
+      "smiles": "S=C(SSSSC(=S)N1CCCCC1)N1CCCCC1",
+      "inchikey": "VNDRMZTXEFFQDR-UHFFFAOYSA-N",
+      "formula": "C12H20N2S6"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "C",
+        "S",
+        "S",
+        "S",
+        "S",
+        "S",
+        "C",
+        "S",
+        "N"
+      ]
+    }
+  },
+  {
+    "id": "US20040002022A1_C00026",
+    "patent": "US20040002022A1",
+    "member": "US20040002022A1-20040101/US20040002022A1-20040101-C00026.CDX",
+    "sha256": "bdb0bf18875de000abf915825e14f98b8bb189e5122547d497fe8c7766acb62c",
+    "mol_sha256": "6aa88505c0ad27d8b162bb675f05bc98513b821f14f1d4eabf7967c876a4613b",
+    "tags": [
+      "unchanged_control",
+      "year_2004",
+      "nested_fragment"
+    ],
+    "expected": {
+      "smiles": "CCCCCCCCC(CCCCCC)CN1CCN(c2ncnc(NO)n2)CC1",
+      "inchikey": "RRACGTXBIMBLDC-UHFFFAOYSA-N",
+      "formula": "C23H44N6O"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "N",
+        "N",
+        "HOHN",
+        "N",
+        "N",
+        "C8H17",
+        "C6H13"
+      ]
+    }
+  },
+  {
+    "id": "US20040002023A1_C00003",
+    "patent": "US20040002023A1",
+    "member": "US20040002023A1-20040101/US20040002023A1-20040101-C00003.CDX",
+    "sha256": "263824f0ddfd004dca7b91600e78fadfa9d99eade94d20fc0919de1c06dd5a65",
+    "mol_sha256": "9fcb073e1ad09a48854bf48e8d6d1ec8743074f26467d01fab3b8a470421db23",
+    "tags": [
+      "unchanged_control",
+      "year_2004",
+      "nested_fragment"
+    ],
+    "expected": {
+      "smiles": "CCCCC(Oc1ccc(C(C)(C)CC)cc1C(C)(C)CC)C(=O)Nc1ccc(NC(=O)Nc2ccc(C#N)cc2)c(O)c1",
+      "inchikey": "OSUJLNYIBSFLGQ-UHFFFAOYSA-N",
+      "formula": "C36H46N4O4"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "H\nN",
+        "O",
+        "H\nN",
+        "CN",
+        "N",
+        "OH",
+        "N\nH",
+        "H\n\t\t\t\t\t9\n\t\t\t\t\tC\n\t\t\t\t\t4",
+        "O",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20040002023A1_C00022",
+    "patent": "US20040002023A1",
+    "member": "US20040002023A1-20040101/US20040002023A1-20040101-C00022.CDX",
+    "sha256": "3493ddde097a570541f40ffea342c63c1a33b3a7b18872bce6147e6dbecf635e",
+    "mol_sha256": "e52ea7eb3b1cbd713ad4f1857fc23ab9e7adcdd64c9188e09398d766a2520bf1",
+    "tags": [
+      "unchanged_control",
+      "year_2004",
+      "nested_fragment"
+    ],
+    "expected": {
+      "smiles": "CCCCCCCCCCCCOc1ccc(C)cc1NC(=O)c1cc(SCCC(=O)O)c2ccccc2c1O",
+      "inchikey": "RUVRHAKNKKYSFG-UHFFFAOYSA-N",
+      "formula": "C33H43NO5S"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "OH",
+        "S(CH\n\t\t\t\t\t2\n\t\t\t\t\t)\n\t\t\t\t\t2\n\t\t\t\t\tCOOH",
+        "N\nH",
+        "O",
+        "CH\n\t\t\t\t\t3",
+        "OC\n\t\t\t\t\t12\n\t\t\t\t\tH\n\t\t\t\t\t25"
+      ]
+    }
+  },
+  {
+    "id": "US20040002145A1_C00005",
+    "patent": "US20040002145A1",
+    "member": "US20040002145A1-20040101/US20040002145A1-20040101-C00005.CDX",
+    "sha256": "c905a5f80f9f58045e1a0321a5adb3b85a2be48c13a77e5596ba0506d939e2c7",
+    "mol_sha256": "846dc10524acb864a4e1394256301a843090c7d2661c74d5f5f49c08d3e7ea0f",
+    "tags": [
+      "unchanged_control",
+      "year_2004"
+    ],
+    "expected": {
+      "smiles": "COc1ccc(COc2ccc(Cc3cnc(N)nc3N)cc2OC)cc1",
+      "inchikey": "MYQAUKPBNJWPIE-UHFFFAOYSA-N",
+      "formula": "C20H22N4O3"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "N",
+        "H2N",
+        "NH2",
+        "O",
+        "O",
+        "CH3",
+        "O",
+        "CH3"
+      ]
+    }
+  },
+  {
+    "id": "US20040002145A1_C00016",
+    "patent": "US20040002145A1",
+    "member": "US20040002145A1-20040101/US20040002145A1-20040101-C00016.CDX",
+    "sha256": "786b0b06b1ac9c180ebcb3ae56a5f0cbc32e097a4bdbcc11c053da495073c278",
+    "mol_sha256": "dc845a4ee37483d40d5cbbefc0dc31943781970219e10f3081674fcbf003c4bd",
+    "tags": [
+      "unchanged_control",
+      "year_2004"
+    ],
+    "expected": {
+      "smiles": "COc1ccc(COc2ccc(Cc3cnc(Nc4ccccc4)nc3N)cc2OC)cc1",
+      "inchikey": "GAVCRGBTXIJZJH-UHFFFAOYSA-N",
+      "formula": "C26H26N4O3"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N\nH",
+        "N",
+        "N",
+        "NH\n\t\t\t\t\t2",
+        "O",
+        "H\n\t\t\t\t\t3\n\t\t\t\t\tC",
+        "O",
+        "O",
+        "CH\n\t\t\t\t\t3"
+      ]
+    }
+  },
+  {
+    "id": "US20040002434A1_C00007",
+    "patent": "US20040002434A1",
+    "member": "US20040002434A1-20040101/US20040002434A1-20040101-C00007.CDX",
+    "sha256": "e42dfe9bb5e1d52052df8a8442589a55165b1a5e836848495817521c49eb22d5",
+    "mol_sha256": "c9dfff99fd44c2757b5f1f24356169210bf67a15d4fb0e998256ca2f833e97b7",
+    "tags": [
+      "unchanged_control",
+      "year_2004"
+    ],
+    "expected": {
+      "smiles": "CN1CCCN2CCN(CCCN(C)CC1)CC2",
+      "inchikey": "QMRWQYZNYCDEBG-UHFFFAOYSA-N",
+      "formula": "C14H30N4"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "N",
+        "N",
+        "N"
+      ]
+    }
+  },
+  {
+    "id": "US20040002434A1_C00010",
+    "patent": "US20040002434A1",
+    "member": "US20040002434A1-20040101/US20040002434A1-20040101-C00010.CDX",
+    "sha256": "5d12b86c19b7f25343d6a92ef72f536339af62cb37fe40a651f7a517f22e7b80",
+    "mol_sha256": "50baa2978ea112b020766f67ebb3ed4042e3c889277ef5c15ac30e17383b0d53",
+    "tags": [
+      "unchanged_control",
+      "year_2004"
+    ],
+    "expected": {
+      "smiles": "CN(C)C1CC2CC(N(C)C)CC2C1",
+      "inchikey": "VKDWWDHKXOXITG-UHFFFAOYSA-N",
+      "formula": "C12H24N2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "N"
+      ]
+    }
+  },
+  {
+    "id": "US20040002448A1_C00082",
+    "patent": "US20040002448A1",
+    "member": "US20040002448A1-20040101/US20040002448A1-20040101-C00082.CDX",
+    "sha256": "dd7705bcff773896812c2562a3296312a115a0b555e0a1b3cf420906fa391e19",
+    "mol_sha256": "5d9ee325a15a96e5c1aaa862ff7fce2b5a4d1e102c4b94bf6012c88576b462bd",
+    "tags": [
+      "unchanged_control",
+      "year_2004",
+      "tetrahedral_stereo",
+      "double_bond_stereo"
+    ],
+    "expected": {
+      "smiles": "COc1ccc2c(O[C@@H]3C[C@H]4C(=O)N[C@]5(C(=O)O)CC5/C=C\\CCCCC[C@H](NC(=O)OC(C)(C)C)C(=O)N4C3)cc(-n3cnc(C)c3)nc2c1",
+      "inchikey": "MGRYRDPHJWDTIT-VMYNCKCISA-N",
+      "formula": "C37H46N6O8"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "O",
+        "O",
+        "N",
+        "N",
+        "O",
+        "H\nN",
+        "N",
+        "OH",
+        "O",
+        "O",
+        "N\nH",
+        "O",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20040002448A1_C00112",
+    "patent": "US20040002448A1",
+    "member": "US20040002448A1-20040101/US20040002448A1-20040101-C00112.CDX",
+    "sha256": "996aa4635f764f30c9d576963fa2ff2aec6e3a50c5c267b55cd21e3ca717a685",
+    "mol_sha256": "995801c68980a8abd12f638d38b8c8bc30322a6c22ae18db03f94c1006479d6b",
+    "tags": [
+      "unchanged_control",
+      "year_2004",
+      "nested_fragment"
+    ],
+    "expected": {
+      "smiles": "CC",
+      "inchikey": "OTMSDBZUPAUEDD-UHFFFAOYSA-N",
+      "formula": "C2H6"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "Me"
+      ]
+    }
+  },
+  {
+    "id": "US20040131975A1_C00008",
+    "patent": "US20040131975A1",
+    "member": "US20040131975A1-20040708/US20040131975A1-20040708-C00008.CDX",
+    "sha256": "735a0b78eefef35e1c2a0bab48345243a19917fe43f3d54ccc1e2a8813fd5135",
+    "mol_sha256": "32ca1782d88442e08627f28d959a4af6901741eae66e4bccca231dbb67ca30d8",
+    "tags": [
+      "unchanged_control",
+      "year_2004"
+    ],
+    "expected": {
+      "smiles": "c1ccc2oc(-c3cc4c5c(c3)CCCN5CCC4)nc2c1",
+      "inchikey": "FNBHUKSMYJGJHA-UHFFFAOYSA-N",
+      "formula": "C19H18N2O"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "N",
+        "O",
+        "N"
+      ]
+    }
+  },
+  {
+    "id": "US20040131975A1_C00011",
+    "patent": "US20040131975A1",
+    "member": "US20040131975A1-20040708/US20040131975A1-20040708-C00011.CDX",
+    "sha256": "a7238ccaa0ee4113b356a0a794e2360cd55b39790d81cac6355c4b0c66d288a1",
+    "mol_sha256": "d7d07f5e1c796c32d466a0b40cd85b18cf269e60b3e2946d99cebe7a8467bbe1",
+    "tags": [
+      "unchanged_control",
+      "year_2004"
+    ],
+    "expected": {
+      "smiles": "O=c1ccc2ccccc2o1",
+      "inchikey": "ZYGHJZDHTFUPRJ-UHFFFAOYSA-N",
+      "formula": "C9H6O2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "O",
+        "O"
+      ]
+    }
+  },
+  {
+    "id": "US20040131981A1_C00006",
+    "patent": "US20040131981A1",
+    "member": "US20040131981A1-20040708/US20040131981A1-20040708-C00006.CDX",
+    "sha256": "eeb2ed8c7301f0e5f269324cc69174854e70c19c16f9db9e10b142820e1b980e",
+    "mol_sha256": "014ffb55f374d6fc259b9114bf8cbbcc07a56577fe06f6d955491d80db7fa09e",
+    "tags": [
+      "unchanged_control",
+      "year_2004",
+      "nested_fragment"
+    ],
+    "expected": {
+      "smiles": "CC(N)C(=O)O",
+      "inchikey": "QNAYBMKLOCPYGJ-UHFFFAOYSA-N",
+      "formula": "C3H7NO2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "CH",
+        "H2N",
+        "COOH",
+        "CH3"
+      ]
+    }
+  },
+  {
+    "id": "US20040131981A1_C00011",
+    "patent": "US20040131981A1",
+    "member": "US20040131981A1-20040708/US20040131981A1-20040708-C00011.CDX",
+    "sha256": "703c7225ad144ab06064fcebbcd5e21c5be40a27e8d0a9c535e3a2a2916557e0",
+    "mol_sha256": "ac7c99aede9d99cfb9eb7548d0eca5629a6f0ca70e9ff9a9bfc1587e193e1c1c",
+    "tags": [
+      "unchanged_control",
+      "year_2004",
+      "nested_fragment"
+    ],
+    "expected": {
+      "smiles": "NC(Cc1ccccc1)C(=O)O",
+      "inchikey": "COLNVLDHVKWLRT-UHFFFAOYSA-N",
+      "formula": "C9H11NO2"
+    },
+    "evidence": {
+      "kind": "independent_graph_agreement",
+      "details": "Unmodified CDX -> pycdxml -> RDKit graph and separately supplied MOL agree on complete isomeric SMILES; no uninterpreted/query nodes or atom warnings. Existing reader also agrees. Expected structure is taken from MOL, not from the changed reader.",
+      "source_labels": [
+        "CH",
+        "H2N",
+        "COOH",
+        "CH2"
+      ]
+    }
+  },
+  {
+    "id": "US20080176309A1_C00234",
+    "patent": "US20080176309A1",
+    "member": "US20080176309A1-20080724/US20080176309A1-20080724-C00234.CDX",
+    "sha256": "1a8f8868d6cd3a8b61956218f2ac9e80875c6f71adb874f721690ab0a0eaafb5",
+    "mol_sha256": "16086a0708b0b31a4019ade828826d9623435582e042283ef9ebee288a0e08ea",
+    "tags": [
+      "nested_fragment",
+      "double_bond_stereo"
+    ],
+    "expected": {
+      "smiles": "O=C1Nc2ccc(C(=O)O)cc2/C1=N/Nc1ccccc1",
+      "inchikey": "NWBKHYVPKSTEEM-UHFFFAOYSA-N",
+      "formula": "C15H11N3O3"
+    },
+    "evidence": {
+      "kind": "source_and_mol",
+      "details": "Nested HO2C graph contains C=O/OH and one external bond. Paired MOL confirms the carboxylic acid and C=N geometry. After node expansion RDKit stereo caches must be refreshed from retained bond directions."
+    }
+  },
+  {
+    "id": "US20220017550A1_C00165",
+    "patent": "US20220017550A1",
+    "member": "US20220017550A1-20220120/US20220017550A1-20220120-C00165.CDX",
+    "sha256": "00a29825f73e5e44d0a27eb5673396e215261d118d30493f3b1115e79755601c",
+    "mol_sha256": "559b4f3ae5efa304f8d0dc4b08f2ef391df147ebdf2595a7c50a92239406025d",
+    "tags": [
+      "isotopes",
+      "tetrahedral_stereo"
+    ],
+    "expected": {
+      "smiles": "[2H]C([2H])([2H])N1CCC[C@H]1Cc1c[nH]c2cccc(OCc3ccccc3)c12",
+      "inchikey": "FQTZZHAWEBFBAW-CAGSJYCBSA-N",
+      "formula": "C21H24N2O"
+    },
+    "evidence": {
+      "kind": "source_and_mol",
+      "details": "Original CDX explicitly contains three deuterium atoms (Element=1, Isotope=2) on N-methyl and a tetrahedral stereocenter. Unmodified RDKit CDXML and paired MOL agree on the complete isomeric graph."
+    }
+  },
+  {
+    "id": "US20140005393A1_C00199",
+    "patent": "US20140005393A1",
+    "member": "US20140005393A1-20140102/US20140005393A1-20140102-C00199.CDX",
+    "sha256": "014d5084f2e65bd20f866ead93b9dd91f4f9938868be1948137a38e92df77125",
+    "mol_sha256": "7b17ea9811597d257c210b77ba484dda3115849c63f7f822d7fdaacb9380abd3",
+    "tags": [
+      "invalid_nested_graph",
+      "deferred_compatibility"
+    ],
+    "expected": {
+      "smiles": "O=C(O)c1ccc(S(=O)(=O)N(Cc2ccc(O)cc2)c2cc3ccccc3cn2)cc1",
+      "inchikey": "KWXCDTDJOCNTQW-UHFFFAOYSA-N",
+      "formula": "C23H18N2O5S"
+    },
+    "evidence": {
+      "kind": "deferred_behavior",
+      "details": "CF3O has an internally impossible graph (three bonds on neutral oxygen; multiply bonded fluorine). Per scope, do not promote this ambiguous graph. This expected value preserves the old hydroxy output; it is NOT asserted to be the correct chemical structure."
+    }
+  },
+  {
+    "id": "US20130178459A1_C00988",
+    "patent": "US20130178459A1",
+    "member": "US20130178459A1-20130711/US20130178459A1-20130711-C00988.CDX",
+    "sha256": "040fbdb73cba5a8095d620e46fbdb1685f215ac4fccb29a6ec66c6bd7cf2a85c",
+    "mol_sha256": "7656e6a9fd92798947d7973a85ff13da212d6b8f36658cec2817a1096877620e",
+    "tags": [
+      "invalid_nested_graph",
+      "deferred_compatibility"
+    ],
+    "expected": {
+      "smiles": "CS(=O)(=O)N1CCN(c2ccc(-c3c(O)ccc4[nH]c(=O)c5sccc5c34)cc2)CC1",
+      "inchikey": "HDIYECOPFHOBAY-UHFFFAOYSA-N",
+      "formula": "C22H21N3O4S2"
+    },
+    "evidence": {
+      "kind": "deferred_behavior",
+      "details": "H3CO has CH3 attached to both oxygen and an external point, implying five bonds on carbon. Do not promote it as a valid nested graph. The old hydroxy output is preserved pending a separate investigation; it is not a chemical gold standard."
+    }
+  },
+  {
+    "id": "US20100240644A1_C01040",
+    "patent": "US20100240644A1",
+    "member": "US20100240644A1-20100923/US20100240644A1-20100923-C01040.CDX",
+    "sha256": "29386c793c9491c6f2bba7453dc397a57c3c6e69f8266cbd282e21703dac6421",
+    "mol_sha256": "5ba4c3e755355e188ace7710c39fd99156a9ac0a412aa28bf9d9e245c53167c6",
+    "tags": [
+      "ambiguous_variable",
+      "deferred_compatibility"
+    ],
+    "expected": {
+      "smiles": "*C1NC(*)C(*)([3C]N(*)*)OC1*",
+      "inchikey": "",
+      "formula": "C5H4*6N2O"
+    },
+    "evidence": {
+      "kind": "deferred_behavior",
+      "details": "A multi-bond T node is encoded as Element=1, Isotope=3. Treating it as tritium invalidates the graph. Its interpretation is deferred: preserve the existing query/scaffold result, without asserting that the [3C] placeholder is chemically correct."
+    }
+  },
+  {
+    "id": "US20130178505A1_C00091",
+    "patent": "US20130178505A1",
+    "member": "US20130178505A1-20130711/US20130178505A1-20130711-C00091.CDX",
+    "sha256": "28f8ff7e9c68bed2dd70d6f79ea7f63fe173a8b875a36ee170c1e1c30c180a46",
+    "mol_sha256": "833a9429dde7d73ec39bbdf3402faeaaaca899f1636312cceedbe551788dc7b3",
+    "tags": [
+      "pycdxml_deferred"
+    ],
+    "expected": {
+      "error": "Unknown object with tag_id 32772"
+    },
+    "evidence": {
+      "kind": "deferred_error",
+      "details": "Known missing CDXGenericList decoder in the pinned pycdxml dependency. The current work intentionally does not bypass or discard this property."
+    }
+  },
+  {
+    "id": "US20100130737A1_C00001",
+    "patent": "US20100130737A1",
+    "member": "US20100130737A1-20100527/US20100130737A1-20100527-C00001.CDX",
+    "sha256": "913a70e211eb3254d8fa9532f4f1958939a7cf3ede3ffd14c2e0b52a47b9a1d8",
+    "mol_sha256": "959f9b9a2a8d2b78f0d799d8c0ccac47e42eccacd967fddb9d676feeb30426b8",
+    "tags": [
+      "pycdxml_deferred"
+    ],
+    "expected": {
+      "error": "CDXGraphicType should consist of exactly 2 bytes"
+    },
+    "evidence": {
+      "kind": "deferred_error",
+      "details": "Known one-byte GraphicType compatibility case. pycdxml handling is deferred; no global tolerance or property deletion is introduced."
+    }
+  },
+  {
+    "id": "US20110112058A1_C00005",
+    "patent": "US20110112058A1",
+    "member": "US20110112058A1-20110512/US20110112058A1-20110512-C00005.CDX",
+    "sha256": "4fc0ff832fc1835d7e33766106e1d17b072d1fdedc2f3257e49797f81539e2b7",
+    "mol_sha256": "d11c9d2035973086ac67aba00790334dc765395c74f6b1f9ad9af4f846a4c8ba",
+    "tags": [
+      "ambiguous_variable",
+      "deferred_compatibility"
+    ],
+    "expected": {
+      "variable_labels": {
+        "28": "Z2",
+        "30": "Z3",
+        "34": "Z1"
+      }
+    },
+    "evidence": {
+      "kind": "deferred_behavior",
+      "details": "Patent paragraph p-0040 explicitly defines T/U/V/W as independently CRa or N. The source nevertheless encodes U as uranium and V as vanadium. Preserve the old placeholder behavior; this is a compatibility control, not a chemically correct resolved molecule. After the user explicitly extended label support beyond R, the active assertion checks the independently read J/Z node labels. The original compatibility output is retained as baseline_expected; it is not a chemical reference. Ambiguous element-letter interpretations remain deferred."
+    },
+    "baseline_expected": {
+      "smiles": "CC1CCC(C)C1.Cc1*[c]c(C)[3c][c]1",
+      "inchikey": "",
+      "formula": "C14H20*"
+    }
+  },
+  {
+    "id": "US20100119475A1_C00040",
+    "patent": "US20100119475A1",
+    "member": "US20100119475A1-20100513/US20100119475A1-20100513-C00040.CDX",
+    "sha256": "7199cfada869746b6be39d5a816c2be605b8f0135750c1bd1438d9dae5d87e53",
+    "mol_sha256": "9ae677558d80a19b1a1d2d2b33c6b7adcc60d199e814aa0ad158a29e6da04028",
+    "tags": [
+      "ambiguous_variable",
+      "deferred_compatibility"
+    ],
+    "expected": {
+      "variable_labels": {
+        "8": "J"
+      }
+    },
+    "evidence": {
+      "kind": "deferred_behavior",
+      "details": "Patent paragraph p-0227 defines J/K as hydrogen or leaving groups, including halogen/imidazolyl. Explicit Element=19 here is insufficient to infer potassium. Preserve the old placeholder behavior pending variable interpretation; not a chemical gold standard. After the user explicitly extended label support beyond R, the active assertion checks the independently read J/Z node labels. The original compatibility output is retained as baseline_expected; it is not a chemical reference. Ambiguous element-letter interpretations remain deferred."
+    },
+    "baseline_expected": {
+      "smiles": "*=C([C])C",
+      "inchikey": "",
+      "formula": "C3H3*"
+    }
+  },
+  {
+    "id": "US20210107908A1_C00636",
+    "patent": "US20210107908A1",
+    "member": "US20210107908A1-20210415/US20210107908A1-20210415-C00636.CDX",
+    "sha256": "0cef8d4a7d6a763b397b17e7d219e0a3ea0f7ac0df6ac17ddd104e68d842635a",
+    "mol_sha256": "22538a224da21a5eb0bc4db7ea171e7f2229d9e6c2e5e808acfb6c90fae1792c",
+    "tags": [
+      "sodium_typo",
+      "tetrahedral_stereo",
+      "multiple_components"
+    ],
+    "expected": {
+      "smiles": "Cc1nc2c(-c3ccc4nn(C)cc4c3Cl)n[nH]c2nc1N1CC[C@H](N)[C@H](F)C1.Cc1nc2c(-c3ccc4nn(C)cc4c3Cl)nn(C3CCCCO3)c2nc1N1CC[C@H](NC(=O)OC(C)(C)C)[C@H](F)C1",
+      "inchikey": "OHKNXAYUTQWBDG-UNBNERMTSA-N",
+      "formula": "C48H56Cl2F2N16O3"
+    },
+    "evidence": {
+      "kind": "source_and_patent",
+      "details": "Method 11 (heading h-0256 and paragraph p-1485) names the pyrazolopyrazine reactant and product. Node 159 is incorrectly Element=11, label Na, with an invalid-valence warning and one single plus one double bond in the pyrazole ring. Preserve the original N interpretation and both explicitly drawn structures."
+    }
+  },
+  {
+    "id": "US20210017189A1_C00004",
+    "patent": "US20210017189A1",
+    "member": "US20210017189A1-20210121/US20210017189A1-20210121-C00004.CDX",
+    "sha256": "410dd625d861cfde2004da4cb7ac43f7ad50222ebd21ae7760c8a0ebd1893623",
+    "mol_sha256": "e0806dda18fb36e3e18a5fa06fb84121853d9524373a1948d443d51df95b801f",
+    "tags": [
+      "single_molecule_policy",
+      "mixed_abbreviations",
+      "deferred_compatibility"
+    ],
+    "expected": {
+      "smiles": "*c1ccc(-c2csc(-c3cc(C(F)(F)F)cc(C(F)(F)F)c3)n2)cc1",
+      "inchikey": "",
+      "formula": "C17H8*F6NS"
+    },
+    "evidence": {
+      "kind": "deferred_behavior",
+      "details": "The existing expansion/selection path chooses the bis-trifluoromethyl scaffold from this multi-structure drawing. Repairing another nested nitro graph changes the expansion decisions and exposes 14 components instead. Defer nested repair in mixed multi-structure drawings with unresolved dictionary abbreviations to preserve the current selection. This is a compatibility control."
+    }
+  },
+  {
+    "id": "US20140005221A1_C00580",
+    "patent": "US20140005221A1",
+    "member": "US20140005221A1-20140102/US20140005221A1-20140102-C00580.CDX",
+    "sha256": "1ba8cdd53a3e2e5458309e765931430a3cca5193ed962c2bd8a909cffe787bfe",
+    "mol_sha256": "b4d6a40d180270eba1eb3b2f46c7324499fa20481b41fa752c7b983a326ff171",
+    "tags": [
+      "charged_salt",
+      "deferred_compatibility"
+    ],
+    "expected": {
+      "none": true
+    },
+    "evidence": {
+      "kind": "deferred_behavior",
+      "details": "Warned K+ is covalently drawn to tetrazolate N-. Preserving it directly makes RDKit 2025.03.3 create a dative K+ with seven radical electrons. Keep the original unresolved outcome pending coordination/salt handling; do not count that radical-bearing result as improved resolution."
+    }
+  },
+  {
+    "id": "US20120295881A1_C01043",
+    "patent": "US20120295881A1",
+    "member": "US20120295881A1-20121122/US20120295881A1-20121122-C01043.CDX",
+    "sha256": "c2185ea3d046499d5ec20f63113188454c5428fa4765d92279ae865f5b9e5603",
+    "mol_sha256": "5aee8ca7a9e49bdecc9e06d81e5c3091074bb7a5f323b8155c8797d69ac1fae6",
+    "tags": [
+      "sodium_typo",
+      "deferred_compatibility"
+    ],
+    "expected": {
+      "smiles": "Cn1cc(C(C)(C)C)cn1",
+      "inchikey": "JLVLTMGMNOWYKX-UHFFFAOYSA-N",
+      "formula": "C8H14N2"
+    },
+    "evidence": {
+      "kind": "source_and_patent",
+      "details": "Table compound A-503 has an N-methyl tert-butylpyrazole. Node 15 says Na/Element=11 but has an invalid-valence warning, a double bond and a single ring bond. Keep the pre-existing N repair; accepting the explicit sodium creates radical chemistry."
+    }
+  },
+  {
+    "id": "US20130217680A1_C00018",
+    "patent": "US20130217680A1",
+    "member": "US20130217680A1-20130822/US20130217680A1-20130822-C00018.CDX",
+    "sha256": "c92885fc3c75282d61b39b9ceee19b34281083bcd557d9d40503438fc43518c1",
+    "mol_sha256": "802057ca438a73d60c9dcc13b84eff15918570fb4bca1b2fa442fb6c2b2ff210",
+    "tags": [
+      "invalid_nested_graph",
+      "deferred_compatibility"
+    ],
+    "expected": {
+      "raw_smiles": "CC.CC.CC.CC.CC.CC.CC.CC.CCC(=O)OC(C)(C)C.CCc1*:*c(C#N)*c1.N#Cc1*:*c(CC(=O)O)c*1.N#Cc1*:*c(O)c*1.N#Cc1*:*c(O)c*1",
+      "inchikey": "",
+      "formula": "C43H76*12N4O6"
+    },
+    "evidence": {
+      "kind": "deferred_behavior",
+      "details": "Scheme 12, paragraph p-0101 names (2-tert-butoxy-2-oxoethyl)(chloro)zinc. The nested ClZn graph instead attaches the external bond at chlorine, not zinc; RDKit silently converts the overbonded chlorine to a dative Cl->Zn graph. Reject promotion when sanitization rewrites source covalent bonds to dative bonds. Preserve the legacy outcome until this inconsistent attachment is addressed. The comparison uses the original baseline serialization directly: reparsing its query SMILES changes aromaticity and is not a lossless normalization."
+    }
+  },
+  {
+    "id": "US20240101576A1_C02186",
+    "patent": "US20240101576A1",
+    "member": "US20240101576A1-20240328/US20240101576A1-20240328-C02186.CDX",
+    "sha256": "6ffc4ec8183d9fa8965cc34b22e58d220e5e1738cc0319151d523032b644a30e",
+    "mol_sha256": "bedf4312419f3ff24979bd82e7a0aaf9c11c8cfffd4d5b3efbb844fa32b13e6d",
+    "tags": [
+      "nested_fallback",
+      "hydrogen_count",
+      "deferred_compatibility"
+    ],
+    "expected": {
+      "raw_smiles": "CCI.CCn1cc(C)nn1.Cc1cnn[nH]1",
+      "inchikey": "DRHWZEZTOOXXCY-UHFFFAOYSA-N",
+      "formula": "C10H19IN6"
+    },
+    "evidence": {
+      "kind": "deferred_behavior",
+      "details": "The nested nitro groups are valid, but the surrounding N-ethyl triazole also contains a neutral ring N with one explicit H and four bonds. The legacy fixer can remove that H only before nitro promotion; a valid nitro N+ otherwise makes it attempt a negative H count. Defer promotion if it loses resolution rather than extend the approved zero-H repair to this different case."
+    }
+  },
+  {
+    "id": "US20240101576A1_C02187",
+    "patent": "US20240101576A1",
+    "member": "US20240101576A1-20240328/US20240101576A1-20240328-C02187.CDX",
+    "sha256": "84fd91ea6d9747d7bdb4876b10751bb06294cde5ab5846dcee3deb65d691072d",
+    "mol_sha256": "e1125d60d264d77b78c7ded64ce6223b652ffdb6883fef6616262ad28963f181",
+    "tags": [
+      "nested_fallback",
+      "hydrogen_count",
+      "deferred_compatibility"
+    ],
+    "expected": {
+      "raw_smiles": "CCn1cc(C)nn1.CCn1cc(N)nn1",
+      "inchikey": "CZVHUNBAYWMTHQ-UHFFFAOYSA-N",
+      "formula": "C9H17N7"
+    },
+    "evidence": {
+      "kind": "deferred_behavior",
+      "details": "Companion drawing to C02186, with excess H on a ring N. Keep the former output if nested promotion prevents sanitization. This compatibility result is not a chemical gold standard for the nitro intermediate."
+    }
+  },
+  {
+    "id": "US20150087630A1_C00034",
+    "patent": "US20150087630A1",
+    "member": "US20150087630A1-20150326/US20150087630A1-20150326-C00034.CDX",
+    "sha256": "4509c7623c94a8dea13cf77c3da670da24d2730592aaaed361fbac2855f12c4c",
+    "mol_sha256": "f67e9c2ec02aa6f07f00b5be42d29f3225e2a180b18c744158af16af65edc92d",
+    "tags": [
+      "repeated_r_numbers",
+      "source_atom_maps",
+      "low_valent_tin",
+      "deferred_compatibility"
+    ],
+    "expected": {
+      "r_labels": {
+        "101": "R10",
+        "144": "R10",
+        "168": "R10",
+        "201": "R10",
+        "218": "R10",
+        "223": "R10",
+        "247": "R10",
+        "287": "R",
+        "288": "R",
+        "289": "R"
+      }
+    },
+    "evidence": {
+      "kind": "source_labels",
+      "details": "Direct CDX text contains repeated R10 labels, some parsed by RDKit with atom-map 10. The labels must remain on their source IDs and must not enter the fragment-joining namespace. Paragraph p-0180 calls the reagent a vinyl stannane; low-valent tin chemistry remains deferred."
+    }
+  },
+  {
+    "id": "US20140005221A1-C00039",
+    "patent": "US20140005221A1",
+    "member": "US20140005221A1-20140102/US20140005221A1-20140102-C00039.CDX",
+    "sha256": "05d41c6b17faa0abe87237161511f4b9fdf2dadf6cd2b3f8400711ca5fbda415",
+    "mol_sha256": "6e445d402f92c015122adc947853c52cfece142db4086b76078b4eb4b9457ddf",
+    "coverage": [
+      "alternate_variables",
+      "aromatic_query",
+      "graph_retention"
+    ],
+    "expected": {
+      "variable_labels": {
+        "29": "W3",
+        "31": "W4",
+        "35": "W5",
+        "49": "W1",
+        "57": "R1",
+        "59": "X",
+        "393": "Z",
+        "399": "W3",
+        "400": "W4",
+        "402": "W5",
+        "406": "W1",
+        "408": "R1",
+        "409": "X",
+        "410": "Xb",
+        "412": "Z"
+      },
+      "source_aromatic_bonds": [
+        {
+          "begin": "49",
+          "end": "51",
+          "order": "1.5"
+        },
+        {
+          "begin": "406",
+          "end": "436",
+          "order": "1.5"
+        }
+      ]
+    },
+    "evidence": {
+      "kind": "source_query_graph",
+      "details": "The source rings contain W1/W3/W4/W5 and Xb variables (Unspecified, no Element) with explicit 1.5 bonds. A variable electron count cannot define a unique Kekule form. Preserve the aromatic query edges and node labels; do not infer carbon atoms or lose the entire drawing. This is a query-graph expectation, not a complete-molecule gold SMILES."
+    }
+  },
+  {
+    "id": "US20140005221A1-C00040",
+    "patent": "US20140005221A1",
+    "member": "US20140005221A1-20140102/US20140005221A1-20140102-C00040.CDX",
+    "sha256": "559d567bae5968ed09ccdf0a7ee0740d95949d240f532cb044a5f3576c3e78ec",
+    "mol_sha256": "911d24a716d08aafbff555dc8874bd538c8545db7215eabe4f898865b6a27352",
+    "coverage": [
+      "alternate_variables",
+      "aromatic_query",
+      "graph_retention"
+    ],
+    "expected": {
+      "variable_labels": {
+        "465": "X",
+        "473": "W3",
+        "474": "W4",
+        "476": "W5",
+        "480": "W1",
+        "481": "R1",
+        "482": "X",
+        "483": "Xb",
+        "485": "Z",
+        "503": "Rb",
+        "399": "W3",
+        "400": "W4",
+        "402": "W5",
+        "406": "W1",
+        "408": "R1",
+        "409": "X",
+        "410": "Rb",
+        "412": "Z"
+      },
+      "source_aromatic_bonds": [
+        {
+          "begin": "480",
+          "end": "486",
+          "order": "1.5"
+        },
+        {
+          "begin": "406",
+          "end": "436",
+          "order": "1.5"
+        }
+      ]
+    },
+    "evidence": {
+      "kind": "source_query_graph",
+      "details": "The source rings contain W1/W3/W4/W5 and Xb variables (Unspecified, no Element) with explicit 1.5 bonds. A variable electron count cannot define a unique Kekule form. Preserve the aromatic query edges and node labels; do not infer carbon atoms or lose the entire drawing. This is a query-graph expectation, not a complete-molecule gold SMILES."
+    }
+  },
+  {
+    "id": "US20130029938A1-C00060",
+    "patent": "US20130029938A1",
+    "member": "US20130029938A1-20130131/US20130029938A1-20130131-C00060.CDX",
+    "sha256": "ad015ebc5c943e80ea660d4240f937f8bbb87d8e12e6550e772b1f06a8f4c647",
+    "mol_sha256": "60317b0ae0fcca69aa02058b6b1ba9449e2249c44893478a9d4fbe83dd7fd037",
+    "coverage": [
+      "first_atom_abbreviation",
+      "source_and_patent"
+    ],
+    "expected": {
+      "smiles": "COC(=O)CC(N)CC(=O)OC",
+      "formula": "C7H13NO4",
+      "inchikey": "PXJFLUYRGQUUIN-UHFFFAOYSA-N"
+    },
+    "evidence": {
+      "kind": "source_and_patent",
+      "details": "Heading h-0055 identifies Intermediate 48 as dimethyl 3-aminopentanedioate. Paragraph p-0200 describes its synthesis and a 6H methyl-ester singlet at 3.56 ppm. CDX begins with a CO2Me abbreviation. The paired MOL/old reader incorrectly give one ketone and one ester."
+    }
+  },
+  {
+    "id": "US20120157394A1-C00040",
+    "patent": "US20120157394A1",
+    "member": "US20120157394A1-20120621/US20120157394A1-20120621-C00040.CDX",
+    "sha256": "da7c69ad15f1531dd458c78a0f7b453283009674cffaf2caaa4fc3d21e78da77",
+    "mol_sha256": "416c68549e1e7b4580f717175a8433d5d3b69bdb35a2a5044e2b31ad4c616d7b",
+    "coverage": [
+      "first_atom_abbreviation",
+      "source_and_patent"
+    ],
+    "expected": {
+      "smiles": "C=CCOC(=O)[C@@H](NC(=O)[C@H](Cc1ccc2ccccc2n1)NC(=O)OCC1c2ccccc2-c2ccccc21)C(C)C",
+      "formula": "C35H35N3O5",
+      "inchikey": "FKJDKFCLQGNVPE-ACHIHNKUSA-N"
+    },
+    "evidence": {
+      "kind": "source_and_patent",
+      "details": "The table row labels compound 1 as Fmoc-Ala (2-prime-quinolyl)-Val-OAllyl. The first source atom is the FmocHN abbreviation. Retained CDX stereocentres specify the dipeptide configuration. The old reader substituted methyl for the Fmoc-protected nitrogen."
+    }
+  },
+  {
+    "id": "US20120245157A1-C00115",
+    "patent": "US20120245157A1",
+    "member": "US20120245157A1-20120927/US20120245157A1-20120927-C00115.CDX",
+    "sha256": "f22fe5a5c6cbc507afe66367ca15da5b9ef505d9293521f37156a8ac8fe57ed1",
+    "mol_sha256": "7aa305457b0f774aa6762c04f152507fe51794c484b9ae6011e5bcdbc60db40c",
+    "coverage": [
+      "first_atom_abbreviation",
+      "source_and_patent"
+    ],
+    "expected": {
+      "smiles": "C=C1C[C@@](C)(c2cc(NC(=O)OC(C)(C)C)ccc2F)N=C(NC(=O)OC(C)(C)C)O1",
+      "formula": "C22H30FN3O5",
+      "inchikey": "GIHSTKGLQIEHOM-QFIPXVFZSA-N"
+    },
+    "evidence": {
+      "kind": "source_and_patent",
+      "details": "Compound I-14 source drawing has a first-atom BocHN abbreviation in addition to another Boc group. The corresponding table row reports distinct 9H singlets at 1.52 and 1.54 ppm, supporting two Boc groups; the old reader and MOL lose the first one. Other bonds and the source stereocentre are retained."
+    }
+  }
+]
