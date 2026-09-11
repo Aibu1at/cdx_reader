@@ -1,0 +1,118 @@
+{
+  "counts": {
+    "compared": 4442,
+    "indexed_variable_atoms": 11260,
+    "indexed_variable_inputs": 2365,
+    "unchanged_failures": 1981,
+    "unchanged_graphs": 93,
+    "isolated_nh2_recoveries": 3
+  },
+  "recovered_graphs": [
+    {
+      "sha": "063992e3fb61af86f371cd1a59fd7cc890f6a3d5c96bd1c28bd73875000a8f58",
+      "member": "US20210053989A1-20210225/US20210053989A1-20210225-C00782.CDX",
+      "calls": [
+        {
+          "old_helper_returns_none": true,
+          "nitrogen_repairs": [
+            {
+              "id": "31",
+              "source": {
+                "id": "31",
+                "p": "43.2 12.28",
+                "Z": "27",
+                "Warning": "An atom in this label has an invalid valence.",
+                "Element": "7",
+                "NumHydrogens": "2",
+                "NeedsClean": "yes",
+                "AS": "N",
+                "LabelDisplay": "Right"
+              },
+              "explicit_h": [
+                2,
+                1
+              ]
+            },
+            {
+              "id": "66",
+              "source": {
+                "id": "66",
+                "p": "134.33 12.28",
+                "Z": "113",
+                "Warning": "An atom in this label has an invalid valence.",
+                "Element": "7",
+                "NumHydrogens": "2",
+                "NeedsClean": "yes",
+                "AS": "N",
+                "LabelDisplay": "Right"
+              },
+              "explicit_h": [
+                2,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sha": "59025624f00244ac25fd20be8ab17a66c59ba0f71f125eb45a1ad37e668224c2",
+      "member": "US20140194413A1-20140710/US20140194413A1-20140710-C00146.CDX",
+      "calls": [
+        {
+          "old_helper_returns_none": true,
+          "nitrogen_repairs": [
+            {
+              "id": "218",
+              "source": {
+                "id": "218",
+                "p": "163.46 206.94",
+                "Z": "478",
+                "Warning": "An atom in this label has an invalid valence.",
+                "Element": "7",
+                "NumHydrogens": "2",
+                "NeedsClean": "yes",
+                "AS": "N",
+                "LabelDisplay": "Left"
+              },
+              "explicit_h": [
+                2,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sha": "b00057a7e791f9a0f5cdc9765b17bb22d735376c9440c7919d02f5a7433074ba",
+      "member": "US20210053989A1-20210225/US20210053989A1-20210225-C00802.CDX",
+      "calls": [
+        {
+          "old_helper_returns_none": true,
+          "nitrogen_repairs": [
+            {
+              "id": "31",
+              "source": {
+                "id": "31",
+                "p": "22.39 96.67",
+                "Z": "998",
+                "Warning": "An atom in this label has an invalid valence.",
+                "Element": "7",
+                "NumHydrogens": "2",
+                "NeedsClean": "yes",
+                "AS": "N",
+                "LabelDisplay": "Right"
+              },
+              "explicit_h": [
+                2,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,94 @@
+{
+  "baseline_commit": "4427b4b8533bc3f69c1554b150f0e457fd093626",
+  "environment": {
+    "before": {
+      "reader_source_sha256": "4c887cdd8909e9694ee429a77d688d95493b6ad245a5048e5cdf88e738a49b98",
+      "repo": "/home/aibulat/tasks/bioactivity/cdx_reader",
+      "rdkit": "2025.03.3",
+      "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "pycdxml": "0.1.6b0",
+      "pycdxml_vcs": {
+        "commit_id": "0cb554faaa25494b374473852d2e839c91691c73",
+        "vcs": "git"
+      },
+      "timeout": 30.0
+    },
+    "after": {
+      "reader_source_sha256": "62e244a2b2bee3dc930a489f73d5938fffc8dd792678a7648dddf0cfffa43086",
+      "repo": "/tmp/cdx-reader-rgroups-v2",
+      "rdkit": "2025.03.3",
+      "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "pycdxml": "0.1.6b0",
+      "pycdxml_vcs": {
+        "commit_id": "0cb554faaa25494b374473852d2e839c91691c73",
+        "vcs": "git"
+      },
+      "timeout": 30.0
+    }
+  },
+  "selection": {
+    "scanned_results": 212917,
+    "matching_results": 2365,
+    "portable_controls": 101,
+    "previous_none_controls": 1982,
+    "selected_total": 4442,
+    "source_engine": "candidate_labels6",
+    "scope": "Retained R + digits + lowercase letter labels, portable controls and previous None results; labels absent from the preceding selected result are not covered."
+  },
+  "comparison": {
+    "compared": 4442,
+    "before_ok": 2458,
+    "after_ok": 2461,
+    "before_accepted": 436,
+    "after_accepted": 79,
+    "chemistry_or_status_changed": 2368,
+    "before_none": 1982,
+    "after_none": 1979,
+    "unchanged": 2074,
+    "accepted_to_rejected": 357,
+    "before_error": 2,
+    "after_error": 2,
+    "inventory": 4442,
+    "missing_pairs": 0
+  },
+  "review": {
+    "classifications": {
+      "source_correction": 2368
+    },
+    "review_evidence": {
+      "source_placeholders_preclude_complete_molecule": 357,
+      "source_nh2_repair_verified_by_valence_replay": 3
+    },
+    "remaining_flags": {},
+    "source_labels_checked": 51438,
+    "r_labels_checked": 17902,
+    "retained_stereocenters_checked": 1095
+  },
+  "delta_counts": {
+    "compared": 4442,
+    "indexed_variable_atoms": 11260,
+    "indexed_variable_inputs": 2365,
+    "unchanged_failures": 1981,
+    "unchanged_graphs": 93,
+    "isolated_nh2_recoveries": 3
+  },
+  "tests": {
+    "passed": 343,
+    "existing_xfail": 1,
+    "harvest_passed": 58,
+    "portable_fixtures": 101,
+    "fixture_patents": 60,
+    "cli_parsed": 98,
+    "cli_failed": 3,
+    "harvest_fixture_accepted": 79
+  },
+  "scope": "Focused reread; no detected degradation on the checked corpus. Not a repeat of the previous full-corpus run.",
+  "deferred": [
+    "Molecule selection and export arbitration (point 2)",
+    "Aromatic query API/InChI policy (point 4)",
+    "Source Ar encoding and missing bonds",
+    "Previously documented pycdxml decoding limitations"
+  ],
+  "production_switched": false,
+  "published": false
+}

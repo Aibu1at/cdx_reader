@@ -9,10 +9,18 @@ import json
 from pathlib import Path
 
 
-def classify(record, trace):
+def classify(record, trace, valence_trace=None):
     remaining = []
     evidence = []
     rules = {c['rule'] for c in record['changes']}
+    isolated_nh2_repair = bool(valence_trace and valence_trace['calls'] and all(
+        call['old_helper_returns_none'] and call['nitrogen_repairs'] and all(
+            repair['explicit_h'] == [2, 1]
+            and repair['source'].get('Element') == '7'
+            and repair['source'].get('NumHydrogens') == '2'
+            for repair in call['nitrogen_repairs']) for call in valence_trace['calls']))
+    if isolated_nh2_repair:
+        rules.add('isolated_nh2_repair_with_variables')
     source_rules = {'explicit_nested_graph', 'explicit_element_preserved',
                     'contradictory_nitrogen_hydrogens', 'declared_variable_placeholder',
                     'first_atom_abbreviation_expanded', 'variable_maps_detached',
@@ -25,6 +33,8 @@ def classify(record, trace):
     for flag in record['flags']:
         if flag == 'acceptance_loss' and record.get('source_placeholders_explaining_rejection'):
             evidence.append('source_placeholders_preclude_complete_molecule')
+        elif flag == 'chemical_change_without_source_change' and isolated_nh2_repair:
+            evidence.append('source_nh2_repair_verified_by_valence_replay')
         elif flag == 'prior_mol_agreement_lost' and rules & source_rules:
             if 'first_atom_abbreviation_expanded' in rules and not joined_to_cut:
                 remaining.append(flag)
@@ -51,9 +61,16 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--evidence', required=True)
     parser.add_argument('--traces', required=True)
+    parser.add_argument('--delta-evidence', help='Successful audit_indexed_r_delta.py result')
     parser.add_argument('--output', required=True)
     args = parser.parse_args()
     traces = {r['sha']: r for r in json.loads(Path(args.traces).read_text())}
+    valence_traces = {}
+    if args.delta_evidence:
+        delta = json.loads(Path(args.delta_evidence).read_text())
+        if delta['unresolved']:
+            raise SystemExit('The supplied delta audit has unresolved changes.')
+        valence_traces = {r['sha']: r for r in delta['recovered_graphs']}
     output = Path(args.output)
     output.mkdir(parents=True, exist_ok=True)
     counts, explanations, flags = collections.Counter(), collections.Counter(), collections.Counter()
@@ -62,7 +79,7 @@ def main():
     with (output / 'classifications.jsonl').open('w') as classifications:
         for line in Path(args.evidence).open():
             record = json.loads(line)
-            result = classify(record, traces.get(record['sha']))
+            result = classify(record, traces.get(record['sha']), valence_traces.get(record['sha']))
             counts[result['classification']] += 1
             explanations.update(result['review_evidence'])
             flags.update(result['remaining_flags'])

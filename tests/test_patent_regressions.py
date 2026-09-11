@@ -51,6 +51,13 @@ def test_real_patent_regression(reference, input_mode):
         clean = Chem.Mol(mol)
         for atom in clean.GetAtoms():
             atom.SetAtomMapNum(0)
+            if (atom.HasProp('_CDX_ATOM_ID') and atom.GetProp('_CDX_ATOM_ID')
+                    in expected.get('legacy_comparison_carbon_ids', [])):
+                # Keep the old deferred-chemistry reference unchanged while
+                # permitting only the newly verified R-label substitutions.
+                # Their actual element, label and neighbors are checked below.
+                atom.SetAtomicNum(6)
+        clean.UpdatePropertyCache(strict=False)
         assert Chem.MolToSmiles(clean) == expected['raw_smiles']
         assert Chem.MolToInchiKey(clean) == expected['inchikey']
         assert rdMolDescriptors.CalcMolFormula(clean) == expected['formula']
@@ -62,12 +69,19 @@ def test_real_patent_regression(reference, input_mode):
             assert atom.GetProp('dummyLabel') == label
             assert atom.GetProp('_CDX_ATOM_LABEL').replace(' ', '') == label
             assert atom.GetAtomMapNum() == 0
+            if 'variable_source_neighbors' in expected:
+                assert sorted(neighbor.GetProp('_CDX_ATOM_ID') for neighbor in atom.GetNeighbors()) == expected['variable_source_neighbors'][identifier]
+                assert not atom.HasProp('_MolFileRLabel')
     if 'source_aromatic_bonds' in expected:
         assert mol.GetBoolProp('_CDX_UNKEKULIZED_QUERY')
         atoms = {a.GetProp('_CDX_ATOM_ID'): a.GetIdx() for a in mol.GetAtoms()
                  if a.HasProp('_CDX_ATOM_ID')}
         for bond in expected['source_aromatic_bonds']:
             assert mol.GetBondBetweenAtoms(atoms[bond['begin']], atoms[bond['end']]).GetBondType() == Chem.BondType.AROMATIC
+    if 'repaired_hydrogens' in expected:
+        atoms = {a.GetProp('_CDX_ATOM_ID'): a for a in mol.GetAtoms() if a.HasProp('_CDX_ATOM_ID')}
+        for identifier, count in expected['repaired_hydrogens'].items():
+            assert atoms[identifier].GetNumExplicitHs() == count
     if 'tetrahedral_source_centers' in expected:
         atoms = {a.GetProp('_CDX_ATOM_ID'): a for a in mol.GetAtoms()
                  if a.HasProp('_CDX_ATOM_ID')}

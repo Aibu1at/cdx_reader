@@ -55,6 +55,9 @@ Styled R labels are read across all text segments. A surviving R dummy carries
 `dummyLabel` (the normalized display label). Numeric `Rn` labels additionally
 carry the integer `_MolFileRLabel`. Repeated R numbers are allowed; these are
 chemical labels, not the atom-map numbers used internally to join fragments.
+Indexed letter labels such as `R1a`, `R1b` and `R27z` are also preserved as
+distinct variables. They keep the complete text and receive no numeric
+`_MolFileRLabel`, so `R1a` and `R1b` cannot collapse into the same `R1` label.
 Ordinary SMILES does not serialize all these properties: retain the RDKit object
 when a downstream agent needs label-to-atom correspondence.
 
@@ -104,6 +107,8 @@ Regression data and source evidence are documented in
 For reproducible corpus comparisons see [docs/corpus-validation.md](docs/corpus-validation.md).
 The completed 212,917-input comparison, acceptance transitions and remaining
 limitations are in [docs/validation-report.md](docs/validation-report.md).
+The later indexed-letter-label correction and its focused validation are in
+[docs/indexed-r-followup.md](docs/indexed-r-followup.md).
 
 ### CLI: batch-convert a folder of CDX files
 

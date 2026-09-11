@@ -116,7 +116,8 @@ def test_missing_query_inchi_is_not_a_parser_failure(monkeypatch):
 
 
 @pytest.mark.parametrize('unexplained', ['graph_loss', 'tetrahedral_stereo_changed:7'])
-def test_review_gate_does_not_excuse_graph_or_stereo_loss_with_a_variable_label(unexplained):
+@pytest.mark.parametrize('with_valence_replay', [False, True])
+def test_review_gate_does_not_excuse_graph_or_stereo_loss_with_a_variable_label(unexplained, with_valence_replay):
     spec = importlib.util.spec_from_file_location(
         'review_audit', Path(__file__).parents[1] / 'scripts' / 'review_audit.py')
     review = importlib.util.module_from_spec(spec)
@@ -126,6 +127,11 @@ def test_review_gate_does_not_excuse_graph_or_stereo_loss_with_a_variable_label(
               'changes': [{'rule': 'declared_variable_placeholder'}],
               'source_placeholders_explaining_rejection': [{'id': '8', 'label': 'X1'}],
               'flags': ['acceptance_loss', unexplained]}
-    result = review.classify(record, None)
+    valence_trace = None
+    if with_valence_replay:
+        record['flags'].append('chemical_change_without_source_change')
+        valence_trace = {'calls': [{'old_helper_returns_none': True, 'nitrogen_repairs': [
+            {'explicit_h': [2, 1], 'source': {'Element': '7', 'NumHydrogens': '2'}}]}]}
+    result = review.classify(record, None, valence_trace)
     assert result['classification'] == 'unresolved'
     assert result['remaining_flags'] == [unexplained]

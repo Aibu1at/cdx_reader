@@ -2197,11 +2197,57 @@
     "expected": {
       "raw_smiles": "CC.CC.CC.CC.CC.CC.CC.CC.CCC(=O)OC(C)(C)C.CCc1*:*c(C#N)*c1.N#Cc1*:*c(CC(=O)O)c*1.N#Cc1*:*c(O)c*1.N#Cc1*:*c(O)c*1",
       "inchikey": "",
-      "formula": "C43H76*12N4O6"
+      "formula": "C43H76*12N4O6",
+      "variable_labels": {
+        "573": "R10b",
+        "617": "R11b",
+        "68": "R10b",
+        "464": "R11b",
+        "479": "R10b",
+        "506": "R11b",
+        "530": "R10b",
+        "557": "R11b"
+      },
+      "variable_source_neighbors": {
+        "573": [
+          "572"
+        ],
+        "617": [
+          "616"
+        ],
+        "68": [
+          "67"
+        ],
+        "464": [
+          "463"
+        ],
+        "479": [
+          "478"
+        ],
+        "506": [
+          "505"
+        ],
+        "530": [
+          "529"
+        ],
+        "557": [
+          "556"
+        ]
+      },
+      "legacy_comparison_carbon_ids": [
+        "464",
+        "479",
+        "506",
+        "530",
+        "557",
+        "573",
+        "617",
+        "68"
+      ]
     },
     "evidence": {
       "kind": "deferred_behavior",
-      "details": "Scheme 12, paragraph p-0101 names (2-tert-butoxy-2-oxoethyl)(chloro)zinc. The nested ClZn graph instead attaches the external bond at chlorine, not zinc; RDKit silently converts the overbonded chlorine to a dative Cl->Zn graph. Reject promotion when sanitization rewrites source covalent bonds to dative bonds. Preserve the legacy outcome until this inconsistent attachment is addressed. The comparison uses the original baseline serialization directly: reparsing its query SMILES changes aromaticity and is not a lossless normalization."
+      "details": "Scheme 12, paragraph p-0101 names (2-tert-butoxy-2-oxoethyl)(chloro)zinc. The nested ClZn graph instead attaches the external bond at chlorine, not zinc; RDKit silently converts the overbonded chlorine to a dative Cl->Zn graph. Reject promotion when sanitization rewrites source covalent bonds to dative bonds. Preserve the legacy outcome until this inconsistent attachment is addressed. The comparison uses the original baseline serialization directly: reparsing its query SMILES changes aromaticity and is not a lossless normalization. Follow-up: eight explicit Unspecified R10b/R11b nodes are now variables. Their source IDs and bonds are checked separately. The original legacy SMILES/formula/InChI expectations remain unchanged and are compared after reverting only these verified variable atoms to their previous carbon identity in a copy; this protects the deferred ClZn behavior without requiring R labels to remain erroneous carbons."
     }
   },
   {
@@ -2613,6 +2659,122 @@
     "evidence": {
       "kind": "source_query_graph",
       "details": "The CDX graph contains the amide nitrogen between the variable and acetyl group; paired MOL substitutes carbon, producing [3*]CC(C)=O. This is a source-graph regression for the existing correct CDX amide, not an assertion that its unspecified group is a complete molecule."
+    }
+  },
+  {
+    "id": "US20120220583A1_C00002",
+    "patent": "US20120220583A1",
+    "member": "US20120220583A1-20120830/US20120220583A1-20120830-C00002.CDX",
+    "sha256": "0e3d64fdb4847d85610a409d7216a80d38b3cec5b424cf2256e86e0ab7aa8d1e",
+    "mol_sha256": "52e8adc73e8efb8eb0709d77a4e7654e66abcb546e244eccf98ddc150e192612",
+    "tags": [
+      "indexed_letter_R_labels"
+    ],
+    "expected": {
+      "variable_labels": {
+        "10": "R1a",
+        "35": "R1c",
+        "37": "R1b",
+        "90": "R2a"
+      },
+      "variable_source_neighbors": {
+        "10": [
+          "12"
+        ],
+        "35": [
+          "12"
+        ],
+        "37": [
+          "12"
+        ],
+        "90": [
+          "41"
+        ]
+      }
+    },
+    "evidence": {
+      "kind": "source_atom_labels",
+      "details": "Original Unspecified nodes explicitly label these attachment positions with R + digits + a lowercase letter. The preceding reader retained their text but interpreted them as carbon. Expectations are the original labels and source bond endpoints, not a molecule inferred from the faulty previous output."
+    }
+  },
+  {
+    "id": "US20170362217A1_C00007",
+    "patent": "US20170362217A1",
+    "member": "US20170362217A1-20171221/US20170362217A1-20171221-C00007.CDX",
+    "sha256": "110a422205acd7961fa96239ef373e69c06a3936fa0baf4854d826f012334026",
+    "mol_sha256": "6eeb8eaf1f6351b2fee4ff33a997f5147ce0697646e811a3f3c16606b99bdb2c",
+    "tags": [
+      "indexed_letter_R_labels"
+    ],
+    "expected": {
+      "variable_labels": {
+        "76": "R3a"
+      },
+      "variable_source_neighbors": {
+        "76": [
+          "11"
+        ]
+      }
+    },
+    "evidence": {
+      "kind": "source_atom_labels",
+      "details": "Original Unspecified nodes explicitly label these attachment positions with R + digits + a lowercase letter. The preceding reader retained their text but interpreted them as carbon. Expectations are the original labels and source bond endpoints, not a molecule inferred from the faulty previous output."
+    }
+  },
+  {
+    "id": "US20120077856A1_C00007",
+    "patent": "US20120077856A1",
+    "member": "US20120077856A1-20120329/US20120077856A1-20120329-C00007.CDX",
+    "sha256": "8a6ef5ecf48664f932f647772ded4b30e8c6b2cf838a2dcb89083696b6c4dcb8",
+    "mol_sha256": "b896cbf337c15320c136b9ca4eb5e796860afde0730f2dfeb14bacd546a7d15e",
+    "tags": [
+      "indexed_letter_R_labels"
+    ],
+    "expected": {
+      "variable_labels": {
+        "9": "R4a",
+        "11": "R5a"
+      },
+      "variable_source_neighbors": {
+        "9": [
+          "7"
+        ],
+        "11": [
+          "7"
+        ]
+      }
+    },
+    "evidence": {
+      "kind": "source_atom_labels",
+      "details": "Original Unspecified nodes explicitly label these attachment positions with R + digits + a lowercase letter. The preceding reader retained their text but interpreted them as carbon. Expectations are the original labels and source bond endpoints, not a molecule inferred from the faulty previous output."
+    }
+  },
+  {
+    "id": "US20200140436A1_C00150",
+    "patent": "US20200140436A1",
+    "member": "US20200140436A1-20200507/US20200140436A1-20200507-C00150.CDX",
+    "sha256": "47b2e5fcbc8ac38774fa70454d8b51d675389fa2baf7a756f234fb2b5e4fc7b7",
+    "mol_sha256": "9e2d93ccc93a20c6888b5678553b34654b08f7f30a61b0222728c91d9331dca0",
+    "tags": [
+      "indexed_letter_R_labels",
+      "dummy_valence"
+    ],
+    "expected": {
+      "variable_labels": {
+        "606": "R1a"
+      },
+      "variable_source_neighbors": {
+        "606": [
+          "605"
+        ]
+      },
+      "repaired_hydrogens": {
+        "610": 1
+      }
+    },
+    "evidence": {
+      "kind": "source_atom_labels",
+      "details": "Source node 606 explicitly reads R1a. Source node 610 has an overvalent two-H annotation. The preceding reader already repaired the N to one H but replaced R1a by carbon. Treating R1a as a dummy must not prevent that existing N repair: a dummy has no default elemental valence and is not a hydrogen-correction target. Source bond endpoints are checked separately."
     }
   }
 ]

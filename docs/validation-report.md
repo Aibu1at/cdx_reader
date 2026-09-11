@@ -1,5 +1,9 @@
 # CDX repairs: validation report
 
+This report records the first completed full-corpus run. The later correction
+for indexed letter labels and its focused reread are documented separately in
+[indexed-r-followup.md](indexed-r-followup.md).
+
 Completed 2026-09-11. Baseline: `452dd4fcf60ce934974625db60fca14c3d6ffefd`.
 The validated candidate package fingerprint is
 `4c887cdd8909e9694ee429a77d688d95493b6ad245a5048e5cdf88e738a49b98`.

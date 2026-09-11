@@ -12,7 +12,7 @@ import sys
 from io import StringIO, BytesIO
 from pathlib import Path
 from ._normalization import (
-    atom_label, r_label, capture_r_labels, restore_r_labels,
+    R_LABEL, atom_label, r_label, capture_r_labels, restore_r_labels,
     normalize_nested_fragment, repair_invalid_nitrogen_hydrogens,
     explicit_element_is_usable,
     has_ambiguous_multimolecule_expansion,
@@ -44,14 +44,31 @@ def fix_valence(mol):
         Chem.SanitizeMol(mol, sanitizeOps=Chem.SANITIZE_ALL)
         # No fixes needed
         return mol
-    except Exception:
-        pass
+    except Exception as exc:
+        correcting_atomic_valence = isinstance(exc, Chem.AtomValenceException)
 
+    repairing_with_variables = correcting_atomic_valence and any(
+        atom.GetAtomicNum() == 0 for atom in mol.GetAtoms())
     pt = GetPeriodicTable()
     for atom in mol.GetAtoms():
+        if repairing_with_variables and atom.GetAtomicNum() == 0:
+            # A variable has no default elemental valence. RDKit reports -1;
+            # using it as a hydrogen target can abort an unrelated N repair.
+            continue
         # Set all explicit Hs to 0 and let RDKit figure it out
         diff_valence = pt.GetDefaultValence(atom.GetAtomicNum()) - atom.GetTotalValence()
         if diff_valence != 0:
+            if repairing_with_variables and not (
+                atom.GetAtomicNum() == 7 and atom.GetFormalCharge() == 0
+                and not atom.HasQuery() and not atom.GetNumRadicalElectrons()
+                and atom.GetDegree() == 2 and atom.GetNumExplicitHs() == 2
+                and diff_valence == -1
+                and all(b.GetBondType() == BT.SINGLE for b in atom.GetBonds())
+            ):
+                # Permit the already-supported NH2 -> NH correction beside a
+                # newly recognized variable. Other formerly failed drawings
+                # need separate evidence before enabling their H heuristics.
+                return None
             numh = atom.GetNumExplicitHs()
             try:
                 atom.SetNumExplicitHs(numh + diff_valence)
@@ -211,7 +228,9 @@ def get_fragment_smiles(label: str) -> tuple:
         return None, None, True
 
     # Check for scaffold patterns (Rn, etc.)
-    if label.startswith('R') and (len(label) == 1 or label[1:].isdigit()):
+    # Keep the legacy isdigit coverage (including literal superscript digits)
+    # as well as styled/indexed letter variables.
+    if R_LABEL.fullmatch(label) or (label.startswith('R') and label[1:].isdigit()):
         return None, None, True
 
     # Labels with commas, semicolons, or "and" are usually lists of options (scaffold)

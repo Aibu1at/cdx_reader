@@ -3,7 +3,7 @@ import re
 from rdkit import Chem
 
 
-R_LABEL = re.compile(r'R(?:\d+|[a-g])?\Z')
+R_LABEL = re.compile(r'R(?:\d+[a-z]?|[a-g])?\Z')
 ELEMENT_SYMBOLS = {Chem.GetPeriodicTable().GetElementSymbol(number) for number in range(1, 119)}
 
 
