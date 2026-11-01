@@ -1,6 +1,7 @@
 import re
 import logging
 import functools
+import json
 from pycdxml import cdxml_converter
 
 from rdkit import Chem
@@ -11,9 +12,17 @@ from rdkit import RDLogger
 import sys
 from io import StringIO, BytesIO
 from pathlib import Path
+from ._attachments import (normalize_wavy_attachment_points, normalize_bold_attachment_points,
+                           restore_attachment_provenance)
+from ._labels import (simple_element_label, mark_unparsed, restore_unparsed,
+                      detach_annotations, annotation_object, ANNOTATIONS)
+from ._nested import flatten_shared_anchor_groups, restore_nested_provenance
+from ._condensed import expand_condensed_labels, restore_condensed_provenance
+from ._io import read_document
+from ._nitriles import restore_label_nitriles
 from ._normalization import (
     R_LABEL, atom_label, r_label, capture_r_labels, restore_r_labels,
-    normalize_nested_fragment, repair_invalid_nitrogen_hydrogens,
+    normalize_nested_fragment, repair_invalid_nitrogen_hydrogens, normalize_hollow_wedges,
     explicit_element_is_usable,
     has_ambiguous_multimolecule_expansion,
     variable_label, capture_atom_labels, restore_atom_labels, detach_variable_atom_maps,
@@ -149,7 +158,7 @@ FRAGMENT_LIBRARY = {
 
     # Sulfur-containing groups
     'SMe': ('SC', '[*:1]SC'),                       # Methylthio
-    'MeS': ('CS', 'C[*:1]'),                        # Methylthio variant (attach at S)
+    'MeS': ('CS', 'CS[*:1]'),                        # Methylthio variant (attach at S)
     'SO2Me': ('S(=O)(=O)C', '[*:1]S(=O)(=O)C'),     # Methanesulfonyl
     'MeSO2': ('CS(=O)(=O)', '[*:1]CS(=O)(=O)'),     # Methanesulfonyl variant
     'SO2NH2': ('S(=O)(=O)N', '[*:1]S(=O)(=O)N'),    # Sulfonamide
@@ -290,6 +299,10 @@ def _parse_cdxml(tree, fix=True, repair_nested=True):
             # text. Some ChemDraw files incorrectly mark these as Unspecified.
             if repair_nested and not preserve_selection and normalize_nested_fragment(node):
                 continue
+            # Already declared nested graphs belong to ChemDraw, even when they
+            # have multiple attachment sites. Do not replace their outer text.
+            if node.get('NodeType') in ('Fragment', 'Nickname') and node.find('fragment') is not None:
+                continue
 
         # 'Element' is often implicit (Carbon) or in 'Element' attribute
         # 't' tag inside 'n' often contains labels like "Me", "Ph"
@@ -303,6 +316,13 @@ def _parse_cdxml(tree, fix=True, repair_nested=True):
 
         if not label:
             continue
+
+        # A leading salt separator is typography, only for a standalone exact
+        # hydrogen halide. Never strip it from a connected compound label.
+        if (re.fullmatch(r'[•·.]H(?:Cl|Br|I|F)', label)
+                and not any(node_id in (b.get('B'), b.get('E'))
+                            for b in node.getparent().findall('b'))):
+            label = label[1:]
 
         declared_variable = variable_label(node, FRAGMENT_LIBRARY)
         if fix and declared_variable:
@@ -320,6 +340,8 @@ def _parse_cdxml(tree, fix=True, repair_nested=True):
         # Element (e.g. HN) continues through the label repair below.
         if (node.get('Element') is not None and element not in ('0', '99', '100')
                 and explicit_element_is_usable(node)
+                and (node.get('NodeType') != 'Unspecified' or simple_element_label(label)
+                     or label == Chem.GetPeriodicTable().GetElementSymbol(int(element)))
                 and label not in FRAGMENT_LIBRARY
                 and label not in SCAFFOLD_LABELS and not get_fragment_smiles(label)[2]):
             continue
@@ -343,20 +365,18 @@ def _parse_cdxml(tree, fix=True, repair_nested=True):
             target_element = '*'
         # Handle common patterns not in library
         else:
-            # Check for nitrogen-containing labels
-            if label.startswith('NH') or label.startswith('HN') or label.startswith('H2N') or label.startswith('N'):
+            parsed_element = simple_element_label(label)
+            if parsed_element:
+                target_element, written_h, written_charge = parsed_element
+                if fix and written_charge is not None and node.get('Charge') is None:
+                    node.set('Charge', str(written_charge))
+                # Preserve explicit source H counts. For unencoded NH/HN let
+                # RDKit infer hydrogens from the existing bonds as before.
+            elif (element == '11' and not explicit_element_is_usable(node)):
+                # Retain the pre-existing, source-reviewed aromatic Na typo rule.
                 target_element = 'N'
-            # Check for oxygen-containing labels
-            elif label.startswith('HO') or label.startswith('OH') or label.endswith('O') and label not in {'NO2'}:
-                target_element = 'O'
-            # Check for sulfur-containing labels
-            elif label.startswith('S') or label.endswith('S'):
-                target_element = 'S'
-            # Default to carbon for unknown organic fragments
-            elif len(label) >=2:
-                logger.error('Invalid fragment label "%s"' % label)
-            elif any(c.isalpha() for c in label):
-                target_element = 'C'
+            elif fix:
+                mark_unparsed(node, label)
 
         # Update the element if we determined a target
         if target_element and fix:
@@ -574,6 +594,21 @@ def expand_fragments_in_mol(mol, fragments_to_expand):
             if scaffold_mol is None:
                 scaffold_mol = split_frags_sorted[-1]  # Use largest fragment as scaffold
 
+            # For a terminal label its opposite side is identified by provenance,
+            # not size: an R port and the placeholder may be equally small. Other
+            # disconnected components belong to this object and must survive.
+            other_components = []
+            if mol.GetAtomWithIdx(atom_idx).GetDegree() == 1:
+                without_label = [frag for frag in split_frags
+                                 if find_atom_by_cdx_id(frag, node_id) < 0]
+                attached = [frag for frag in without_label if any(
+                    atom.GetAtomicNum() == 0 and not atom.HasProp('_CDX_ATOM_ID')
+                    for atom in frag.GetAtoms())]
+                if len(attached) != 1:
+                    raise ValueError('cannot identify the component opposite the source label')
+                scaffold_mol = attached[0]
+                other_components = [frag for frag in without_label if frag is not scaffold_mol]
+
             # Only FragmentOnBonds' new cut atoms belong to the joining
             # namespace. Source R atoms keep their labels/isotopes, and a cut
             # next to atom zero is still a valid attachment (isotope zero).
@@ -606,6 +641,8 @@ def expand_fragments_in_mol(mol, fragments_to_expand):
 
             if joined_mol is not None:
                 mol = joined_mol
+                for component in other_components:
+                    mol = Chem.CombineMols(mol, component)
                 logger.debug(f"Successfully expanded fragment {label} at atom {atom_idx} (cdx_id={node_id})")
             else:
                 logger.debug(f"join_molecule_fragments failed for {label} at atom {atom_idx}")
@@ -643,11 +680,36 @@ def _read_cdx_molecule(path_or_bytes, as_single, repair_nested):
         else:
             raise ValueError(f"Invalid type {type(path_or_bytes)}")
 
-        doc: cdxml_converter.ChemDrawDocument = cdxml_converter.read_cdx(source)
+        doc: cdxml_converter.ChemDrawDocument = read_document(source)
+        label_repairs = restore_label_nitriles(doc.cdxml)
+        object_ids = [f.get('id') for f in doc.cdxml.getroot().iter('fragment')
+                      if not any(a.tag in ('fragment', 'n') for a in f.iterancestors())]
         labels = capture_r_labels(doc.cdxml)
         all_labels = capture_atom_labels(doc.cdxml)
+        declared_variables = {
+            node.get('id') for node in doc.cdxml.getroot().iter('n')
+            if (variable_label(node, FRAGMENT_LIBRARY)
+                or atom_label(node) in SCAFFOLD_LABELS
+                or r_label(node))
+        }
+        annotations, annotation_objects = detach_annotations(doc.cdxml)
+        attachment_repairs = normalize_wavy_attachment_points(doc.cdxml)
+        bold_attachment_repairs = normalize_bold_attachment_points(doc.cdxml)
+        hollow_repairs = normalize_hollow_wedges(doc.cdxml)
+        nested_expansions = flatten_shared_anchor_groups(doc.cdxml)
+        generated_atoms, label_expansions, normalized_labels = expand_condensed_labels(doc.cdxml, FRAGMENT_LIBRARY)
+        # Newly generated variable ports have their own printed label and a
+        # recorded parent origin, but no invented public source atom ID.
+        for identifier, value in capture_atom_labels(doc.cdxml).items():
+            all_labels.setdefault(identifier, value)
+        for identifier, value in capture_r_labels(doc.cdxml).items():
+            labels[identifier] = (all_labels.get(identifier, value)[0], value[1])
+        declared_variables.update(node.get('id') for node in doc.cdxml.getroot().iter('n')
+                                  if variable_label(node, FRAGMENT_LIBRARY) or r_label(node))
         original_types = {n.get('id'): n.get('NodeType') for n in doc.cdxml.getroot().iter('n')}
         fragments_to_expand = _parse_cdxml(doc.cdxml, fix=True, repair_nested=repair_nested)
+        unparsed = {n.get('id'): n.get('_CDXUnparsedLabel')
+                    for n in doc.cdxml.getroot().iter('n') if n.get('_CDXUnparsedLabel') is not None}
         repaired_fragment = any(n.get('NodeType') == 'Fragment'
                                 and original_types.get(n.get('id')) != 'Fragment'
                                 for n in doc.cdxml.getroot().iter('n'))
@@ -671,13 +733,28 @@ def _read_cdx_molecule(path_or_bytes, as_single, repair_nested):
                 Chem.AssignStereochemistry(mol, cleanIt=True, force=True)
                 for atom, tag in drawn_tags:
                     atom.SetChiralTag(tag)
-            return restore_r_labels(restore_atom_labels(mol, all_labels), labels)
+            mol = restore_unparsed(restore_attachment_provenance(
+                restore_r_labels(restore_atom_labels(mol, all_labels), labels), attachment_repairs), unparsed, declared_variables)
+            mol = restore_attachment_provenance(mol, bold_attachment_repairs, style='bold')
+            mol = restore_nested_provenance(mol, nested_expansions)
+            mol = restore_condensed_provenance(mol, generated_atoms, label_expansions, normalized_labels)
+            if mol is not None and getattr(doc, '_cdx_binary_repairs', None):
+                mol.SetProp('_CDX_BINARY_REPAIRS', json.dumps(doc._cdx_binary_repairs))
+            if mol is not None and annotations:
+                mol.SetProp(ANNOTATIONS, json.dumps(annotations, ensure_ascii=False))
+            return mol
 
         if as_single:
+            if not mols:
+                return None
             combined = functools.reduce(Chem.CombineMols, mols)
             if fragments_to_expand:
                 combined = expand_fragments_in_mol(combined, fragments_to_expand)
             result = finalize(combined)
+            if result is not None and label_repairs:
+                result.SetProp('_CDX_LABEL_REPAIRS', json.dumps(label_repairs))
+            if result is not None and hollow_repairs:
+                result.SetProp('_CDX_STEREO_REPAIRS', json.dumps(hollow_repairs))
             if result is None and repaired_fragment:
                 # A valid nested group can expose an unrelated error in the
                 # surrounding drawing which the legacy valence fixer cannot
@@ -687,12 +764,32 @@ def _read_cdx_molecule(path_or_bytes, as_single, repair_nested):
             return result
 
         result = []
+        result_ids = []
         for mol in mols:
+            fragment_id = mol.GetProp('CDXML_FRAG_ID') if mol.HasProp('CDXML_FRAG_ID') else None
             if fragments_to_expand:
                 mol = expand_fragments_in_mol(mol, fragments_to_expand)
-            result.append(finalize(mol))
+            completed = finalize(mol)
+            if completed is not None and fragment_id is not None:
+                completed.SetProp('CDXML_FRAG_ID', fragment_id)
+                own = [r for r in label_repairs if r['fragment_id'] == fragment_id]
+                if own:
+                    completed.SetProp('_CDX_LABEL_REPAIRS', json.dumps(own))
+                own_hollow = [r for r in hollow_repairs if r['fragment_id'] == fragment_id]
+                if own_hollow:
+                    completed.SetProp('_CDX_STEREO_REPAIRS', json.dumps(own_hollow))
+            result.append(completed)
+            result_ids.append(fragment_id)
         if repaired_fragment and any(mol is None for mol in result):
             return _read_cdx_molecule(path_or_bytes, as_single, repair_nested=False)
+        if annotation_objects:
+            for identifier, entries in annotation_objects:
+                result.append(annotation_object(identifier, entries))
+                result_ids.append(identifier)
+            # Keep source order even if another object failed sanitization.
+            if all(identifier in object_ids for identifier in result_ids):
+                result = [mol for _, mol in sorted(zip(result_ids, result),
+                          key=lambda pair: object_ids.index(pair[0]))]
         return result
     finally:
         sys.stderr = old_stderr

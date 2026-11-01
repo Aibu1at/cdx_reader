@@ -1,0 +1,47 @@
+[
+  {
+    "patent": "US20240051972A1",
+    "chem_id": "C00018",
+    "url": "https://patentimages.storage.googleapis.com/a6/ec/54/23c99043dd5d2c/US20240051972A1-20240215-C00018.png",
+    "file": "US20240051972A1-C00018.png",
+    "sha256": "cb57cf7a62c8fba6c37da3f30cd8ec8b77d9de4e29a41602b957d132dfa6df37"
+  },
+  {
+    "patent": "US20250042847A1",
+    "chem_id": "C00020",
+    "url": "https://patentimages.storage.googleapis.com/60/a2/29/de25a6c36bcfca/US20250042847A1-20250206-C00020.png",
+    "file": "US20250042847A1-C00020.png",
+    "sha256": "e0b1a23596b2779ae9776a7075d8275c02174948be3f4ac40d4ae047a673a543"
+  },
+  {
+    "patent": "US20120295881A1",
+    "chem_id": "C01043",
+    "url": "https://patentimages.storage.googleapis.com/d9/5d/66/20d6df6a05b3d4/US20120295881A1-20121122-C01043.png",
+    "file": "US20120295881A1-C01043.png",
+    "sha256": "ce7b337541f8d128b2ea641e14a31ad2d5c2e34c13c63b18e617c3f6915d4986"
+  },
+  {
+    "patent": "US20090018114A1",
+    "chem_id": "C00007",
+    "file": "US20090018114A1-C00007.tif",
+    "member": "US20090018114A1-20090115/US20090018114A1-20090115-C00007.TIF",
+    "sha256": "7b12ca2f8f8a88be7ca5b0735738aa45fce305daf7da5696fca25cfba9da83dc",
+    "source": "USPTO APPDT original TIF"
+  },
+  {
+    "patent": "US20090018114A1",
+    "chem_id": "C00009",
+    "file": "US20090018114A1-C00009.tif",
+    "member": "US20090018114A1-20090115/US20090018114A1-20090115-C00009.TIF",
+    "sha256": "315bece00cbebf6b376a79f8054b01e0d4341a466dd719602f1cc35a986bb090",
+    "source": "USPTO APPDT original TIF"
+  },
+  {
+    "patent": "US20120035134A1",
+    "chem_id": "C00006",
+    "file": "US20120035134A1-C00006.tif",
+    "member": "US20120035134A1-20120209/US20120035134A1-20120209-C00006.TIF",
+    "sha256": "002fdfed043fe1acadb14ad6ba2dcb63706f0d9fc87aa8be072c8b102b900e73",
+    "source": "USPTO APPDT original TIF"
+  }
+]

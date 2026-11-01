@@ -1,0 +1,248 @@
+{
+  "US20040001895A1_C00017": {
+    "sha256": "e44aac6b696cb3932fe81dec5a17f6e96b660aab41cf992f0a03c272f1332801",
+    "source_nodes": {
+      "24": {
+        "id": "24",
+        "p": "86.56 64.81",
+        "Z": "19"
+      },
+      "30": {
+        "id": "30",
+        "p": "98.57 64.81",
+        "Z": "25",
+        "AS": "N"
+      },
+      "32": {
+        "id": "32",
+        "p": "70.6 64.81",
+        "Z": "27",
+        "AS": "N"
+      },
+      "27": {
+        "id": "27",
+        "p": "118.56 64.81",
+        "Z": "22"
+      },
+      "34": {
+        "id": "34",
+        "p": "106.06 64.81",
+        "Z": "29",
+        "AS": "N"
+      },
+      "36": {
+        "id": "36",
+        "p": "132.55 64.81",
+        "Z": "31",
+        "AS": "N"
+      }
+    },
+    "bars": {
+      "24": [
+        "30",
+        "32"
+      ],
+      "27": [
+        "34",
+        "36"
+      ]
+    },
+    "expected_repaired_smiles": "*C1CCCCC1*",
+    "scope": "R7 edit only; unchanged remainder is a historical regression, not a verified complete molecule",
+    "tif_member": "US20040001895A1-20040101/US20040001895A1-20040101-C00017.TIF",
+    "tif_sha256": "54bcddd0d1d49b0b358e58eca982c43401fa013b0492237901214c01eedfc287",
+    "context_sha256": "a248ed1297bf1de3eb0996f178693734d03e93dee8a45a8c78151f63e2d46444",
+    "original_artwork_review": "2026-09-24; original USPTO TIF inspected; downloaded CDX SHA matches frozen fixture"
+  },
+  "US20040001895A1_C00038": {
+    "sha256": "e95d6e3fdaea79bbbb02aee2bc5011d34491fec3a1f846724d83ec8c49d4ef5c",
+    "source_nodes": {
+      "24": {
+        "id": "24",
+        "p": "86.56 64.81",
+        "Z": "40"
+      },
+      "30": {
+        "id": "30",
+        "p": "98.57 64.81",
+        "Z": "44",
+        "AS": "N"
+      },
+      "32": {
+        "id": "32",
+        "p": "70.6 64.81",
+        "Z": "46",
+        "AS": "N"
+      },
+      "27": {
+        "id": "27",
+        "p": "118.56 64.81",
+        "Z": "42"
+      },
+      "34": {
+        "id": "34",
+        "p": "106.06 64.81",
+        "Z": "48",
+        "AS": "N"
+      },
+      "36": {
+        "id": "36",
+        "p": "132.55 64.81",
+        "Z": "50",
+        "AS": "N"
+      }
+    },
+    "bars": {
+      "24": [
+        "30",
+        "32"
+      ],
+      "27": [
+        "34",
+        "36"
+      ]
+    },
+    "expected_repaired_smiles": "*C1CCCCC1*",
+    "scope": "R7 edit only; unchanged remainder is a historical regression, not a verified complete molecule",
+    "tif_member": "US20040001895A1-20040101/US20040001895A1-20040101-C00038.TIF",
+    "tif_sha256": "54bcddd0d1d49b0b358e58eca982c43401fa013b0492237901214c01eedfc287",
+    "context_sha256": "6b644cf147fde38452d32c909561eedb78b4ff377a1ff31b42e72ee9ad4cdf9b",
+    "original_artwork_review": "2026-09-24; original USPTO TIF inspected; downloaded CDX SHA matches frozen fixture"
+  },
+  "US20090018114A1_C00009": {
+    "sha256": "30ca5a4fa31a265cb41bc6c24134c7406d9365a89d0db2c608dac5132dd237d1",
+    "source_nodes": {
+      "28": {
+        "id": "28",
+        "p": "119.12 164.15",
+        "Z": "47"
+      },
+      "45": {
+        "id": "45",
+        "p": "127.12 178.01",
+        "Z": "60",
+        "AS": "N"
+      },
+      "47": {
+        "id": "47",
+        "p": "111.12 150.3",
+        "Z": "62",
+        "AS": "N"
+      }
+    },
+    "bars": {
+      "28": [
+        "45",
+        "47"
+      ]
+    },
+    "expected_repaired_smiles": "*/C=c1/cccc/c1=C/C(C)(C)C",
+    "scope": "R7 edit only; unchanged remainder is a historical regression, not a verified complete molecule",
+    "tif_member": "US20090018114A1-20090115/US20090018114A1-20090115-C00009.TIF",
+    "tif_sha256": "315bece00cbebf6b376a79f8054b01e0d4341a466dd719602f1cc35a986bb090",
+    "context_sha256": "75ee73067ddaae5d68019c5620a306f54be58a0b45de3dd5d68715ab90ccb7f9",
+    "original_artwork_review": "2026-09-24; original USPTO TIF inspected; downloaded CDX SHA matches frozen fixture"
+  },
+  "US20130005755A1_C00025": {
+    "sha256": "6f5840d266353158f53c34b530ee5bc0e458a4a202da5523fa13ca2c7aecb8da",
+    "source_nodes": {
+      "437": {
+        "id": "437",
+        "p": "1.35 109.76",
+        "Z": "265"
+      },
+      "438": {
+        "id": "438",
+        "p": "1.35 93.76",
+        "Z": "267",
+        "AS": "N"
+      },
+      "439": {
+        "id": "439",
+        "p": "1.35 125.76",
+        "Z": "269",
+        "AS": "N"
+      }
+    },
+    "bars": {
+      "437": [
+        "438",
+        "439"
+      ]
+    },
+    "expected_repaired_smiles": "*CCc1ccc(-c2cc[nH]c(=O)c2)cc1",
+    "scope": "R7 edit only; unchanged remainder is a historical regression, not a verified complete molecule",
+    "tif_member": "US20130005755A1-20130103/US20130005755A1-20130103-C00025.TIF",
+    "tif_sha256": "e3d62b08fcded3af703b19e9bfa4f7ded43d537cb6a1cf082b5a07aacfb9c592",
+    "context_sha256": "109ca7963fad903cc2b982e956b088f12e8ca80a0acf9f19c2f74d51b8502615",
+    "original_artwork_review": "2026-09-24; original USPTO TIF inspected; downloaded CDX SHA matches frozen fixture"
+  },
+  "US20160002213A1_C00040": {
+    "sha256": "02f751da269db94f4e860c1b30c0e30a9e4eff13b434c18c0b424d225c2a1b7b",
+    "source_nodes": {
+      "30": {
+        "id": "30",
+        "p": "26.99 120.62",
+        "Z": "21"
+      },
+      "34": {
+        "id": "34",
+        "p": "18.99 106.77",
+        "Z": "25",
+        "AS": "N"
+      },
+      "36": {
+        "id": "36",
+        "p": "34.99 134.48",
+        "Z": "27",
+        "AS": "N"
+      }
+    },
+    "bars": {
+      "30": [
+        "34",
+        "36"
+      ]
+    },
+    "expected_repaired_smiles": "*C1=NOCC(=O)N1",
+    "scope": "R7 edit only; unchanged remainder is a historical regression, not a verified complete molecule",
+    "tif_member": "US20160002213A1-20160107/US20160002213A1-20160107-C00040.TIF",
+    "tif_sha256": "82023a96bbb8af58e8d09a4d1285f79b14d9cd25b36715fd2d7807bf3786aa51",
+    "context_sha256": "5a4070f75550e3614916ffa6ee10f3dac7fb4b6cd35e79e2fd29dfbda81075ac",
+    "original_artwork_review": "2026-09-24; original USPTO TIF inspected; downloaded CDX SHA matches frozen fixture"
+  },
+  "US20160002213A1_C00042": {
+    "sha256": "4c39fbe53d7b785669994d0d7c5f431a9f31d002c6c246b04eb7d0f532f1f648",
+    "source_nodes": {
+      "25": {
+        "id": "25",
+        "p": "26.99 102.0",
+        "Z": "32"
+      },
+      "29": {
+        "id": "29",
+        "p": "18.99 88.14",
+        "Z": "34",
+        "AS": "N"
+      },
+      "31": {
+        "id": "31",
+        "p": "34.99 115.86",
+        "Z": "36",
+        "AS": "N"
+      }
+    },
+    "bars": {
+      "25": [
+        "29",
+        "31"
+      ]
+    },
+    "expected_repaired_smiles": "*c1noc(=O)[nH]1",
+    "scope": "R7 edit only; unchanged remainder is a historical regression, not a verified complete molecule",
+    "tif_member": "US20160002213A1-20160107/US20160002213A1-20160107-C00042.TIF",
+    "tif_sha256": "f140e41ddd12bc6ccc87dff8746affcce1d6c0c388291f00f75407cc43c5905c",
+    "context_sha256": "cb6efa06399ae7ade39fb53846c8bd6c11ca742110af22c31280818327f12cd0",
+    "original_artwork_review": "2026-09-24; original USPTO TIF inspected; downloaded CDX SHA matches frozen fixture"
+  }
+}

@@ -3,7 +3,7 @@ import re
 from rdkit import Chem
 
 
-R_LABEL = re.compile(r'R(?:\d+[a-z]?|[a-g])?\Z')
+R_LABEL = re.compile(r"R(?:\d+[a-z]?|[a-g]|[′']+)?\Z")
 ELEMENT_SYMBOLS = {Chem.GetPeriodicTable().GetElementSymbol(number) for number in range(1, 119)}
 
 
@@ -30,6 +30,18 @@ def variable_label(node, abbreviations):
     if node.get('NodeType') == 'GenericNickname':
         return label
     if node.get('NodeType') == 'Unspecified':
+        # US20210122713A1 Table 3 writes Ar with a separately styled A/B.
+        # ChemDraw also cached an invalid argon graph under these text nodes.
+        # Only these source-confirmed labels are added: preserve any explicitly
+        # encoded element or usable nested chemical graph.
+        if (label in ('ArA', 'ArB') and node.get('Element') in (None, '0')
+                and node.get('ElementList') is None
+                and node.get('GenericList') is None
+                and node.get('Charge') in (None, '0')
+                and node.get('Isotope') is None
+                and node.get('Radical') is None
+                and not has_unambiguous_nested_fragment(node)):
+            return label
         # Indexed non-element letters are frequent alternate variable names.
         # Ordinary elemental labels and H-count formulas retain their chemistry.
         if (re.fullmatch(r'[A-Z]\d+', label)
@@ -205,7 +217,8 @@ def repair_invalid_nitrogen_hydrogens(node):
     if (node.get('Element') != '7' or node.get('NumHydrogens') != '0'
             or node.get('Charge', '0') != '0'
             or node.get('NodeType') not in (None, 'Element')
-            or 'invalid valence' not in node.get('Warning', '').lower()
+            or not any('invalid valence' in item.get('Warning', '').lower()
+                       for item in [node, *node.findall('t')])
             or node.get('Radical') is not None
             or node.get('ElementList') is not None
             or node.get('GenericList') is not None
@@ -219,6 +232,28 @@ def repair_invalid_nitrogen_hydrogens(node):
         return False
     del node.attrib['NumHydrogens']
     return True
+
+
+def normalize_hollow_wedges(tree):
+    """Translate explicit hollow single-bond wedges to RDKit-supported styles.
+
+    Preserve the begin/end direction and retain the encoded style as provenance.
+    Bold, Hash and Wavy have other meanings and are deliberately not converted.
+    """
+    styles = {'HollowWedgeBegin': 'WedgeBegin', 'HollowWedgeEnd': 'WedgeEnd'}
+    repairs = []
+    for bond in tree.getroot().iter('b'):
+        encoded = bond.get('Display')
+        if encoded not in styles or bond.get('Order', '1') != '1':
+            continue
+        fragments = [p for p in bond.iterancestors() if p.tag == 'fragment']
+        if not fragments:
+            continue
+        repairs.append(dict(fragment_id=fragments[-1].get('id'), bond_id=bond.get('id'),
+                            begin=bond.get('B'), end=bond.get('E'),
+                            encoded=encoded, interpreted=styles[encoded]))
+        bond.set('Display', styles[encoded])
+    return repairs
 
 
 def capture_r_labels(tree):

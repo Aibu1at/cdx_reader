@@ -1,0 +1,52 @@
+[
+  {
+    "file": "US20090221600A1_C00002.cdx",
+    "patent": "US20090221600A1",
+    "member": "US20090221600A1-20090903/US20090221600A1-20090903-C00002.CDX",
+    "sha256": "cccf091ce0fb8d802bb3765b02170cc53dc89991ed62fdb4b28a30dffa1ef1b9"
+  },
+  {
+    "file": "US20200352925A1_C00005.cdx",
+    "patent": "US20200352925A1",
+    "member": "US20200352925A1-20201112/US20200352925A1-20201112-C00005.CDX",
+    "sha256": "ed79cdbe0f6562f72ba7986e399169dd9ecee01899689f44ad0d708a8f47758e"
+  },
+  {
+    "file": "US20200352925A1_C00006.cdx",
+    "patent": "US20200352925A1",
+    "member": "US20200352925A1-20201112/US20200352925A1-20201112-C00006.CDX",
+    "sha256": "0f0c1e9a976826086c194e28fb9b95c1f1fd6acf6eb42d8caa8bd9bbff5e7486"
+  },
+  {
+    "file": "US20210122713A1_C00127.cdx",
+    "patent": "US20210122713A1",
+    "member": "US20210122713A1-20210429/US20210122713A1-20210429-C00127.CDX",
+    "sha256": "2037e2f07b3dc13884fabc9f082418ca804828a6e631ea2086127b656e917c6c"
+  },
+  {
+    "file": "US20110135650A1_C00661.cdx",
+    "patent": "US20110135650A1",
+    "member": "US20110135650A1-20110609/US20110135650A1-20110609-C00661.CDX",
+    "sha256": "00d5591211591898300566370819a67b2f367fb0a319b432f6b32e6668596ec7"
+  },
+  {
+    "file": "US20040002022A1_C00026.cdx",
+    "patent": "US20040002022A1",
+    "member": "US20040002022A1_C00026.cdx",
+    "sha256": "bdb0bf18875de000abf915825e14f98b8bb189e5122547d497fe8c7766acb62c"
+  },
+  {
+    "file": "US20180022705A1_C00028.cdx",
+    "sha256": "ce9de6dd9e5186312674f557ee996273b90d34846b4639c96ce128eef5dab2fc",
+    "zip": "results/ligand_resolver/_diag/r7_agent_20260924/patents/US20180022705A1.zip",
+    "member": "US20180022705A1-20180125/US20180022705A1-20180125-C00028.CDX",
+    "purpose": "Existing declared variable must remain a usable port"
+  },
+  {
+    "file": "US20150152119A1_C00076.cdx",
+    "sha256": "22a7295561109419191a6c9f954b11d664a551b7809be50fe35f25257d5f0bd0",
+    "zip": "results/ligand_resolver/_diag/r7_agent_20260924/patents/US20150152119A1.zip",
+    "member": "US20150152119A1-20150604/US20150152119A1-20150604-C00076.CDX",
+    "purpose": "Existing declared variable must remain a usable port"
+  }
+]

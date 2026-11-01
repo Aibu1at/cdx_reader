@@ -2042,14 +2042,20 @@
     "sha256": "913a70e211eb3254d8fa9532f4f1958939a7cf3ede3ffd14c2e0b52a47b9a1d8",
     "mol_sha256": "959f9b9a2a8d2b78f0d799d8c0ccac47e42eccacd967fddb9d676feeb30426b8",
     "tags": [
-      "pycdxml_deferred"
+      "pycdxml_deferred",
+      "abstract_scheme"
     ],
     "expected": {
-      "error": "CDXGraphicType should consist of exactly 2 bytes"
+      "variable_labels": {
+        "18": "V",
+        "22": "D",
+        "27": "Q",
+        "29": "W"
+      }
     },
     "evidence": {
-      "kind": "deferred_error",
-      "details": "Known one-byte GraphicType compatibility case. pycdxml handling is deferred; no global tolerance or property deletion is introduced."
+      "kind": "reviewed_diagnostic",
+      "details": "The one-byte GraphicType now decodes (_io.py, 2026-10-07). The original TIF is an abstract scheme A-P-D-V-Q-W with circles for A and D, not a molecule. The variables V, Q, W, D survive as labels; the circle A comes back as carbon and the text P as a phosphorus radical, known misreads of a drawing that has no chemistry, deliberately not asserted."
     }
   },
   {
@@ -2137,13 +2143,13 @@
       "deferred_compatibility"
     ],
     "expected": {
-      "smiles": "*c1ccc(-c2csc(-c3cc(C(F)(F)F)cc(C(F)(F)F)c3)n2)cc1",
-      "inchikey": "",
-      "formula": "C17H8*F6NS"
+      "smiles": "FC(F)(F)c1ccc(-c2csc(-c3cc(C(F)(F)F)cc(C(F)(F)F)c3)n2)cc1",
+      "inchikey": "QAOUNLWHIUBTFE-UHFFFAOYSA-N",
+      "formula": "C18H8F9NS"
     },
     "evidence": {
-      "kind": "deferred_behavior",
-      "details": "The existing expansion/selection path chooses the bis-trifluoromethyl scaffold from this multi-structure drawing. Repairing another nested nitro graph changes the expansion decisions and exposes 14 components instead. Defer nested repair in mixed multi-structure drawings with unresolved dictionary abbreviations to preserve the current selection. This is a compatibility control."
+      "kind": "reviewed_diagnostic",
+      "details": "Single-molecule mode chooses the bis-trifluoromethyl compound of this 14-object drawing. The label 'CF3,' (trailing comma) used to stay a wildcard on all 14 objects; since the 2026-10-07 condensed-label work it reads as CF3, so the selected object is a complete molecule. The five objects carrying 'O2N' keep it as a labelled placeholder."
     }
   },
   {
@@ -2383,7 +2389,6 @@
     ],
     "expected": {
       "variable_labels": {
-        "465": "X",
         "473": "W3",
         "474": "W4",
         "476": "W5",
@@ -2417,7 +2422,7 @@
     },
     "evidence": {
       "kind": "source_query_graph",
-      "details": "The source rings contain W1/W3/W4/W5 and Xb variables (Unspecified, no Element) with explicit 1.5 bonds. A variable electron count cannot define a unique Kekule form. Preserve the aromatic query edges and node labels; do not infer carbon atoms or lose the entire drawing. This is a query-graph expectation, not a complete-molecule gold SMILES."
+      "details": "The source rings contain W1/W3/W4/W5 and Xb variables (Unspecified, no Element) with explicit 1.5 bonds. A variable electron count cannot define a unique Kekule form. Preserve the aromatic query edges and node labels; do not infer carbon atoms or lose the entire drawing. This is a query-graph expectation, not a complete-molecule gold SMILES. Atom 465 (X) is not a variable: it was the first letter of the caption (XIII), which ChemDraw expanded into X and three I atoms. Since 2026-10-28 that caption, like (XIV) and (XV), is read as an annotation."
     }
   },
   {

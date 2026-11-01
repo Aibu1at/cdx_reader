@@ -84,7 +84,20 @@ before abbreviation expansion, including incorrectly marked `Unspecified` nodes.
 Query graphs, multiple attachments, impossible valences and covalent graphs that
 RDKit rewrites into dative bonds are not promoted. A narrowly targeted zero-H
 repair applies to neutral N with two single bonds, an invalid-valence warning,
-and no explicit radical/query annotation. Other hydrogen counts are retained.
+and no explicit radical/query annotation. The warning may be on the atom or its
+direct text label. Other hydrogen counts are retained.
+
+Multi-attachment nested groups are also flattened when every external endpoint
+has the same internal anchor, attachment bonds are single, and the explicit
+internal graph validates. Disconnected components such as HCl are retained.
+Terminal dictionary abbreviations are expanded on the side identified by the
+source atom ID, retaining source ports and the object's other components.
+
+Explicit `HollowWedgeBegin` / `HollowWedgeEnd` single bonds are interpreted as the
+corresponding directed wedges. The encoded style and source bond ID are retained
+in `_CDX_STEREO_REPAIRS`; ordinary Bold, Hash and Wavy bonds are not converted.
+Graphic enum widths are normalized only when the integer value can be preserved
+exactly; `_CDX_BINARY_REPAIRS` records the original width and value.
 
 An explicitly aromatic bond to a variable may have no unique Kekule form. When
 that is the sole sanitization obstacle, the original aromatic query graph is
@@ -94,16 +107,20 @@ ordinary complete molecules; the returned object sets `_CDX_UNKEKULIZED_QUERY`.
 Drawn tetrahedral tags are retained when stereo is recomputed, including centres
 whose distinct variable labels appear identical to RDKit as wildcard atoms.
 
-The existing molecule-selection behavior is preserved. In drawings with multiple
-structures and unresolved dictionary abbreviations, nested repairs are deferred:
-they can otherwise change which component the existing expander selects. An API
-that explicitly returns every labeled object for a future agent is separate work.
-Fixing an erroneous join through a source R atom can nevertheless change the
-components returned by the old expander: an accidental attachment is not retained
-as a compatibility requirement. These differences are audited separately.
+Use `as_single=False` to obtain separate decoded objects with their
+`CDXML_FRAG_ID`. Selecting the product of a reaction scheme belongs to the caller.
+The default `as_single=True` combines objects; it does not identify a product.
+Abbreviation expansion no longer discards other components merely because they
+are smaller. Consequently, combined-mode output may include more of the original
+drawing than older releases. Malformed source objects may still be omitted by
+the backend or returned as `None`; callers must not interpret their absence as
+proof that a surviving counterion is the product.
 
 Regression data and source evidence are documented in
 [tests/data/patent_regressions/README.md](tests/data/patent_regressions/README.md).
+Additional graph-conservation, binary-width and hollow-wedge fixtures include
+unchanged CDX/TIF bytes and SHA-256 provenance in
+[tests/data/reader_fixes_20261030/EVIDENCE.md](tests/data/reader_fixes_20261030/EVIDENCE.md).
 For reproducible corpus comparisons see [docs/corpus-validation.md](docs/corpus-validation.md).
 The completed 212,917-input comparison, acceptance transitions and remaining
 limitations are in [docs/validation-report.md](docs/validation-report.md).

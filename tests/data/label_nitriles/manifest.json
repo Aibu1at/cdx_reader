@@ -1,0 +1,12 @@
+{
+  "US20210017156A1_C00098.cdx": {
+    "sha256": "0d7fe324bc6a7db3e8d93e1c540dd533576880caa7c464dc28d084cbea6d1b7c",
+    "source": "US20210017156A1-20210121/US20210017156A1-20210121-C00098.CDX",
+    "evidence": "Example 38, named ...pyrimidine-5-carbonitrile; CDX and MOL encode an isocyanide"
+  },
+  "US20200237771A1_C00162.cdx": {
+    "sha256": "311b58f2f039ee902ac54f1d557b8563885e84be3a0138b3d5ffad01929be4a4",
+    "source": "US20200237771A1-20200730/US20200237771A1-20200730-C00162.CDX",
+    "evidence": "reagent 2, p-0477 names ethyl-2-isocyanoacetate; N+ and C- drawn as atoms"
+  }
+}

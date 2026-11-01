@@ -1,0 +1,37 @@
+[
+  {
+    "file": "US20120041190A1_C00452.cdx",
+    "member": "US20120041190A1-20120216/US20120041190A1-20120216-C00452.CDX",
+    "sha256": "aa0a213dd823e01487c74eddc47256745db34400e32032c444312e2d0b7401fd",
+    "publication": "US20120041190A1",
+    "evidence": "TABLE I-6 / TABLE-US-00007: I-103 and I-106 inserts C00463/C00466; independent final drawings C00452/C00453; core C00460. Original USPTO TIFs visually reviewed."
+  },
+  {
+    "file": "US20120041190A1_C00453.cdx",
+    "member": "US20120041190A1-20120216/US20120041190A1-20120216-C00453.CDX",
+    "sha256": "c33967f7021df2921d5e7a757ef2574170ba63206354151b56124f0837eeec41",
+    "publication": "US20120041190A1",
+    "evidence": "TABLE I-6 / TABLE-US-00007: I-103 and I-106 inserts C00463/C00466; independent final drawings C00452/C00453; core C00460. Original USPTO TIFs visually reviewed."
+  },
+  {
+    "file": "US20120041190A1_C00460.cdx",
+    "member": "US20120041190A1-20120216/US20120041190A1-20120216-C00460.CDX",
+    "sha256": "65855024530755518b26a3b2b10dcc64f59b7ee3029f0fb62df7dfd79916ef18",
+    "publication": "US20120041190A1",
+    "evidence": "TABLE I-6 / TABLE-US-00007: I-103 and I-106 inserts C00463/C00466; independent final drawings C00452/C00453; core C00460. Original USPTO TIFs visually reviewed."
+  },
+  {
+    "file": "US20120041190A1_C00463.cdx",
+    "member": "US20120041190A1-20120216/US20120041190A1-20120216-C00463.CDX",
+    "sha256": "81fb27cc0e197620379677a1438d6b3a552f479fa0894e2dc13c3ced4c5141ea",
+    "publication": "US20120041190A1",
+    "evidence": "TABLE I-6 / TABLE-US-00007: I-103 and I-106 inserts C00463/C00466; independent final drawings C00452/C00453; core C00460. Original USPTO TIFs visually reviewed."
+  },
+  {
+    "file": "US20120041190A1_C00466.cdx",
+    "member": "US20120041190A1-20120216/US20120041190A1-20120216-C00466.CDX",
+    "sha256": "f20de3cfe649a4a0047834f9cca9757ace33726a3d1c35f93a026b70297714ae",
+    "publication": "US20120041190A1",
+    "evidence": "TABLE I-6 / TABLE-US-00007: I-103 and I-106 inserts C00463/C00466; independent final drawings C00452/C00453; core C00460. Original USPTO TIFs visually reviewed."
+  }
+]

@@ -9,9 +9,18 @@ from rdkit.Chem import rdMolDescriptors
 
 from cdx_reader import read_cdx_molecule
 from cdx_reader._normalization import R_LABEL
+from .r7_reference import legacy_comparison_copy
 
 DATA = Path(__file__).parent / 'data' / 'patent_regressions'
 REFERENCES = json.loads((DATA / 'references.json').read_text())
+
+# These frozen chemical references were originally also controls for the old
+# implicit selection from a reaction scheme. Selection now belongs to the agent:
+# retain exactly the same expected molecule, addressed by its original object ID.
+SELECTED_SOURCE_OBJECTS = {
+    'US20210079003A1_C00690': '20109',
+    'US20210017189A1_C00004': '302',
+}
 
 
 def canonical(mol):
@@ -38,15 +47,24 @@ def test_real_patent_regression(reference, input_mode):
         with pytest.raises(Exception, match=expected['error']):
             read_cdx_molecule(source)
         return
-    mol = read_cdx_molecule(source)
+    if reference['id'] in SELECTED_SOURCE_OBJECTS:
+        identifier = SELECTED_SOURCE_OBJECTS[reference['id']]
+        mol = next(m for m in read_cdx_molecule(source, as_single=False)
+                   if m is not None and m.GetProp('CDXML_FRAG_ID') == identifier)
+    else:
+        mol = read_cdx_molecule(source)
     if expected.get('none'):
         assert mol is None
         return
     assert mol is not None
     if 'smiles' in expected:
-        assert canonical(mol) == expected['smiles']
-        assert Chem.MolToInchiKey(mol) == expected['inchikey']
-        assert rdMolDescriptors.CalcMolFormula(mol) == expected['formula']
+        # Six source-reviewed wavy bars were mistaken for carbons in these
+        # frozen references. Check their actual new ports, then compare only
+        # the untouched remainder in the old representation (no oracle rewrite).
+        comparison = legacy_comparison_copy(mol, reference)
+        assert canonical(comparison) == expected['smiles']
+        assert Chem.MolToInchiKey(comparison) == expected['inchikey']
+        assert rdMolDescriptors.CalcMolFormula(comparison) == expected['formula']
     if 'raw_smiles' in expected:
         clean = Chem.Mol(mol)
         for atom in clean.GetAtoms():

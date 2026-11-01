@@ -1,0 +1,162 @@
+[
+  {
+    "file": "US20080125424A1_C00020.cdx",
+    "sha256": "a0f2b7c1fbbbdf2528df878d96d5d809ab098e63a5639d96332e7947afda41eb",
+    "patent": "US20080125424A1",
+    "archive": "/home/aibulat/tasks/bioactivity/Bioactiity_from_patents/data/gold109_uspto/US20080125424A1.zip",
+    "member": "US20080125424A1-20080529/US20080125424A1-20080529-C00020.CDX",
+    "image": "US20080125424A1_C00020.tif",
+    "image_member": "US20080125424A1-20080529/US20080125424A1-20080529-C00020.TIF",
+    "image_sha256": "c334a428aa80a50118a8afff7156f21e47ab94c35de99f73abf96de0926a0044"
+  },
+  {
+    "file": "US20070123494A1_C00047.cdx",
+    "sha256": "e95df9337e92f538cc11c2b54071d6fa2ac0d3b8469c20c53262a8b4e0917013",
+    "patent": "US20070123494A1",
+    "archive": "/home/aibulat/tasks/bioactivity/Bioactiity_from_patents/data/bdb100_uspto/US20070123494A1.zip",
+    "member": "US20070123494A1-20070531/US20070123494A1-20070531-C00047.CDX",
+    "image": "US20070123494A1_C00047.tif",
+    "image_member": "US20070123494A1-20070531/US20070123494A1-20070531-C00047.TIF",
+    "image_sha256": "9275cc650abb2e24d25fd7cdc7d710f87c8199d07d093a6fe24478491c1789dc"
+  },
+  {
+    "file": "US20210052514A1_C00011.cdx",
+    "sha256": "40de8b2022e2819bed288dd7cb04843fb712168d305528bcd036ffb39a03e2c3",
+    "patent": "US20210052514A1",
+    "archive": "/home/aibulat/tasks/bioactivity/Bioactiity_from_patents/data/bdb100_uspto/US20210052514A1.zip",
+    "member": "US20210052514A1-20210225/US20210052514A1-20210225-C00011.CDX",
+    "image": "US20210052514A1_C00011.tif",
+    "image_member": "US20210052514A1-20210225/US20210052514A1-20210225-C00011.TIF",
+    "image_sha256": "92c0ede3b537521389dd694ce51302cec8fafe02270c7ea6701d0e484faf2b35"
+  },
+  {
+    "file": "US20210052514A1_C00012.cdx",
+    "sha256": "fb68671a446d91740dc9907f52ef6f0cdb00699e0b6f4f06e88e9ad02cc06488",
+    "patent": "US20210052514A1",
+    "archive": "/home/aibulat/tasks/bioactivity/Bioactiity_from_patents/data/bdb100_uspto/US20210052514A1.zip",
+    "member": "US20210052514A1-20210225/US20210052514A1-20210225-C00012.CDX",
+    "image": "US20210052514A1_C00012.tif",
+    "image_member": "US20210052514A1-20210225/US20210052514A1-20210225-C00012.TIF",
+    "image_sha256": "46dedfe6fd04680487dd303d51b90fdd05a305905a47add0118a62e48ff6b585"
+  },
+  {
+    "file": "US20210052514A1_C00015.cdx",
+    "sha256": "66511e3f44e15c135eae7838a17b6e3d49fda068bf27d07deb4efdab7851e91a",
+    "patent": "US20210052514A1",
+    "archive": "/home/aibulat/tasks/bioactivity/Bioactiity_from_patents/data/bdb100_uspto/US20210052514A1.zip",
+    "member": "US20210052514A1-20210225/US20210052514A1-20210225-C00015.CDX",
+    "image": "US20210052514A1_C00015.tif",
+    "image_member": "US20210052514A1-20210225/US20210052514A1-20210225-C00015.TIF",
+    "image_sha256": "eda8a9679f14b9454a0ec648d88c16ee3e290fa517a24a1e0b89d4ce1d34e971"
+  },
+  {
+    "file": "US20110306591A1_C00049.cdx",
+    "sha256": "0599eedb888978074a421ab8f8398464f4ca26648c988dab8fc99bfdbd28416f",
+    "patent": "US20110306591A1",
+    "archive": "/home/aibulat/tasks/bioactivity/Bioactiity_from_patents/data/bdb100_uspto/US20110306591A1.zip",
+    "member": "US20110306591A1-20111215/US20110306591A1-20111215-C00049.CDX",
+    "image": "US20110306591A1_C00049.tif",
+    "image_member": "US20110306591A1-20111215/US20110306591A1-20111215-C00049.TIF",
+    "image_sha256": "25552d763bf8534b234979441d354fb2d10fd1427f706e30b0d1ceae317c840f"
+  },
+  {
+    "file": "US20140057938A1_C00038.cdx",
+    "sha256": "100ec16139b22e3ab02596398e2a1032b8e87a4b54eb45d769477ea5ae743ef8",
+    "patent": "US20140057938A1",
+    "archive": "/home/aibulat/tasks/bioactivity/Bioactiity_from_patents/data/bdb100_uspto/US20140057938A1.zip",
+    "member": "US20140057938A1-20140227/US20140057938A1-20140227-C00038.CDX",
+    "image": "US20140057938A1_C00038.tif",
+    "image_member": "US20140057938A1-20140227/US20140057938A1-20140227-C00038.TIF",
+    "image_sha256": "d7bc19117345b06383aa47e676e4cec285d5c617c557d5b97896fa3d5de0b01e"
+  },
+  {
+    "file": "US20130116228A1_C00023.cdx",
+    "sha256": "086cb51ab8a59484add9da036ff964928d62dc0592515685edbaaf6d97cf30bf",
+    "patent": "US20130116228A1",
+    "archive": "/home/aibulat/tasks/bioactivity/Bioactiity_from_patents/data/gold109_uspto/US20130116228A1.zip",
+    "member": "US20130116228A1-20130509/US20130116228A1-20130509-C00023.CDX",
+    "image": "US20130116228A1_C00023.tif",
+    "image_member": "US20130116228A1-20130509/US20130116228A1-20130509-C00023.TIF",
+    "image_sha256": "19e8c078aca6d1b2861fd462da7fc15c291d4fe9c58edab85cd1179e0aeb400c"
+  },
+  {
+    "file": "US20130178505A1_C00217.cdx",
+    "sha256": "90f5f744f984a080a77de1d72d2b68ab8fce17dd364d4f4306fd462383d9d8d2",
+    "patent": "US20130178505A1",
+    "archive": "/home/aibulat/tasks/bioactivity/Bioactiity_from_patents/data/gold109_uspto/US20130178505A1.zip",
+    "member": "US20130178505A1-20130711/US20130178505A1-20130711-C00217.CDX",
+    "image": "US20130178505A1_C00217.tif",
+    "image_member": "US20130178505A1-20130711/US20130178505A1-20130711-C00217.TIF",
+    "image_sha256": "42c735a51a517e72135492ac41113ce73b1160cd4ed4fff180482cc2c99073fa"
+  },
+  {
+    "file": "US20130178505A1_C00240.cdx",
+    "sha256": "98f13841a8e70151db9d8fa290267a4de028409c8ed9408416815fd0ef04cdae",
+    "patent": "US20130178505A1",
+    "archive": "/home/aibulat/tasks/bioactivity/Bioactiity_from_patents/data/gold109_uspto/US20130178505A1.zip",
+    "member": "US20130178505A1-20130711/US20130178505A1-20130711-C00240.CDX",
+    "image": "US20130178505A1_C00240.tif",
+    "image_member": "US20130178505A1-20130711/US20130178505A1-20130711-C00240.TIF",
+    "image_sha256": "61dc4f4010c9fb31eafa65e1c87b9954237ce7e2fda137e0417cee876ac8a08a"
+  },
+  {
+    "file": "US20130317001A1_C00741.cdx",
+    "sha256": "5e06de26e5f7662a086c5988a1bef3b34630143113fc028198a77914fc18fd9b",
+    "patent": "US20130317001A1",
+    "archive": "/home/aibulat/tasks/bioactivity/Bioactiity_from_patents/data/bdb100_uspto/US20130317001A1.zip",
+    "member": "US20130317001A1-20131128/US20130317001A1-20131128-C00741.CDX",
+    "image": "US20130317001A1_C00741.tif",
+    "image_member": "US20130317001A1-20131128/US20130317001A1-20131128-C00741.TIF",
+    "image_sha256": "eb2f41492f49ff40dd5c94f35989616439c956c1c1edac69839700f12e52e8cf"
+  },
+  {
+    "file": "US20070123494A1_C00048.cdx",
+    "sha256": "814678d9ce90f52b35a19cac86ed912b5c1ed09b1a4c6a06040bc4d1d66a504f",
+    "patent": "US20070123494A1",
+    "archive": "/home/aibulat/tasks/bioactivity/Bioactiity_from_patents/data/bdb100_uspto/US20070123494A1.zip",
+    "member": "US20070123494A1-20070531/US20070123494A1-20070531-C00048.CDX",
+    "image": "US20070123494A1_C00048.tif",
+    "image_member": "US20070123494A1-20070531/US20070123494A1-20070531-C00048.TIF",
+    "image_sha256": "3f734541f5cccbb5e0a8db6aa972f8b802837f704329d727ebc6e1e1332a3216"
+  },
+  {
+    "file": "US20080161371A1_C00151.cdx",
+    "sha256": "2256f3553cce24ec262c9f833f02638252d4fc515b50b4051cfb12f7e3113067",
+    "patent": "US20080161371A1",
+    "archive": "/home/aibulat/tasks/bioactivity/Bioactiity_from_patents/data/gold109_uspto/US20080161371A1.zip",
+    "member": "US20080161371A1-20080703/US20080161371A1-20080703-C00151.CDX",
+    "image": "US20080161371A1_C00151.tif",
+    "image_member": "US20080161371A1-20080703/US20080161371A1-20080703-C00151.TIF",
+    "image_sha256": "d49492778102e71132c3f4f88cbca5a67a1871716d84e851c85b84b3dfdeeb39"
+  },
+  {
+    "file": "US20100197697A1_C00155.cdx",
+    "sha256": "a34dd2d4ebdf426c6b3941ffff54aa2a92d293f3e36b8777d735048056f1c474",
+    "patent": "US20100197697A1",
+    "archive": "/home/aibulat/tasks/bioactivity/Bioactiity_from_patents/data/gold109_uspto/US20100197697A1.zip",
+    "member": "US20100197697A1-20100805/US20100197697A1-20100805-C00155.CDX",
+    "image": "US20100197697A1_C00155.tif",
+    "image_member": "US20100197697A1-20100805/US20100197697A1-20100805-C00155.TIF",
+    "image_sha256": "75b20253624d284ac38f480046e2408f7d9ce511726470fc117e4fdc0a73750a"
+  },
+  {
+    "file": "US20110311444A1_C00025.cdx",
+    "sha256": "4e3fc4fb6428452d45be179c4e43a3cc02391602405842f778febd7061038612",
+    "patent": "US20110311444A1",
+    "archive": "/home/aibulat/tasks/bioactivity/Bioactiity_from_patents/data/bdb100_uspto/US20110311444A1.zip",
+    "member": "US20110311444A1-20111222/US20110311444A1-20111222-C00025.CDX",
+    "image": "US20110311444A1_C00025.tif",
+    "image_member": "US20110311444A1-20111222/US20110311444A1-20111222-C00025.TIF",
+    "image_sha256": "7c48db41c12cb11c55b1b513782d1c6ab65b09cf24dca0d26242f7e3def30311"
+  },
+  {
+    "file": "US20240083898A1_C00038.cdx",
+    "sha256": "9aef5745137568fd76700241ac23f8d3e366db088c9e8f8c53eb551168a0e599",
+    "patent": "US20240083898A1",
+    "archive": "/home/aibulat/tasks/bioactivity/Bioactiity_from_patents/data/gold109_uspto/US20240083898A1.zip",
+    "member": "US20240083898A1-20240314/US20240083898A1-20240314-C00038.CDX",
+    "image": "US20240083898A1_C00038.tif",
+    "image_member": "US20240083898A1-20240314/US20240083898A1-20240314-C00038.TIF",
+    "image_sha256": "47f1712feeb2b9ceeb2867d50aba388ff308584f032d44318a9bd069c330571d"
+  }
+]
